@@ -1,0 +1,22 @@
+  {
+    "$schema": "../goat.schema.json",
+    "goats": [
+      {
+        "shortName": "Storm",
+        "registeredName": "Timbuckdoe Farm AW Aleut Storm",
+        "color": "Blue-eyed buckskin",
+        "dam": {
+          "dam": "Camanna RA Uliana",
+          "sire": "Old Mountain Farm M Bold N",
+          "name": "Tua Farms MB Calico Rose"
+        },
+        "sire": {
+          "dam": "Leisure Time TW Pixie Dust",
+          "sire": "Hetlandcreek Sharp Dressed Man",
+          "name": "Leisure Time ZZ Aleution Wind"
+        },
+        "dob": "03/12/2020",
+        "horns": "polled"
+      }
+    ]
+  }

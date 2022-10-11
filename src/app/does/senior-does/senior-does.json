@@ -1,0 +1,46 @@
+  {
+    "$schema": "../../goat.interface.json",
+    "goats": [
+      {
+        "shortName": "Mystic",
+        "registeredName": "Gillis Family Farm Mystic",
+        "color": "Light chocolate buckskin with minimal white",
+        "horns": "disbudded",
+        "dob": "05/08/2021",
+        "dam": {
+          "dam": "SG Leisure Time ZZ Scandalous",
+          "sire": "Leisure Time PD Copper Penny",
+          "name": "Leisure Time Dirty Lil Secret"
+        },
+        "sire": {
+          "name": "Gillis Family Farm Oh Snap!",
+          "sire": "SG Sugar Moon NS Alejandro",
+          "dam": "SG 5 Fold Farm CC Ginger Snap"
+        },
+        "awards": [
+          {
+            "level": "Reserve Grand Champion",
+            "division": "Junior Does",
+            "event": "2022 Evergreen State Fair"
+          }
+        ]
+      },
+      {
+        "shortName": "Crystal",
+        "registeredName": "Gillis Family Farm Crystal",
+        "color": "Chocolate buckskin with white poll and tail",
+        "horns": "disbudded",
+        "dob": "05/26/2021",
+        "dam": {
+          "dam": "Hetlandcreek ILM Adagio",
+          "sire": "Almar Acres HS Smokin Hot",
+          "name": "Tua Farms SH Minuette"
+        },
+        "sire": {
+          "dam": "SG 5 Fold Farm CC Ginger Snap",
+          "sire": "SG Sugar Moon NS Alejandro",
+          "name": "Gillis Family Farm Oh Snap!"
+        }
+      }
+    ]
+  }

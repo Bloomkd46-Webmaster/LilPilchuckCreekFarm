@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+
+/**Colors for devices in dark mode*/
+//@media (prefers-color-scheme: dark) {
+.color-scheme-main {
+  background-color: hsla(0, 0%, 0%) !important;
+  color: hsl(0, 0%, 85%) !important;
+}
+
+.color-scheme-secondary {
+  background-color: hsla(0, 0%, 20%) !important;
+  color: hsl(0, 0%, 85%) !important;
+}
+
+.color-scheme-tertiary {
+  background-color: hsla(0, 0%, 30%) !important;
+  color: hsl(0, 0%, 85%) !important;
+}
+
+.color-scheme-quaternary {
+  background-color: hsla(0, 0%, 35%) !important;
+  color: hsl(0, 0%, 85%) !important;
+}
+
+img {
+  opacity: 0.75
+}
+
+//}
+
+/**Colors for devices in light mode*/
+@media (prefers-color-scheme: light) {
+  .color-scheme-main {
+    color: hsla(0, 0%, 15%) !important;
+    background-color: hsl(0, 0%, 100%) !important;
+  }
+
+  .color-scheme-secondary {
+    background-color: hsl(0, 0%, 90%) !important;
+    color: hsla(0, 0%, 15%) !important;
+  }
+
+  .color-scheme-tertiary {
+    background-color: hsla(0, 0%, 80%) !important;
+    color: hsl(0, 0%, 15%) !important;
+  }
+
+  .color-scheme-quaternary {
+    background-color: hsla(0, 0%, 75%) !important;
+    color: hsl(0, 0%, 15%) !important;
+  }
+
+  img {
+    opacity: 0.9
+  }
+}

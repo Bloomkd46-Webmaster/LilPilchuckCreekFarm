@@ -1,0 +1,180 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$ref": "#/definitions/Goats",
+  "definitions": {
+    "Goats": {
+      "title": "Goats",
+      "type": "object",
+      "properties": {
+        "$schema": {
+          "description": "Path To This Schema",
+          "type": "string",
+          "title": "$schema"
+        },
+        "goats": {
+          "description": "Array Of Goats",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Goat"
+          },
+          "title": "goats"
+        }
+      },
+      "required": [
+        "$schema",
+        "goats"
+      ]
+    },
+    "Goat": {
+      "title": "Goat",
+      "type": "object",
+      "properties": {
+        "shortName": {
+          "description": "Short Name",
+          "type": "string",
+          "title": "shortName"
+        },
+        "registeredName": {
+          "description": "Registered Name (Name On Registration Papers)",
+          "type": "string",
+          "title": "registeredName"
+        },
+        "awards": {
+          "description": "Any Known Awards",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Award"
+          },
+          "title": "awards"
+        },
+        "dam": {
+          "$ref": "#/definitions/Dam",
+          "title": "dam"
+        },
+        "sire": {
+          "$ref": "#/definitions/Sire",
+          "title": "sire"
+        },
+        "dob": {
+          "description": "Date Of Birth",
+          "type": "string",
+          "title": "dob"
+        },
+        "color": {
+          "description": "Description Found On Registration Papers",
+          "type": "string",
+          "title": "color"
+        },
+        "horns": {
+          "description": "Horn Type (Polled Or Disbudded)",
+          "enum": [
+            "disbudded",
+            "polled"
+          ],
+          "type": "string",
+          "title": "horns"
+        },
+        "images": {
+          "description": "Images (Relative To The assets/images Directory)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "images"
+        },
+        "description": {
+          "description": "Optional Description Of The Goat",
+          "type": "string",
+          "title": "description"
+        }
+      },
+      "required": [
+        "color",
+        "dam",
+        "dob",
+        "horns",
+        "registeredName",
+        "shortName",
+        "sire"
+      ]
+    },
+    "Sire": {
+      "title": "Sire",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Sire's Name",
+          "type": "string",
+          "title": "name"
+        },
+        "sire": {
+          "description": "Sire's Sire (SS)",
+          "type": "string",
+          "title": "sire"
+        },
+        "dam": {
+          "description": "Sire's Dam (SD)",
+          "type": "string",
+          "title": "dam"
+        }
+      },
+      "required": [
+        "dam",
+        "name",
+        "sire"
+      ]
+    },
+    "Dam": {
+      "title": "Dam",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Dam's Name",
+          "type": "string",
+          "title": "name"
+        },
+        "sire": {
+          "description": "Dam's Sire (DS)",
+          "type": "string",
+          "title": "sire"
+        },
+        "dam": {
+          "description": "Dam's Dam (DD)",
+          "type": "string",
+          "title": "dam"
+        }
+      },
+      "required": [
+        "dam",
+        "name",
+        "sire"
+      ]
+    },
+    "Award": {
+      "title": "Award",
+      "type": "object",
+      "properties": {
+        "level": {
+          "description": "Award Level (Grand Champion, Reserve Grand Champion, etc.)",
+          "type": "string",
+          "title": "level"
+        },
+        "division": {
+          "description": "Award Division (Junior Doe, Senior Doe, Breed, etc.)",
+          "type": "string",
+          "title": "division"
+        },
+        "event": {
+          "description": "Event Name Prefixed By Year (2022 Evergreen State Fair, 2023 Udder Spectacular, etc.)",
+          "type": "string",
+          "title": "event"
+        }
+      },
+      "required": [
+        "division",
+        "event",
+        "level"
+      ]
+    }
+  }
+}
