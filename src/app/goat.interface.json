@@ -29,10 +29,10 @@
       "title": "Goat",
       "type": "object",
       "properties": {
-        "shortName": {
+        "nickname": {
           "description": "Short Name",
           "type": "string",
-          "title": "shortName"
+          "title": "nickname"
         },
         "registeredName": {
           "description": "Registered Name (Name On Registration Papers)",
@@ -93,8 +93,8 @@
         "dam",
         "dob",
         "horns",
+        "nickname",
         "registeredName",
-        "shortName",
         "sire"
       ]
     },

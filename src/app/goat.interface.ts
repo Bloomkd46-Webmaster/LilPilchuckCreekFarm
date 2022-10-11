@@ -6,7 +6,7 @@ export interface Goats {
 };
 export interface Goat {
   /** Short Name */
-  shortName: string;
+  nickname: string;
   /** Registered Name (Name On Registration Papers) */
   registeredName: string;
   /** Any Known Awards */

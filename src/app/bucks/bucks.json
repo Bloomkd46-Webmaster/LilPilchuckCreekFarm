@@ -1,8 +1,8 @@
   {
-    "$schema": "../goat.schema.json",
+    "$schema": "../goat.interface.json",
     "goats": [
       {
-        "shortName": "Storm",
+        "nickname": "Storm",
         "registeredName": "Timbuckdoe Farm AW Aleut Storm",
         "color": "Blue-eyed buckskin",
         "dam": {

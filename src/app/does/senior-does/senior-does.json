@@ -2,7 +2,7 @@
     "$schema": "../../goat.interface.json",
     "goats": [
       {
-        "shortName": "Mystic",
+        "nickname": "Mystic",
         "registeredName": "Gillis Family Farm Mystic",
         "color": "Light chocolate buckskin with minimal white",
         "horns": "disbudded",
@@ -26,7 +26,7 @@
         ]
       },
       {
-        "shortName": "Crystal",
+        "nickname": "Crystal",
         "registeredName": "Gillis Family Farm Crystal",
         "color": "Chocolate buckskin with white poll and tail",
         "horns": "disbudded",
