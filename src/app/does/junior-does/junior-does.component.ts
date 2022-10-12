@@ -1,4 +1,9 @@
+import { ColorSchemeService } from 'src/app/color-scheme.service';
+import { Goat } from 'src/app/goat.interface';
+
 import { Component } from '@angular/core';
+
+import does from './junior-does.json';
 
 
 
@@ -8,9 +13,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./junior-does.component.scss']
 })
 export class JuniorDoesComponent {
+  public does: Goat[] = does.goats as Goat[];
 
-  constructor() { }
-
-
-
+  constructor(public colorScheme: ColorSchemeService) { }
 }
