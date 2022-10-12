@@ -1,12 +1,11 @@
 <!-- Navbar to display tabs at the top of the page -->
-<header class="navbar navbar-expand-lg sticky-top color-scheme-secondary" [class.navbar-dark]="colorScheme.darkMode"
-  [class.navbar-light]="colorScheme.lightMode">
+<header class="navbar navbar-expand-lg sticky-top color-scheme-secondary" [class.navbar-dark]="colorScheme.darkMode">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/"><img alt="Botsmiths Logo" src="./assets/images/logo.png" class="d-inline-block align-text-top"
-        width="30" height="24">
+    <a class="navbar-brand" routerLink="/"><img src="./assets/images/logo.png" class="d-inline-block align-text-top" width="30" height="24">
       <span>
-        <strong class="h3">BFFN</strong><br>
-        <small class="text-muted">Bloom Family Farm Nigerians</small>
+        <strong class="h3">BFFN</strong>
+        <!--<br>
+        <small class="text-muted">Bloom Family Farm Nigerians</small>-->
       </span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -14,66 +13,52 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav nav-tabs nav-fill w-100">
         <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']"
-            ariaCurrentWhenActive="page" routerLink="/" [routerLinkActiveOptions]="{exact: true}" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']"
-            aria-currentWhenActive="page" routerLink="/sponsors" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show">Sponsors</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']"
-            aria-currentWhenActive="page" routerLink="/news" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">News</a>
+          <a class="nav-link" [routerLinkActive]="['active', 'activeLink']" ariaCurrentWhenActive="page" routerLink="/"
+            [routerLinkActiveOptions]="{exact: true}" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Home</a>
         </li>
         <li class="nav-item dropdown">
-          <a #programsDropdown class="dropdown-toggle nav-link" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-            data-bs-auto-close="false" aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs') ? 'page' : null"
-            [class.active]="routerLinkActive('/programs')" [class.text-warning]="routerLinkActive('/programs') && colorScheme.darkMode"
-            [class.text-danger]="routerLinkActive('/programs') && colorScheme.lightMode"> Programs </a>
-          <!-- Programs dropdown -->
+          <a #doesDropdown class="dropdown-toggle nav-link" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+            data-bs-auto-close="false" aria-expanded="false" [attr.aria-current]="routerLinkActive('/does') ? 'page' : null"
+            [class.active]="routerLinkActive('/does')"> Does </a>
+          <!-- Does dropdown -->
           <ul class="dropdown-menu  ms-lg-0 color-scheme-tertiary" aria-labelledby="navbarDropdownMenuLink"
             [class.dropdown-menu-dark]="colorScheme.darkMode">
-            <li><a class="!dropdown-item nav-link dropdownItem text-start"
-                [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']" aria-currentWhenActive="page"
-                routerLink="/programs/frc" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">FRC</a></li>
-            <li><a class="!dropdown-item nav-link dropdownItem"
-                [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']" aria-currentWhenActive="page"
-                routerLink="/programs/ftc" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">FTC</a></li>
-            <li class="nav-item dropend">
+            <li><a class="!dropdown-item nav-link dropdownItem text-start" [routerLinkActive]="['active']" aria-currentWhenActive="page"
+                routerLink="/does/junior" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Junior Does</a></li>
+            <li><a class="!dropdown-item nav-link dropdownItem" [routerLinkActive]="['active']" aria-currentWhenActive="page"
+                routerLink="/does/senior" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Senior Does</a></li>
+            <!--<li class="nav-item dropend">
               <a #fllDropdown class="dropdown-toggle nav-link text-start" id="navbarDropdownMenuFLLLink" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs/fll') ? 'page' : null"
                 [class.active]="routerLinkActive('/programs/fll')"
                 [class.text-warning]="routerLinkActive('/programs/fll') && colorScheme.darkMode"
                 [class.text-danger]="routerLinkActive('/programs/fll') && colorScheme.lightMode" data-bs-auto-close="false"> FLL </a>
-              <!-- FLL programs dropdown -->
+              <-- FLL programs dropdown ->
               <ul class="dropdown-menu ms-3 ms-lg-0 color-scheme-quaternary" aria-labelledby="navbarDropdownMenuFLLLink"
                 [class.dropdown-menu-dark]="colorScheme.darkMode">
-                <li><a class="!dropdown-item nav-link dropdownItem"
-                    [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']" aria-currentWhenActive="page"
+                <li><a class="!dropdown-item nav-link dropdownItem" [routerLinkActive]="['active']" aria-currentWhenActive="page"
                     routerLink="/programs/fll/challenge" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">FLL Challenge</a>
                 </li>
-                <li><a class="!dropdown-item nav-link dropdownItem"
-                    [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']" aria-currentWhenActive="page"
+                <li><a class="!dropdown-item nav-link dropdownItem" [routerLinkActive]="['active']" aria-currentWhenActive="page"
                     routerLink="/programs/fll/explore" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">FLL Explore</a>
                 </li>
               </ul>
-            </li>
-            <li><a class="!dropdown-item nav-link dropdownItem"
-                [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']" aria-currentWhenActive="page"
-                routerLink="/programs/minecraft" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Minecraft</a></li>
+            </li>-->
           </ul>
         </li>
-      </ul>
-      <!-- Second navbar to align items to the right side of the page -->
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li>
-          <a class="nav-link" [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']"
-            aria-currentWhenActive="page" routerLink="/contact-us" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Contact
-            Us</a>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" aria-currentWhenActive="page" routerLink="/bucks" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show">Bucks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" aria-currentWhenActive="page" routerLink="/kidding-schedule"
+            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Kidding Schedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" aria-currentWhenActive="page" routerLink="/contact-us"
+            data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Contact Us</a>
         </li>
       </ul>
     </div>
@@ -81,7 +66,7 @@
 </header>
 <br>
 <!-- Put in minimum height div to put footer at bottom of page -->
-<div class="min-vh-100">
+<div class="min-vh-100 px-3 py-3">
   <router-outlet></router-outlet>
 </div>
 <br>
@@ -89,9 +74,9 @@
 <footer class="bd-footer color-scheme-secondary">
   <br>
   <div class="container  text-center" style="min-height: 5vh;"> This Site Was Created and Is Maintained By <a
-      [class.text-info]="colorScheme.darkMode" href="https://github.com/bloomkd46" target="_blank">Bloomkd46</a>
-    <br> See The Source Code On <a [class.text-info]="colorScheme.darkMode" href="https://github.com/4H-Botsmiths/website"
-      target="_blank">Github</a>
+      [class.text-info]="colorScheme.darkMode" href="https://github.com/bloomkd46-webmaster" target="_blank">Bloomkd46(Webmaster)</a>
+    <br> See The Source Code On <a [class.text-info]="colorScheme.darkMode"
+      href="https://github.com/bloomkd46-webmaster/BloomFamilyFarmNigerians" target="_blank">Github</a>
   </div>
   <br>
 </footer>

@@ -62,14 +62,14 @@ export class AppComponent implements OnInit {
   routerLinkActive(link: string): boolean {
     return this.router.isActive(link, { paths: 'subset', queryParams: 'subset', fragment: 'ignored', matrixParams: 'ignored' });
   }
-  @ViewChild("fllDropdown") fllDropdown!: ElementRef;
-  @ViewChild("programsDropdown") programsDropdown!: ElementRef;
+  //@ViewChild("fllDropdown") fllDropdown!: ElementRef;
+  @ViewChild("doesDropdown") programsDropdown!: ElementRef;
   /**
    * Close the navbar dropdowns if necessary
    */
   closeDropdown() {
-    const nestedDropdown = this.fllDropdown.nativeElement;
-    nestedDropdown?.classList.contains('show') ? nestedDropdown?.click() : undefined;
+    //const nestedDropdown = this.fllDropdown.nativeElement;
+    //nestedDropdown?.classList.contains('show') ? nestedDropdown?.click() : undefined;
     const dropdown = this.programsDropdown.nativeElement;
     dropdown?.classList.contains('show') ? dropdown?.click() : undefined;
   }

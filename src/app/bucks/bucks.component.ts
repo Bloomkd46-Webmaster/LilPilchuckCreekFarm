@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { ColorSchemeService } from '../color-scheme.service';
+import { Goat } from '../goat.interface';
+import bucks from './bucks.json';
+
+
 
 @Component({
   selector: 'app-bucks',
   templateUrl: './bucks.component.html',
   styleUrls: ['./bucks.component.scss']
 })
-export class BucksComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class BucksComponent {
+  public bucks: Goat[] = bucks.goats as Goat[];
+  constructor(public colorScheme: ColorSchemeService) { }
 
 }
