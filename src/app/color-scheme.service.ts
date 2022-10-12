@@ -15,7 +15,7 @@ export class ColorSchemeService {
     this.darkMode = this.getDarkMode();
     this.lightMode = this.getLightMode();
     window.matchMedia("(prefers-color-scheme: dark)").onchange = () => {
-      //location.reload();
+      location.reload();
       this.darkMode = this.getDarkMode();
       this.lightMode = this.getLightMode();
     };
