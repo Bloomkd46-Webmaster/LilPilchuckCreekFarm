@@ -41,9 +41,9 @@
     {
       "label": "Serve app on startup",
       "type": "shell",
-      "command": "ng serve",
+      "command": "ng serve --open",
       "windows": {
-        "command": "ng serve"
+        "command": "ng serve --open"
       },
       "presentation": {
         "reveal": "always",
