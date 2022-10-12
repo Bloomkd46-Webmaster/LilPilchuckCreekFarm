@@ -37,6 +37,21 @@
           }
         }
       }
+    },
+    {
+      "label": "Serve app on startup",
+      "type": "shell",
+      "command": "ng serve",
+      "windows": {
+        "command": "ng serve"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }
