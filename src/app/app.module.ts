@@ -9,6 +9,7 @@ import { SeniorDoesComponent } from './does/senior-does/senior-does.component';
 import { HomeComponent } from './home/home.component';
 import { GoatComponent } from './goat/goat.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
+import { GoatCardComponent } from './goat-card/goat-card.component';
 
 
 
@@ -20,7 +21,8 @@ import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.co
     SeniorDoesComponent,
     BucksComponent,
     GoatComponent,
-    KiddingScheduleComponent
+    KiddingScheduleComponent,
+    GoatCardComponent
   ],
   imports: [
     BrowserModule,

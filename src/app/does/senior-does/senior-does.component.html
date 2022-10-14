@@ -4,34 +4,7 @@
   <h3 *ngIf="!does.length" class="text-center">Please see the <a routerLink="/kidding-schedule">Kidding Schedule</a> for more info</h3>
   <div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 align-items-center justify-content-center">
     <div class="col py-3" *ngFor="let goat of does">
-      <div class="card color-scheme-tertiary" style="cursor: pointer;">
-        <!--<div class="card-header text-center color-scheme-quaternary"></div>-->
-        <!--<img *ngIf="article.image" src="{{article.image}}" alt="{{article.image}}" class="card-img-top px-2 pt-2">-->
-        <div class="card-body color-scheme-tertiary">
-          <h5 class="card-title stretched-link text-center" routerLink="{{goat.nickname}}">{{goat.registeredName}}</h5>
-          <h6 class="card-subtitle mb-2 text-center text-muted">"{{goat.nickname}}"</h6>
-          <p class="card-text" style="max-height: 25vh; overflow-y:hidden;"></p>
-        </div>
-        <div class="card-footer text-center color-scheme-quaternary" *ngIf="goat.awards">
-          <h4 class="text-center">Awards:</h4>
-          <table class="table table-striped table-hover text-center-bordered" [class.table-dark]="colorScheme.darkMode">
-            <thead>
-              <tr>
-                <th scope="col">Award</th>
-                <th scope="col">Division</th>
-                <th scope="col">Event</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let award of goat.awards">
-                <th scope="row">{{award.level}}</th>
-                <td>{{award.division}}</td>
-                <td>{{award.event}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <app-goat-card [goat]="goat"></app-goat-card>
     </div>
   </div>
 </div>
