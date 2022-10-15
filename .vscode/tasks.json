@@ -41,7 +41,7 @@
     {
       "label": "Serve app on startup",
       "type": "shell",
-      "command": "ng serve --open",
+      //"command": "npm run ng serve --open",
       "windows": {
         "command": "ng serve --open"
       },
