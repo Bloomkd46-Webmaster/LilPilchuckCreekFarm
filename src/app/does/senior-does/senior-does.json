@@ -41,6 +41,23 @@
           "sire": "SG Sugar Moon NS Alejandro",
           "name": "Gillis Family Farm Oh Snap!"
         }
+      },
+      {
+        "nickname": "Hazel",
+        "registeredName": "R Serenity CF Blue Haze",
+        "color": "Dark red buckskin with white AD blue eyes",
+        "horns": "disbudded",
+        "dob": "04/08/2019",
+        "dam": {
+          "dam": "Night Heron Farm AB Kara",
+          "sire": "Night Heron Farm WH Rocky Road",
+          "name": "EZ PZ Farm Blue Mist"
+        },
+        "sire": {
+          "dam": "Diji Farm MT Ariel",
+          "sire": "Castle Rock Elika",
+          "name": "R Serenity E Cadbury Freddo"
+        }
       }
     ]
   }

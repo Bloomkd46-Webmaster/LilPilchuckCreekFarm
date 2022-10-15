@@ -1,26 +1,29 @@
-<div class="card color-scheme-tertiary" style="cursor: pointer;" *ngIf="goat">
-  <div class="card-header text-center color-scheme-quaternary"></div>
+<div class="card color-scheme-secondary" style="cursor: pointer;" *ngIf="goat">
+  <!--<div class="card-header text-center color-scheme-tertiary"></div>-->
   <!--<img *ngIf="article.image" src="{{article.image}}" alt="{{article.image}}" class="card-img-top px-2 pt-2">-->
-  <div class="card-body color-scheme-tertiary">
-    <h5 class="card-title stretched-link text-center" routerLink="{{goat.nickname}}">{{goat.registeredName}}</h5>
-    <h6 class="card-subtitle mb-2 text-center text-muted">"{{goat.nickname}}"</h6>
-    <div class="card-text text-center" style="max-height: 25vh; overflow-y:hidden;">
-      <dl>
-        <dt> Sire: {{goat.sire.name}}
-        </dt>
-        <dd> Sires Sire (SS): {{goat.sire.sire}}<br> Sires Dam (SD): {{goat.sire.dam}}
-        </dd>
-        <dt> Dam: {{goat.dam.name}}
-        </dt>
-        <dd> Dams Sire (DS): {{goat.dam.sire}}<br> Dams Dam (DD): {{goat.dam.dam}}
-        </dd>
-      </dl>
+  <div class="card-body color-scheme-secondary">
+    <div class="container color-scheme-tertiary py-3">
+      <h5 class="card-title stretched-link text-center" routerLink="{{goat.nickname}}">{{goat.registeredName}}</h5>
+      <h6 class="card-subtitle mb-2 text-center text-muted">"{{goat.nickname}}"</h6>
+      <div class="card-text text-center">
+        <dl>
+          <dt> Sire: {{goat.sire.name}}
+          </dt>
+          <dd> Sire's Sire (SS): {{goat.sire.sire}}<br> Sire's Dam (SD): {{goat.sire.dam}}
+          </dd>
+          <dt> Dam: {{goat.dam.name}}
+          </dt>
+          <dd> Dam's Sire (DS): {{goat.dam.sire}}<br> Dam's Dam (DD): {{goat.dam.dam}}
+          </dd>
+        </dl>
+      </div>
     </div>
   </div>
-  <div class="card-footer text-center color-scheme-quaternary">
-    <div class="container" *ngIf="goat.awards">
+  <div class="card-footer text-center pb-3 color-scheme-secondary" *ngIf="goat.awards">
+    <div class="container color-scheme-tertiary py-3">
       <h4 class="text-center">Awards:</h4>
-      <table class="table table-striped table-hover text-center-bordered" [class.table-dark]="colorScheme.darkMode">
+      <table class="table table-striped table-hover text-center-bordered" [class.table-dark]="colorScheme.darkMode"
+        [class.table-info]="colorScheme.lightMode">
         <thead>
           <tr>
             <th scope="col">Award</th>

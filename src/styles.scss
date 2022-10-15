@@ -3,28 +3,28 @@
 /**Colors for devices in dark mode*/
 //@media (prefers-color-scheme: dark) {
 .color-scheme-main {
-  background-color: hsl(250, 100%, 10%) !important;
+  background-color: hsl(225, 100%, 10%) !important;
   color: hsl(0, 0%, 85%) !important;
 }
 
 .color-scheme-secondary {
-  background-color: hsla(250, 100%, 20%) !important;
+  background-color: hsla(225, 100%, 20%) !important;
   color: hsl(0, 0%, 85%) !important;
 }
 
 .color-scheme-tertiary {
-  background-color: hsla(250, 100%, 30%) !important;
+  background-color: hsla(225, 100%, 30%) !important;
   color: hsl(0, 0%, 85%) !important;
 }
 
 .color-scheme-quaternary {
-  background-color: hsla(250, 100%, 35%) !important;
+  background-color: hsla(225, 100%, 35%) !important;
   color: hsl(0, 0%, 85%) !important;
 }
 
 .active {
   //color: hsl(250, 100%, 60%) !important;
-  background-color: hsla(250, 100%, 40%) !important;
+  background-color: hsla(225, 100%, 40%) !important;
 }
 
 img {
@@ -36,28 +36,28 @@ img {
 /**Colors for devices in light mode*/
 @media (prefers-color-scheme: light) {
   .color-scheme-main {
+    background-color: hsl(200, 100%, 100%) !important;
     color: hsla(0, 0%, 15%) !important;
-    background-color: hsl(250, 100%, 80%) !important;
   }
 
   .color-scheme-secondary {
-    background-color: hsl(250, 100%, 70%) !important;
+    background-color: hsl(200, 100%, 90%) !important;
     color: hsla(0, 0%, 15%) !important;
   }
 
   .color-scheme-tertiary {
-    background-color: hsla(250, 100%, 60%) !important;
+    background-color: hsla(200, 100%, 80%) !important;
     color: hsl(0, 0%, 15%) !important;
   }
 
   .color-scheme-quaternary {
-    background-color: hsla(250, 100%, 55%) !important;
+    background-color: hsla(200, 100%, 75%) !important;
     color: hsl(0, 0%, 15%) !important;
   }
 
   .active {
     //color: hsl(250, 100%, 60%) !important;
-    background-color: hsla(250, 100%, 60%) !important;
+    background-color: hsla(200, 100%, 80%) !important;
   }
 
   img {
