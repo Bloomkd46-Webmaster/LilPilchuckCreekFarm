@@ -20,11 +20,26 @@ const routes: Routes = [
   { path: 'home', redirectTo: '' },
   {
     path: 'does', children: [
-      { path: 'senior', component: SeniorDoesComponent },
-      { path: 'junior', component: JuniorDoesComponent }
+      {
+        path: 'senior', children: [
+          { path: '', component: SeniorDoesComponent },
+          { path: ':doe', component: SeniorDoesComponent }
+        ]
+      },
+      {
+        path: 'junior', children: [
+          { path: '', component: JuniorDoesComponent },
+          { path: ':doe', component: JuniorDoesComponent }
+        ]
+      }
     ]
   },
-  { path: 'bucks', component: BucksComponent },
+  {
+    path: 'bucks', children: [
+      { path: '', component: BucksComponent },
+      { path: ':doe', component: BucksComponent }
+    ]
+  },
   { path: 'kidding-schedule', component: KiddingScheduleComponent }
 ];
 
