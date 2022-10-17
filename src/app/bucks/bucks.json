@@ -6,14 +6,44 @@
         "registeredName": "Timbuckdoe Farm AW Aleut Storm",
         "color": "Blue-eyed buckskin",
         "dam": {
-          "dam": "Camanna RA Uliana",
-          "sire": "Old Mountain Farm M Bold N",
+          "dam": {
+            "name": "Camanna RA Uliana",
+            "stars": [
+              "1*M",
+              "AR2019",
+              "ST2018",
+              "LA2019,2018,2017"
+            ]
+          },
+          "sire": {
+            "name": "Old Mountain Farm M Bold N",
+            "DNA": true,
+            "stars": [
+              "LA2019"
+            ]
+          },
           "name": "Tua Farms MB Calico Rose"
         },
         "sire": {
-          "dam": "Leisure Time TW Pixie Dust",
-          "sire": "Hetlandcreek Sharp Dressed Man",
-          "name": "Leisure Time ZZ Aleution Wind"
+          "dam": {
+            "name": "Leisure Time TW Pixie Dust",
+            "stars": [
+              "3*M",
+              "AR2018",
+              "LA2019,2018"
+            ]
+          },
+          "sire": {
+            "name": "Hetlandcreek Sharp Dressed Man",
+            "DNA": true,
+            "stars": [
+              "LA2018"
+            ]
+          },
+          "name": "Leisure Time ZZ Aleution Wind",
+          "stars": [
+            "*B"
+          ]
         },
         "dob": "03/12/2020",
         "horns": "polled"
