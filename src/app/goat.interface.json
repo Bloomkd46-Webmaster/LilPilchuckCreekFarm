@@ -104,27 +104,13 @@
           "title": "name"
         },
         "sire": {
+          "$ref": "#/definitions/Grandparent",
           "description": "Sire's Sire (SS)",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Grandparent"
-            },
-            {
-              "type": "string"
-            }
-          ],
           "title": "sire"
         },
         "dam": {
+          "$ref": "#/definitions/Grandparent",
           "description": "Sire's Dam (SD)",
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Grandparent"
-            },
-            {
-              "type": "string"
-            }
-          ],
           "title": "dam"
         },
         "DNA": {

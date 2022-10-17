@@ -28,9 +28,9 @@ interface Parent {
   /** Sire's Name */
   name: string;
   /** Sire's Sire (SS) */
-  sire: string | Grandparent;
+  sire: Grandparent;
   /** Sire's Dam (SD) */
-  dam: string | Grandparent;
+  dam: Grandparent;
   /** DNA Tested */
   DNA?: boolean;
   /** Stars */

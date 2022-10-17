@@ -7,13 +7,17 @@
       <h6 class="card-subtitle mb-2 text-center text-muted">"{{goat.nickname}}"</h6>
       <div class="card-text text-center">
         <dl>
-          <dt> Sire: {{goat.sire.name}}
+          <dt>Sire: {{goat.sire.name}}<span *ngIf="goat.sire.stars"><br><small>Awards: {{goat.sire.stars.join(', ')}}</small></span>
           </dt>
-          <dd> Sire's Sire (SS): {{goat.sire.sire}}<br> Sire's Dam (SD): {{goat.sire.dam}}
+          <dd>Sire's Sire (SS): {{goat.sire.sire.name}}
+            <span *ngIf="goat.sire.sire.stars"><br><small>Awards: {{goat.sire.sire.stars.join(', ')}}</small></span><br>Sire's Dam (SD):
+            {{goat.sire.dam.name}}<span *ngIf="goat.sire.dam.stars"><br><small>Awards: {{goat.sire.dam.stars.join(', ')}}</small></span>
           </dd>
-          <dt> Dam: {{goat.dam.name}}
+          <dt>Dam: {{goat.dam.name}}<span *ngIf="goat.dam.stars"><br><small>Awards: {{goat.dam.stars.join(', ')}}</small></span>
           </dt>
-          <dd> Dam's Sire (DS): {{goat.dam.sire}}<br> Dam's Dam (DD): {{goat.dam.dam}}
+          <dd>Dam's Sire (DS): {{goat.dam.sire.name}}<span *ngIf="goat.dam.sire.stars"><br><small>Awards:
+                {{goat.dam.sire.stars.join(', ')}}</small></span><br> Dam's Dam (DD): {{goat.dam.dam.name}}<span
+              *ngIf="goat.dam.stars"><br><small>Awards: {{goat.dam.stars.join(', ')}}</small></span>
           </dd>
         </dl>
       </div>
