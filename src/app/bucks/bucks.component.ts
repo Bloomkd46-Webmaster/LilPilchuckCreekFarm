@@ -12,7 +12,6 @@ import bucks from './bucks.json';
   styleUrls: ['./bucks.component.scss']
 })
 export class BucksComponent {
-  public bucks: Goat[] = bucks.goats as Goat[];
+  public bucks: Goat[] = bucks.goats;
   constructor(public colorScheme: ColorSchemeService) { }
-
 }

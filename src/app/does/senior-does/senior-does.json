@@ -8,14 +8,42 @@
         "horns": "disbudded",
         "dob": "05/08/2021",
         "dam": {
-          "dam": "SG Leisure Time ZZ Scandalous",
-          "sire": "Leisure Time PD Copper Penny",
+          "dam": {
+            "DNA": true,
+            "stars": [
+              "6*M",
+              "AR2019",
+              "LA2019"
+            ],
+            "name": "SG Leisure Time ZZ Scandalous"
+          },
+          "sire": {
+            "DNA": true,
+            "stars": [
+              "*B"
+            ],
+            "name": "Leisure Time PD Copper Penny"
+          },
           "name": "Leisure Time Dirty Lil Secret"
         },
         "sire": {
           "name": "Gillis Family Farm Oh Snap!",
-          "sire": "SG Sugar Moon NS Alejandro",
-          "dam": "SG 5 Fold Farm CC Ginger Snap"
+          "sire": {
+            "DNA": true,
+            "stars": [
+              "+*B",
+              "AR2020"
+            ],
+            "name": "SG Sugar Moon NS Alejandro"
+          },
+          "dam": {
+            "stars": [
+              "1*M",
+              "AR2019",
+              "LA2015"
+            ],
+            "name": "SG 5 Fold Farm CC Ginger Snap"
+          }
         },
         "awards": [
           {

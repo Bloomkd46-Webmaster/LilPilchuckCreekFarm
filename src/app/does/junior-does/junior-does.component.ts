@@ -13,7 +13,7 @@ import does from './junior-does.json';
   styleUrls: ['./junior-does.component.scss']
 })
 export class JuniorDoesComponent {
-  public does: Goat[] = does.goats as Goat[];
+  public does: Goat[] = does.goats;
 
   constructor(public colorScheme: ColorSchemeService) { }
 }

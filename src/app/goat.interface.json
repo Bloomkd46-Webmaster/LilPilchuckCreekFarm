@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "$ref": "#/definitions/Goats",
   "definitions": {
     "Goats": {
@@ -48,11 +48,11 @@
           "title": "awards"
         },
         "dam": {
-          "$ref": "#/definitions/Dam",
+          "$ref": "#/definitions/Parent",
           "title": "dam"
         },
         "sire": {
-          "$ref": "#/definitions/Sire",
+          "$ref": "#/definitions/Parent",
           "title": "sire"
         },
         "dob": {
@@ -67,10 +67,6 @@
         },
         "horns": {
           "description": "Horn Type (Polled Or Disbudded)",
-          "enum": [
-            "disbudded",
-            "polled"
-          ],
           "type": "string",
           "title": "horns"
         },
@@ -98,8 +94,8 @@
         "sire"
       ]
     },
-    "Sire": {
-      "title": "Sire",
+    "Parent": {
+      "title": "Parent",
       "type": "object",
       "properties": {
         "name": {
@@ -109,13 +105,40 @@
         },
         "sire": {
           "description": "Sire's Sire (SS)",
-          "type": "string",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Grandparent"
+            },
+            {
+              "type": "string"
+            }
+          ],
           "title": "sire"
         },
         "dam": {
           "description": "Sire's Dam (SD)",
-          "type": "string",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Grandparent"
+            },
+            {
+              "type": "string"
+            }
+          ],
           "title": "dam"
+        },
+        "DNA": {
+          "description": "DNA Tested",
+          "type": "boolean",
+          "title": "DNA"
+        },
+        "stars": {
+          "description": "Stars",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "stars"
         }
       },
       "required": [
@@ -124,30 +147,31 @@
         "sire"
       ]
     },
-    "Dam": {
-      "title": "Dam",
+    "Grandparent": {
+      "title": "Grandparent",
       "type": "object",
       "properties": {
         "name": {
-          "description": "Dam's Name",
+          "description": "Sire's Name",
           "type": "string",
           "title": "name"
         },
-        "sire": {
-          "description": "Dam's Sire (DS)",
-          "type": "string",
-          "title": "sire"
+        "DNA": {
+          "description": "DNA Tested",
+          "type": "boolean",
+          "title": "DNA"
         },
-        "dam": {
-          "description": "Dam's Dam (DD)",
-          "type": "string",
-          "title": "dam"
+        "stars": {
+          "description": "Stars",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "stars"
         }
       },
       "required": [
-        "dam",
-        "name",
-        "sire"
+        "name"
       ]
     },
     "Award": {
