@@ -1,13 +1,48 @@
-<div class="card text-center container color-scheme-secondary w-75" *ngIf="goat">
-  <div class="card-header">
+<div class="card color-scheme-secondary" style="cursor: pointer;" *ngIf="goat">
+  <!--<div class="card-header text-center color-scheme-tertiary"></div>-->
+  <!--<img *ngIf="article.image" src="{{article.image}}" alt="{{article.image}}" class="card-img-top px-2 pt-2">-->
+  <div class="card-body color-scheme-secondary">
+    <div class="container color-scheme-tertiary py-3">
+      <h5 class="card-title stretched-link text-center" routerLink="{{goat.nickname}}">{{goat.registeredName}}</h5>
+      <h6 class="card-subtitle mb-2 text-center text-muted">"{{goat.nickname}}"</h6>
+      <div class="card-text text-center">
+        <dl>
+          <dt>Sire: {{goat.sire.name}}<span *ngIf="goat.sire.stars"><br><small>Awards: {{goat.sire.stars.join(', ')}}</small></span>
+          </dt>
+          <dd>Sire's Sire (SS): {{goat.sire.sire.name}}
+            <span *ngIf="goat.sire.sire.stars"><br><small>Awards: {{goat.sire.sire.stars.join(', ')}}</small></span><br>Sire's Dam (SD):
+            {{goat.sire.dam.name}}<span *ngIf="goat.sire.dam.stars"><br><small>Awards: {{goat.sire.dam.stars.join(', ')}}</small></span>
+          </dd>
+          <dt>Dam: {{goat.dam.name}}<span *ngIf="goat.dam.stars"><br><small>Awards: {{goat.dam.stars.join(', ')}}</small></span>
+          </dt>
+          <dd>Dam's Sire (DS): {{goat.dam.sire.name}}<span *ngIf="goat.dam.sire.stars"><br><small>Awards:
+                {{goat.dam.sire.stars.join(', ')}}</small></span><br> Dam's Dam (DD): {{goat.dam.dam.name}}<span
+              *ngIf="goat.dam.dam.stars"><br><small>Awards: {{goat.dam.dam.stars.join(', ')}}</small></span>
+          </dd>
+        </dl>
+      </div>
+    </div>
   </div>
-  <img src="" class="card-img-top w-100 h-100" alt="Goat Image">
-  <div class="card-body">
-    <h3 class="card-title">{{goat.registeredName}} - "{{goat.nickname}}"</h3>
-    <h4 class="card-subtitle mb-2 text-muted">{{goat.dob}}</h4>
-    <p class="card-text"></p>
-    <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
-  </div>
-  <div class="card-footer">
+  <div class="card-footer text-center pb-3 color-scheme-secondary" *ngIf="goat.awards">
+    <div class="container color-scheme-tertiary py-3">
+      <h4 class="text-center">Awards:</h4>
+      <table class="table table-striped table-hover table-bordered text-center-bordered" [class.table-dark]="colorScheme.darkMode"
+        [class.table-info]="colorScheme.lightMode">
+        <thead>
+          <tr>
+            <th scope="col">Award</th>
+            <th scope="col">Division</th>
+            <th scope="col">Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let award of goat.awards">
+            <th scope="row">{{award.level}}</th>
+            <td>{{award.division}}</td>
+            <td>{{award.event}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

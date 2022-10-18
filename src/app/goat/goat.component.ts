@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+import { ColorSchemeService } from '../color-scheme.service';
 import { Goat } from '../goat.interface';
 
 
@@ -12,8 +13,5 @@ import { Goat } from '../goat.interface';
 export class GoatComponent {
   /** The goat to display */
   @Input() goat!: Goat;
-  @Input() full?: boolean;
-
-  constructor() { }
-
+  constructor(public colorScheme: ColorSchemeService) { }
 }
