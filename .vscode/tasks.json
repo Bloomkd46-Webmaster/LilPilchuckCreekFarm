@@ -43,7 +43,7 @@
       "type": "shell",
       //"command": "npm run ng serve --open",
       "windows": {
-        "command": "ng serve --open"
+        "command": "ng serve"
       },
       "presentation": {
         "reveal": "always",
