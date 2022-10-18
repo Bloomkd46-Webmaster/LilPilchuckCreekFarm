@@ -1,4 +1,21 @@
 <h1 class="text-center">Senior Does</h1>
+<div #modal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="doe">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">{{doe.registeredName}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"> ... </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!--<button type="button" class="btn btn-primary">Understood</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
   <h2 *ngIf="!does.length" class="text-center">We currently don't have any senior does.</h2>
   <h3 *ngIf="!does.length" class="text-center">Please see the <a routerLink="/kidding-schedule">Kidding Schedule</a> for more info</h3>

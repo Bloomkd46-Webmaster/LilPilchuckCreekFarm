@@ -1,25 +1,39 @@
+import * as Bootstrap from 'bootstrap';
 import { ColorSchemeService } from 'src/app/color-scheme.service';
 import { Goat } from 'src/app/goat.interface';
 import { MetaService } from 'src/app/meta.service';
 
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import does from './senior-does.json';
 
 
+
+declare const bootstrap: typeof Bootstrap;
 
 @Component({
   selector: 'app-senior-does',
   templateUrl: './senior-does.component.html',
   styleUrls: ['./senior-does.component.scss']
 })
-export class SeniorDoesComponent implements OnInit, OnDestroy {
+export class SeniorDoesComponent implements OnInit, OnDestroy, AfterViewInit {
   public does: Goat[] = does.goats;
   public doe?: Goat;
 
-  constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta) { }
+  constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router) { }
+  @ViewChild("modal") modal!: ElementRef;
+  ngAfterViewInit(): void {
+    if (this.doe) {
+      const myModalAlternative = new bootstrap.Modal(this.modal.nativeElement, { focus: false });
+      myModalAlternative.show();
+      this.modal.nativeElement.addEventListener('hidden.bs.modal', () => {
+        this.router.navigate(['does/senior/']);
+      });
+
+    }
+  }
   ngOnInit(): void {
     const specificDoe: boolean = this.activatedRoute.snapshot.paramMap.get("doe") !== null;
     if (specificDoe) {
@@ -38,3 +52,4 @@ export class SeniorDoesComponent implements OnInit, OnDestroy {
     this.meta.removeTag('name="robots"');
   }
 }
+//new bootstrap.Modal(document.getElementById('exampleModal')!);

@@ -23,7 +23,7 @@
             data-bs-auto-close="false" aria-expanded="false" [attr.aria-current]="routerLinkActive('/does') ? 'page' : null"
             [class.active]="routerLinkActive('/does')"> Does </a>
           <!-- Does dropdown -->
-          <ul class="dropdown-menu  ms-lg-0 color-scheme-tertiary" aria-labelledby="navbarDropdownMenuLink"
+          <ul class="dropdown-menu  ms-lg-0 color-scheme-tertiary w-100" aria-labelledby="navbarDropdownMenuLink"
             [class.dropdown-menu-dark]="colorScheme.darkMode">
             <li><a class="!dropdown-item nav-link dropdownItem text-start" [routerLinkActive]="['active']" aria-currentWhenActive="page"
                 routerLink="/does/junior" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Junior Does</a></li>
