@@ -19,15 +19,27 @@ const routes: Routes = [
   },
   { path: 'home', redirectTo: '' },
   {
-    path: 'does', children: [
+    path: 'does', data: {
+      title: 'Does',
+      description: '',
+      keywords: ['Doe', 'Does']
+    }, children: [
       {
-        path: 'senior', children: [
+        path: 'senior', data: {
+          title: 'Senior Does',
+          description: '',
+          keywords: ['Does', 'Doe', 'Senior', 'Milking']
+        }, children: [
           { path: '', component: SeniorDoesComponent },
           { path: ':doe', component: SeniorDoesComponent }
         ]
       },
       {
-        path: 'junior', children: [
+        path: 'junior', data: {
+          title: 'Junior Does',
+          description: '',
+          keywords: ['Does', 'Doe', 'Junior', 'Dry']
+        }, children: [
           { path: '', component: JuniorDoesComponent },
           { path: ':doe', component: JuniorDoesComponent }
         ]
@@ -35,12 +47,22 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'bucks', children: [
+    path: 'bucks', data: {
+      title: 'Bucks',
+      description: '',
+      keywords: ['Bucks', 'Buck', 'Junior', 'Senior']
+    }, children: [
       { path: '', component: BucksComponent },
-      { path: ':doe', component: BucksComponent }
+      { path: ':buck', component: BucksComponent }
     ]
   },
-  { path: 'kidding-schedule', component: KiddingScheduleComponent }
+  {
+    path: 'kidding-schedule', component: KiddingScheduleComponent, data: {
+      title: 'Kidding Schedule',
+      description: '',
+      keywords: ['Kidding', 'Schedule']
+    }
+  }
 ];
 
 @NgModule({
