@@ -1,8 +1,10 @@
 export interface Goats {
   /** Path To This Schema */
   $schema: string;
-  /** Array Of Goats */
-  goats: Goat[];
+  /** Array of Does */
+  does: Goat[];
+  /** Array of Bucks */
+  bucks: Goat[];
 }
 export interface Goat {
   /** Short Name */

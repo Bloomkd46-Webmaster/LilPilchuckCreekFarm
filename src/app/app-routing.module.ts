@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BucksComponent } from './bucks/bucks.component';
-import { JuniorDoesComponent } from './does/junior-does/junior-does.component';
-import { SeniorDoesComponent } from './does/senior-does/senior-does.component';
+import { DoesComponent } from './does/does.component';
 import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
 
@@ -18,7 +17,7 @@ const routes: Routes = [
     }
   },
   { path: 'home', redirectTo: '' },
-  {
+  /*{
     path: 'does', data: {
       title: 'Does',
       description: '',
@@ -45,7 +44,7 @@ const routes: Routes = [
         ]
       }
     ]
-  },
+  },*/
   {
     path: 'bucks', data: {
       title: 'Bucks',
@@ -54,6 +53,15 @@ const routes: Routes = [
     }, children: [
       { path: '', component: BucksComponent },
       { path: ':buck', component: BucksComponent }
+    ]
+  }, {
+    path: 'does', data: {
+      title: 'Does',
+      description: '',
+      keywords: ['Does', 'Doe', 'Junior', 'Senior', 'Milking', 'Dry']
+    }, children: [
+      { path: '', component: DoesComponent },
+      { path: ':doe', component: DoesComponent }
     ]
   },
   {

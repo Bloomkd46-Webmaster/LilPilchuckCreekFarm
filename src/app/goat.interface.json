@@ -11,18 +11,27 @@
           "type": "string",
           "title": "$schema"
         },
-        "goats": {
-          "description": "Array Of Goats",
+        "does": {
+          "description": "Array of Does",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Goat"
           },
-          "title": "goats"
+          "title": "does"
+        },
+        "bucks": {
+          "description": "Array of Bucks",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Goat"
+          },
+          "title": "bucks"
         }
       },
       "required": [
         "$schema",
-        "goats"
+        "bucks",
+        "does"
       ]
     },
     "Goat": {

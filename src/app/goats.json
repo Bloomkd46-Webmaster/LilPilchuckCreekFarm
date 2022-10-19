@@ -1,0 +1,194 @@
+{
+  "$schema": "./goat.interface.json",
+  "bucks": [
+    {
+      "nickname": "Storm",
+      "registeredName": "Timbuckdoe Farm AW Aleut Storm",
+      "color": "Blue-eyed buckskin",
+      "dam": {
+        "dam": {
+          "name": "Camanna RA Uliana",
+          "stars": [
+            "1*M",
+            "AR2019",
+            "ST2018",
+            "LA2019,2018,2017"
+          ]
+        },
+        "sire": {
+          "name": "Old Mountain Farm M Bold N",
+          "DNA": true,
+          "stars": [
+            "LA2019"
+          ]
+        },
+        "name": "Tua Farms MB Calico Rose"
+      },
+      "sire": {
+        "dam": {
+          "name": "Leisure Time TW Pixie Dust",
+          "stars": [
+            "3*M",
+            "AR2018",
+            "LA2019,2018"
+          ]
+        },
+        "sire": {
+          "name": "Hetlandcreek Sharp Dressed Man",
+          "DNA": true,
+          "stars": [
+            "LA2018"
+          ]
+        },
+        "name": "Leisure Time ZZ Aleution Wind",
+        "stars": [
+          "*B"
+        ]
+      },
+      "dob": "03/12/2020",
+      "horns": "polled"
+    }
+  ],
+  "does": [
+    {
+      "nickname": "Mystic",
+      "registeredName": "Gillis Family Farm Mystic",
+      "color": "Light chocolate buckskin with minimal white",
+      "horns": "disbudded",
+      "dob": "05/08/2021",
+      "dam": {
+        "dam": {
+          "DNA": true,
+          "stars": [
+            "6*M",
+            "AR2019",
+            "LA2019"
+          ],
+          "name": "SG Leisure Time ZZ Scandalous"
+        },
+        "sire": {
+          "DNA": true,
+          "stars": [
+            "*B"
+          ],
+          "name": "Leisure Time PD Copper Penny"
+        },
+        "name": "Leisure Time Dirty Lil Secret"
+      },
+      "sire": {
+        "name": "Gillis Family Farm Oh Snap!",
+        "sire": {
+          "DNA": true,
+          "stars": [
+            "+*B",
+            "AR2020"
+          ],
+          "name": "SG Sugar Moon NS Alejandro"
+        },
+        "dam": {
+          "stars": [
+            "1*M",
+            "AR2019",
+            "LA2015"
+          ],
+          "name": "SG 5 Fold Farm CC Ginger Snap"
+        },
+        "DNA": true,
+        "stars": [
+          "*B"
+        ]
+      },
+      "awards": [
+        {
+          "level": "Reserve Grand Champion",
+          "division": "Junior Does",
+          "event": "2022 Evergreen State Fair"
+        }
+      ]
+    },
+    {
+      "nickname": "Crystal",
+      "registeredName": "Gillis Family Farm Crystal",
+      "color": "Chocolate buckskin with white poll and tail",
+      "horns": "disbudded",
+      "dob": "05/26/2021",
+      "dam": {
+        "dam": {
+          "stars": [
+            "6*M",
+            "AR2020",
+            "AR2019"
+          ],
+          "name": "Hetlandcreek ILM Adagio"
+        },
+        "sire": {
+          "stars": [
+            "*B",
+            "LA2019,2018,2017"
+          ],
+          "DNA": true,
+          "name": "Almar Acres HS Smokin Hot"
+        },
+        "name": "Tua Farms SH Minuette"
+      },
+      "sire": {
+        "dam": {
+          "stars": [
+            "1*M",
+            "AR2019",
+            "LA2015"
+          ],
+          "name": "SG 5 Fold Farm CC Ginger Snap"
+        },
+        "sire": {
+          "name": "SG Sugar Moon NS Alejandro",
+          "DNA": true,
+          "stars": [
+            "+*B",
+            "AR2020"
+          ]
+        },
+        "name": "Gillis Family Farm Oh Snap!",
+        "DNA": true,
+        "stars": [
+          "*B"
+        ]
+      }
+    },
+    {
+      "nickname": "Hazel",
+      "registeredName": "R Serenity CF Blue Haze",
+      "color": "Dark red buckskin with white AD blue eyes",
+      "horns": "disbudded",
+      "dob": "04/08/2019",
+      "dam": {
+        "dam": {
+          "name": "Night Heron Farm AB Kara",
+          "stars": [
+            "LA2019,2018"
+          ]
+        },
+        "sire": {
+          "name": "Night Heron Farm WH Rocky Road"
+        },
+        "name": "EZ PZ Farm Blue Mist"
+      },
+      "sire": {
+        "dam": {
+          "name": "Diji Farm MT Ariel",
+          "stars": [
+            "LA2019,2018,2017"
+          ]
+        },
+        "sire": {
+          "name": "Castle Rock Elika",
+          "stars": [
+            "*B"
+          ],
+          "DNA": true
+        },
+        "name": "R Serenity E Cadbury Freddo"
+      }
+    }
+  ]
+}
