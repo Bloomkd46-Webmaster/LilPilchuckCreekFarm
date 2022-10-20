@@ -39,9 +39,9 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       this.metaService.updateTitle(this.title ? `${this.goat.nickname} · ${this.title}` : this.goat.nickname);
       this.goat.description !== undefined ? this.metaService.updateDescription(this.goat.description) : undefined;
       if (this.noIndex) this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
-    } else {
+    }/* else {
       this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
-    }
+    }*/
   } ngOnDestroy(): void {
     this.meta.removeTag('name="robots"');
   };
