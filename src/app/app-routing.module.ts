@@ -39,11 +39,14 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'kidding-schedule', component: KiddingScheduleComponent, data: {
+    path: 'kidding-schedule', data: {
       title: 'Kidding Schedule',
       description: '',
       keywords: ['Kidding', 'Schedule']
-    }
+    }, children: [
+      { path: '', component: KiddingScheduleComponent },
+      { path: ':doe', component: KiddingScheduleComponent }
+    ]
   },
   {
     path: 'contact-us', component: ContactUsComponent, data: {

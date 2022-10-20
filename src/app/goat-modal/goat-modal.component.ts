@@ -12,7 +12,6 @@ import { MetaService } from '../meta.service';
 
 
 declare const bootstrap: typeof Bootstrap;
-
 @Component({
   selector: 'app-goat-modal',
   templateUrl: './goat-modal.component.html',
@@ -24,22 +23,24 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public goat?: Goat;
 
   @Input() title?: string;
+  @Input() noIndex?: boolean;
   constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router) { }
 
   ngOnInit(): void {
-    const specificDoe: boolean = this.activatedRoute.snapshot.paramMap.get("doe") !== null;
-    const specificBuck: boolean = this.activatedRoute.snapshot.paramMap.get("buck") !== null;
+    this.goat = this.does.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe")) ||
+      this.bucks.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("buck"));
 
-    if (specificDoe || specificBuck) {
-      this.goat = this.does.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe")) || this.bucks.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("buck"));
-      if (this.goat) {
-        console.log(this.goat);
-        //this.metaService.updateKeywords(['News', 'Post', 'Blog', ...(this.post.categories ?? [])]);
-        this.metaService.updateTitle(this.title ? `${this.goat.nickname} · ${this.title}` : this.goat.nickname);
-        this.goat.description !== undefined ? this.metaService.updateDescription(this.goat.description) : undefined;
-      } else {
-        this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
-      }
+    //    const specificDoe: boolean = this.activatedRoute.snapshot.paramMap.get("doe") !== null;
+    //    const specificBuck: boolean = this.activatedRoute.snapshot.paramMap.get("buck") !== null;
+
+    if (this.goat/*specificDoe || specificBuck*/) {
+      console.log(this.goat);
+      //this.metaService.updateKeywords(['News', 'Post', 'Blog', ...(this.post.categories ?? [])]);
+      this.metaService.updateTitle(this.title ? `${this.goat.nickname} · ${this.title}` : this.goat.nickname);
+      this.goat.description !== undefined ? this.metaService.updateDescription(this.goat.description) : undefined;
+      if (this.noIndex) this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
+    } else {
+      this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
     }
   } ngOnDestroy(): void {
     this.meta.removeTag('name="robots"');
@@ -50,6 +51,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       const myModalAlternative = new bootstrap.Modal(this.modal.nativeElement);
       myModalAlternative.show();
       this.modal.nativeElement.addEventListener('hidden.bs.modal', () => {
+        this.meta.removeTag('name="robots"');
         this.router.navigate(['../'], { relativeTo: this.activatedRoute });
       });
 

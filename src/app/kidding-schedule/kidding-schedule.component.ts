@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ColorSchemeService } from '../color-scheme.service';
+import goats from '../goats.json';
 import KiddingSchedule from './kidding-schedule.json';
 
 
@@ -11,10 +12,8 @@ import KiddingSchedule from './kidding-schedule.json';
   styleUrls: ['./kidding-schedule.component.scss']
 })
 export class KiddingScheduleComponent {
-  public kiddingSchedule = KiddingSchedule;
+  public kiddingSchedule = KiddingSchedule.map(schedule => { return { bred: schedule.bred, dam: goats.does.find(doe => doe.registeredName == schedule.dam)!, sire: goats.bucks.find(buck => buck.registeredName == schedule.sire)!, kidding: schedule.kidding }; });
 
   constructor(public colorScheme: ColorSchemeService) { }
-
-
 
 }

@@ -3,7 +3,7 @@
   <!--<img *ngIf="article.image" src="{{article.image}}" alt="{{article.image}}" class="card-img-top px-2 pt-2">-->
   <div class="card-body color-scheme-secondary">
     <div class="container color-scheme-tertiary py-3">
-      <a class="stretched-link" routerLink="{{goat.nickname}}"></a>
+      <a class="stretched-link" [routerLink]="goat.nickname"></a>
       <h5 class="card-title text-center">{{goat.registeredName}}</h5>
       <h6 class="card-subtitle mb-2 text-center text-muted">"{{goat.nickname}}"</h6>
       <div class="card-text text-center">
