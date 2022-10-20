@@ -18,18 +18,22 @@
           <a class="nav-link" [routerLinkActive]="['active', 'activeLink']" ariaCurrentWhenActive="page" routerLink="/"
             [routerLinkActiveOptions]="{exact: true}" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Home</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" aria-currentWhenActive="page" routerLink="/does" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show">Does</a>
+        </li>
+        <!--<li class="nav-item dropdown">
           <a #doesDropdown class="dropdown-toggle nav-link" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
             data-bs-auto-close="false" aria-expanded="false" [attr.aria-current]="routerLinkActive('/does') ? 'page' : null"
             [class.active]="routerLinkActive('/does')"> Does </a>
-          <!-- Does dropdown -->
+          <!- Does dropdown ->
           <ul class="dropdown-menu  ms-lg-0 color-scheme-tertiary w-100" aria-labelledby="navbarDropdownMenuLink"
             [class.dropdown-menu-dark]="colorScheme.darkMode">
             <li><a class="!dropdown-item nav-link dropdownItem text-start" [routerLinkActive]="['active']" aria-currentWhenActive="page"
                 routerLink="/does/junior" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Junior Does</a></li>
             <li><a class="!dropdown-item nav-link dropdownItem" [routerLinkActive]="['active']" aria-currentWhenActive="page"
-                routerLink="/does/senior" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Senior Does</a></li>
-            <!--<li class="nav-item dropend">
+                routerLink="/does/senior" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Senior Does</a></li>-->
+        <!--<li class="nav-item dropend">
               <a #fllDropdown class="dropdown-toggle nav-link text-start" id="navbarDropdownMenuFLLLink" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs/fll') ? 'page' : null"
                 [class.active]="routerLinkActive('/programs/fll')"
@@ -46,8 +50,8 @@
                 </li>
               </ul>
             </li>-->
-          </ul>
-        </li>
+        <!--</li>
+      </ul>-->
         <li class="nav-item">
           <a class="nav-link" [routerLinkActive]="['active']" aria-currentWhenActive="page" routerLink="/bucks" data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show">Bucks</a>

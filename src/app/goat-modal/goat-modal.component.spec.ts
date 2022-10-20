@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeniorDoesComponent } from './senior-does.component';
+import { GoatModalComponent } from './goat-modal.component';
 
-describe('SeniorDoesComponent', () => {
-  let component: SeniorDoesComponent;
-  let fixture: ComponentFixture<SeniorDoesComponent>;
+describe('GoatModalComponent', () => {
+  let component: GoatModalComponent;
+  let fixture: ComponentFixture<GoatModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SeniorDoesComponent ]
+      declarations: [ GoatModalComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SeniorDoesComponent);
+    fixture = TestBed.createComponent(GoatModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

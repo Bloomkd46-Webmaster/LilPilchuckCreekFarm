@@ -4,12 +4,11 @@ import { BrowserModule, Meta } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BucksComponent } from './bucks/bucks.component';
-import { JuniorDoesComponent } from './does/junior-does/junior-does.component';
-import { SeniorDoesComponent } from './does/senior-does/senior-does.component';
+import { DoesComponent } from './does/does.component';
+import { GoatModalComponent } from './goat-modal/goat-modal.component';
 import { GoatComponent } from './goat/goat.component';
 import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
-import { DoesComponent } from './does/does.component';
 
 
 
@@ -17,12 +16,11 @@ import { DoesComponent } from './does/does.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    JuniorDoesComponent,
-    SeniorDoesComponent,
     BucksComponent,
     GoatComponent,
     KiddingScheduleComponent,
-    DoesComponent
+    DoesComponent,
+    GoatModalComponent
   ],
   imports: [
     BrowserModule,

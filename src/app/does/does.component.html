@@ -1,42 +1,7 @@
-<h1 class="text-center">Senior Does</h1>
-<div #modal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="doe">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
-    <div class="modal-dialog color-scheme-secondary">
-      <div class="modal-content">
-        <div class="modal-header color-scheme-tertiary">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">{{doe.registeredName}}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body color-scheme-quaternary">
-          <h5 class="card-title stretched-link text-center" routerLink="{{doe.nickname}}">{{doe.registeredName}}</h5>
-          <h6 class="card-subtitle mb-2 text-center text-muted">"{{doe.nickname}}"</h6>
-          <div class="card-text text-center">
-            <dl>
-              <dt>Sire: {{doe.sire.name}}<span *ngIf="doe.sire.stars"><br><small>Awards: {{doe.sire.stars.join(', ')}}</small></span>
-              </dt>
-              <dd>Sire's Sire (SS): {{doe.sire.sire.name}}
-                <span *ngIf="doe.sire.sire.stars"><br><small>Awards: {{doe.sire.sire.stars.join(', ')}}</small></span><br>Sire's Dam (SD):
-                {{doe.sire.dam.name}}<span *ngIf="doe.sire.dam.stars"><br><small>Awards: {{doe.sire.dam.stars.join(', ')}}</small></span>
-              </dd>
-              <dt>Dam: {{doe.dam.name}}<span *ngIf="doe.dam.stars"><br><small>Awards: {{doe.dam.stars.join(', ')}}</small></span>
-              </dt>
-              <dd>Dam's Sire (DS): {{doe.dam.sire.name}}<span *ngIf="doe.dam.sire.stars"><br><small>Awards:
-                    {{doe.dam.sire.stars.join(', ')}}</small></span><br> Dam's Dam (DD): {{doe.dam.dam.name}}<span
-                  *ngIf="doe.dam.dam.stars"><br><small>Awards: {{doe.dam.dam.stars.join(', ')}}</small></span>
-              </dd>
-            </dl>
-          </div>
-        </div>
-        <div class="modal-footer color-scheme-tertiary">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <!--<button type="button" class="btn btn-primary">Understood</button>-->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<h1 class="text-center">Does</h1>
+<app-goat-modal></app-goat-modal>
 <div class="container">
-  <h2 *ngIf="!does.length" class="text-center">We currently don't have any senior does.</h2>
+  <h2 *ngIf="!does.length" class="text-center">We currently don't have any does.</h2>
   <h3 *ngIf="!does.length" class="text-center">Please see the <a routerLink="/kidding-schedule">Kidding Schedule</a> for more info</h3>
   <div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 align-items-center justify-content-center">
     <div class="col py-3" *ngFor="let goat of does">

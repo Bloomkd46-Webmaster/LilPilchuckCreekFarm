@@ -1,6 +1,6 @@
 import { filter, map, mergeMap } from 'rxjs';
 
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 import { ColorSchemeService } from './color-scheme.service';
@@ -63,14 +63,14 @@ export class AppComponent implements OnInit {
     return this.router.isActive(link, { paths: 'subset', queryParams: 'subset', fragment: 'ignored', matrixParams: 'ignored' });
   }
   //@ViewChild("fllDropdown") fllDropdown!: ElementRef;
-  @ViewChild("doesDropdown") programsDropdown!: ElementRef;
+  //@ViewChild("doesDropdown") programsDropdown!: ElementRef;
   /**
    * Close the navbar dropdowns if necessary
    */
   closeDropdown() {
     //const nestedDropdown = this.fllDropdown.nativeElement;
     //nestedDropdown?.classList.contains('show') ? nestedDropdown?.click() : undefined;
-    const dropdown = this.programsDropdown.nativeElement;
-    dropdown?.classList.contains('show') ? dropdown?.click() : undefined;
+    //const dropdown = this.programsDropdown.nativeElement;
+    //dropdown?.classList.contains('show') ? dropdown?.click() : undefined;
   }
 }
