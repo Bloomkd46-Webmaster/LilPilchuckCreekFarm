@@ -1,6 +1,6 @@
 import * as Bootstrap from 'bootstrap';
 
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -23,6 +23,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public bucks: Goat[] = goats.bucks;
   public goat?: Goat;
 
+  @Input() title?: string;
   constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router) { }
 
   ngOnInit(): void {
@@ -34,7 +35,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       if (this.goat) {
         console.log(this.goat);
         //this.metaService.updateKeywords(['News', 'Post', 'Blog', ...(this.post.categories ?? [])]);
-        this.metaService.updateTitle(this.goat.nickname);
+        this.metaService.updateTitle(this.title ? `${this.goat.nickname} · ${this.title}` : this.goat.nickname);
         this.goat.description !== undefined ? this.metaService.updateDescription(this.goat.description) : undefined;
       } else {
         this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
@@ -46,7 +47,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild("modal") modal!: ElementRef;
   ngAfterViewInit(): void {
     if (this.goat) {
-      const myModalAlternative = new bootstrap.Modal(this.modal.nativeElement, { focus: false });
+      const myModalAlternative = new bootstrap.Modal(this.modal.nativeElement);
       myModalAlternative.show();
       this.modal.nativeElement.addEventListener('hidden.bs.modal', () => {
         this.router.navigate(['../'], { relativeTo: this.activatedRoute });

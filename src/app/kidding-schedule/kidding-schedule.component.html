@@ -11,8 +11,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let breeding of kiddingSchedule">
-        <th scope="row">{{breeding.breed}}</th>
-        <td>{{breeding.dam}}</td>
+        <th scope="row">{{breeding.bred}}</th>
+        <td>
+          <!--<a routerLink="/does/Mystic" class="stretched-link"></a>-->
+          {{breeding.dam}}
+        </td>
         <td>{{breeding.sire}}</td>
         <td>{{breeding.kidding}}</td>
       </tr>

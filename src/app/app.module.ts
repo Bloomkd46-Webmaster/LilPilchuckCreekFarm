@@ -9,6 +9,7 @@ import { GoatModalComponent } from './goat-modal/goat-modal.component';
 import { GoatComponent } from './goat/goat.component';
 import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 
@@ -20,7 +21,8 @@ import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.co
     GoatComponent,
     KiddingScheduleComponent,
     DoesComponent,
-    GoatModalComponent
+    GoatModalComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

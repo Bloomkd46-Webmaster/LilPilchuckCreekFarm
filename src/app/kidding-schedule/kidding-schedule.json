@@ -1,8 +1,20 @@
 [
   {
-    "breed": "1/2/3456",
-    "dam": "goat",
-    "sire": "other goat",
-    "kidding": "1/2/3456"
+    "bred": "TBD",
+    "dam": "R Serenity CF Blue Haze",
+    "sire": "Timbuckdoe Farm AW Aleut Storm",
+    "kidding": "TBD"
+  },
+  {
+    "bred": "TBD",
+    "dam": "Gillis Family Farm Mystic",
+    "sire": "Timbuckdoe Farm AW Aleut Storm",
+    "kidding": "TBD"
+  },
+  {
+    "bred": "TBD",
+    "dam": "Gillis Family Farm Crystal",
+    "sire": "Timbuckdoe Farm AW Aleut Storm",
+    "kidding": "TBD"
   }
 ]
