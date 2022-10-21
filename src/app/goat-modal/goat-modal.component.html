@@ -10,47 +10,63 @@
           <h5 class="card-title stretched-link text-center" routerLink="{{goat.nickname}}">{{goat.registeredName}}</h5>
           <h6 class="card-subtitle mb-2 text-center text-muted">"{{goat.nickname}}"</h6>
           <div class="card-text text-center">
-            <dl>
-              <dt>Sire: {{goat.sire.name}} <small *ngIf="goat.sire.DNA">*DNA*</small></dt>
+            <!--<dl>
+              <dt class="h4">Sire: {{goat.sire.name}} <small *ngIf="goat.sire.DNA">*DNA*</small></dt>
               <dd *ngIf="goat.sire.stars">Awards: {{goat.sire.stars.join(', ')}}</dd>
               <dd>
                 <dl>
-                  <dt>Sire's Sire (SS): {{goat.sire.sire.name}} <small *ngIf="goat.sire.sire.DNA">*DNA*</small></dt>
+                  <dt class="h5">Sire's Sire (SS): {{goat.sire.sire.name}} <small *ngIf="goat.sire.sire.DNA">*DNA*</small></dt>
                   <dd *ngIf="goat.sire.sire.stars">Awards: {{goat.sire.sire.stars.join(', ')}}</dd>
-                  <dt>Sire's Dam (SD): {{goat.sire.dam.name}} <small *ngIf="goat.sire.dam.DNA">*DNA*</small></dt>
+                  <dt class="h5">Sire's Dam (SD): {{goat.sire.dam.name}} <small *ngIf="goat.sire.dam.DNA">*DNA*</small></dt>
                   <dd *ngIf="goat.sire.dam.stars">Awards: {{goat.sire.dam.stars.join(', ')}}</dd>
                 </dl>
               </dd>
-              <dt>Dam: {{goat.dam.name}} <small *ngIf="goat.dam.DNA">*DNA*</small></dt>
+              <dt class="h4">Dam: {{goat.dam.name}} <small *ngIf="goat.dam.DNA">*DNA*</small></dt>
               <dd *ngIf="goat.dam.stars">Awards: {{goat.dam.stars.join(', ')}}</dd>
               <dd>
                 <dl>
-                  <dt>Dam's Sire (DS): {{goat.dam.sire.name}} <small *ngIf="goat.dam.sire.DNA">*DNA*</small></dt>
+                  <dt class="h5">Dam's Sire (DS): {{goat.dam.sire.name}} <small *ngIf="goat.dam.sire.DNA">*DNA*</small></dt>
                   <dd *ngIf="goat.dam.sire.stars">Awards: {{goat.dam.sire.stars.join(', ')}}</dd>
-                  <dt>Dam's Dam (DD): {{goat.dam.dam.name}} <small *ngIf="goat.dam.DNA">*DNA*</small></dt>
+                  <dt class="h5">Dam's Dam (DD): {{goat.dam.dam.name}} <small *ngIf="goat.dam.DNA">*DNA*</small></dt>
                   <dd *ngIf="goat.dam.dam.stars">Awards: {{goat.dam.dam.stars.join(', ')}}</dd>
                 </dl>
               </dd>
+            </dl>-->
+            <dl>
+              <dt>Sire: {{goat.sire.name}}<span *ngIf="goat.sire.stars"><br><small>Awards: {{goat.sire.stars.join(', ')}}</small></span>
+              </dt>
+              <dd>Sire's Sire (SS): {{goat.sire.sire.name}}
+                <span *ngIf="goat.sire.sire.stars"><br><small>Awards: {{goat.sire.sire.stars.join(', ')}}</small></span><br>Sire's Dam (SD):
+                {{goat.sire.dam.name}}<span *ngIf="goat.sire.dam.stars"><br><small>Awards: {{goat.sire.dam.stars.join(', ')}}</small></span>
+              </dd>
+              <dt>Dam: {{goat.dam.name}}<span *ngIf="goat.dam.stars"><br><small>Awards: {{goat.dam.stars.join(', ')}}</small></span>
+              </dt>
+              <dd>Dam's Sire (DS): {{goat.dam.sire.name}}<span *ngIf="goat.dam.sire.stars"><br><small>Awards:
+                    {{goat.dam.sire.stars.join(', ')}}</small></span><br> Dam's Dam (DD): {{goat.dam.dam.name}}<span
+                  *ngIf="goat.dam.dam.stars"><br><small>Awards: {{goat.dam.dam.stars.join(', ')}}</small></span>
+              </dd>
             </dl>
+            <div *ngIf="goat.awards">
+              <h4 class="text-center">Awards:</h4>
+              <table class="table table-striped table-hover table-bordered text-center-bordered" [class.table-dark]="colorScheme.darkMode"
+                [class.table-info]="colorScheme.lightMode">
+                <thead>
+                  <tr>
+                    <th scope="col">Award</th>
+                    <th scope="col">Division</th>
+                    <th scope="col">Event</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let award of goat.awards">
+                    <th scope="row">{{award.level}}</th>
+                    <td>{{award.division}}</td>
+                    <td>{{award.event}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <h4 class="text-center">Awards:</h4>
-          <table class="table table-striped table-hover table-bordered text-center-bordered" [class.table-dark]="colorScheme.darkMode"
-            [class.table-info]="colorScheme.lightMode">
-            <thead>
-              <tr>
-                <th scope="col">Award</th>
-                <th scope="col">Division</th>
-                <th scope="col">Event</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let award of goat.awards">
-                <th scope="row">{{award.level}}</th>
-                <td>{{award.division}}</td>
-                <td>{{award.event}}</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
         <div class="modal-footer color-scheme-tertiary">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
