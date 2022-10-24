@@ -21,14 +21,15 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public does: Goat[] = goats.does;
   public bucks: Goat[] = goats.bucks;
   public goat?: Goat;
+  public nickname = this.activatedRoute.snapshot.paramMap.get("doe") || this.activatedRoute.snapshot.paramMap.get("buck");
 
   @Input() title?: string;
   @Input() noIndex?: boolean;
   constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router) { }
 
   ngOnInit(): void {
-    this.goat = this.does.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe")) ||
-      this.bucks.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("buck"));
+    this.goat = this.does.find(doe => doe.nickname === this.nickname) ||
+      this.bucks.find(buck => buck.nickname === this.nickname);
 
     //    const specificDoe: boolean = this.activatedRoute.snapshot.paramMap.get("doe") !== null;
     //    const specificBuck: boolean = this.activatedRoute.snapshot.paramMap.get("buck") !== null;
@@ -47,9 +48,9 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   };
   @ViewChild("modal") modal!: ElementRef;
   ngAfterViewInit(): void {
-    if (this.goat) {
-      const myModalAlternative = new bootstrap.Modal(this.modal.nativeElement);
-      myModalAlternative.show();
+    if (this.nickname) {
+      const bsModal = new bootstrap.Modal(this.modal.nativeElement);
+      bsModal.show();
       this.modal.nativeElement.addEventListener('hidden.bs.modal', () => {
         this.meta.removeTag('name="robots"');
         this.router.navigate(['../'], { relativeTo: this.activatedRoute });

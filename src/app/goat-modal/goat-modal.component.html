@@ -1,15 +1,15 @@
-<div #modal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="goat">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+<div #modal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-dialog color-scheme-secondary">
       <div class="modal-content">
         <div class="modal-header color-scheme-tertiary">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">{{goat.registeredName}}</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">{{goat?.registeredName || 'Not Found'}}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body color-scheme-quaternary">
-          <h5 class="card-title stretched-link text-center" routerLink="{{goat.nickname}}">{{goat.registeredName}}</h5>
-          <h6 class="card-subtitle mb-2 text-center text-muted">"{{goat.nickname}}"</h6>
-          <div class="card-text text-center">
+          <h5 class="card-title text-center">{{goat?.registeredName || 'The Requested Goat: "' + nickname + '" Was Not Found'}}</h5>
+          <h6 class="card-subtitle mb-2 text-center text-muted" *ngIf="goat">"{{goat.nickname}}"</h6>
+          <div class="card-text text-center" *ngIf="goat">
             <!--<dl>
               <dt class="h4">Sire: {{goat.sire.name}} <small *ngIf="goat.sire.DNA">*DNA*</small></dt>
               <dd *ngIf="goat.sire.stars">Awards: {{goat.sire.stars.join(', ')}}</dd>
