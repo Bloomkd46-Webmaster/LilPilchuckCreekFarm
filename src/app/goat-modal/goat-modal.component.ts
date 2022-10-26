@@ -25,6 +25,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() title?: string;
   @Input() noIndex?: boolean;
+  @Input() ignoreNotFound?: boolean;
   constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router) { }
 
   ngOnInit(): void {
@@ -48,14 +49,13 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   };
   @ViewChild("modal") modal!: ElementRef;
   ngAfterViewInit(): void {
-    if (this.nickname) {
+    if (this.goat || (this.nickname && this.ignoreNotFound)) {
       const bsModal = new bootstrap.Modal(this.modal.nativeElement);
       bsModal.show();
       this.modal.nativeElement.addEventListener('hidden.bs.modal', () => {
         this.meta.removeTag('name="robots"');
         this.router.navigate(['../'], { relativeTo: this.activatedRoute });
       });
-
     }
   }
 }
