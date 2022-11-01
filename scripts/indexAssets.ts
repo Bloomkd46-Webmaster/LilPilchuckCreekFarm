@@ -30,18 +30,14 @@ export const index = (
             if (res) {
               results = results.concat(res);
             }
-            if (!--pending) {
-              resolve(results);
-            }
           }).catch(err => reject(err));
-        } else {
+        } else if (file.name !== 'map.json') {
           results.push(filePath);
-          if (!--pending) {
-            resolve(results);
-          }
+        } if (!--pending) {
+          resolve(results);
         }
       });
     }).catch(err => reject(err));
   });
 };
-index('src/assets', '/assets').then(res => console.log(res.map(res1 => res1.split(path.sep).join(path.posix.sep))));
+index('src/assets', '/assets').then(res => fs.writeFile(path.join(__dirname, '../src/assets/map.json'), JSON.stringify(res.map(res1 => res1.split(path.sep).join(path.posix.sep)), null, 2)));
