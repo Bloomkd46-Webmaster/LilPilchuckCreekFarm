@@ -1,0 +1,16 @@
+{
+  "path": "/assets",
+  "name": "assets",
+  "children": [
+    {
+      "path": "/assets/Mystic",
+      "name": "Mystic",
+      "children": [
+        {
+          "path": "/assets/Mystic/FullSizeRender.JPEG",
+          "name": "FullSizeRender.JPEG"
+        }
+      ]
+    }
+  ]
+}

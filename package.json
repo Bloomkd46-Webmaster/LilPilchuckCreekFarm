@@ -7,7 +7,12 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "index": "node ./scripts/indexDir.js",
+    "preindex": "tsc ./scripts/indexDir.ts",
+    "add-image": "node ./scripts/addImages.js",
+    "preadd-image": "tsc ./scripts/addImages.ts",
+    "postadd-image": "npm run index"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +24,7 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "axios": "^1.1.3",
     "bootstrap": "^5.2.2",
     "directory-tree": "^3.3.1",
     "rxjs": "~7.5.0",
