@@ -1,3 +1,5 @@
+
+
 import { Injectable } from '@angular/core';
 
 import images from '../assets/map.json';
@@ -12,7 +14,7 @@ export class ImageService {
 
   constructor() { }
 
-  find(goat: Goat): string[] | undefined {
-    return images.children.find(child => child.name === goat.nickname)?.children.map(image => image.path);
+  find(goat: Goat) {
+    return images.children.find(child => child.name === goat.nickname)?.children;//?.map(image => image.path);
   }
 }
