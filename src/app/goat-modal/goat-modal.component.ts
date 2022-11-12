@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ColorSchemeService } from '../color-scheme.service';
 import { Goat } from '../goat.interface';
 import goats from '../goats.json';
+import { ImageService } from '../image.service';
 import { MetaService } from '../meta.service';
 
 
@@ -18,6 +19,8 @@ declare const bootstrap: typeof Bootstrap;
   styleUrls: ['./goat-modal.component.scss']
 })
 export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
+  public images?: { path: string; name: string; }[];
+
   public does: Goat[] = goats.does;
   public bucks: Goat[] = goats.bucks;
   public goat?: Goat;
@@ -26,7 +29,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() title?: string;
   @Input() noIndex?: boolean;
   @Input() ignoreNotFound?: boolean;
-  constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router) { }
+  constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router, public imageService: ImageService) { }
 
   ngOnInit(): void {
     this.goat = this.does.find(doe => doe.nickname === this.nickname) ||
@@ -41,13 +44,16 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       this.metaService.updateTitle(this.title ? `${this.goat.nickname} · ${this.title}` : this.goat.nickname);
       this.goat.description !== undefined ? this.metaService.updateDescription(this.goat.description) : undefined;
       if (this.noIndex) this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
+      this.images = this.imageService.find(this.goat);
     }/* else {
       this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
     }*/
-  } ngOnDestroy(): void {
+  }
+  ngOnDestroy(): void {
     this.meta.removeTag('name="robots"');
   };
   @ViewChild("modal") modal!: ElementRef;
+  @ViewChild("carousel") carousel!: ElementRef;
   ngAfterViewInit(): void {
     if (this.goat || (this.nickname && this.ignoreNotFound)) {
       const bsModal = new bootstrap.Modal(this.modal.nativeElement);
@@ -55,6 +61,12 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       this.modal.nativeElement.addEventListener('hidden.bs.modal', () => {
         this.meta.removeTag('name="robots"');
         this.router.navigate(['../'], { relativeTo: this.activatedRoute });
+      });
+    }
+    if (this.images) {
+      const bsCarousel = new bootstrap.Carousel(this.carousel.nativeElement, {
+        ride: "carousel",
+        interval: 2000
       });
     }
   }

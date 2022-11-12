@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { ColorSchemeService } from '../color-scheme.service';
 import { Goat } from '../goat.interface';
+import { ImageService } from '../image.service';
 
 
 
@@ -10,8 +11,14 @@ import { Goat } from '../goat.interface';
   templateUrl: './goat.component.html',
   styleUrls: ['./goat.component.scss']
 })
-export class GoatComponent {
+export class GoatComponent implements OnInit {
+  public image?: { path: string; name: string; };
   /** The goat to display */
   @Input() goat!: Goat;
-  constructor(public colorScheme: ColorSchemeService) { }
+  constructor(public colorScheme: ColorSchemeService, public imageService: ImageService) { }
+
+  ngOnInit() {
+    const images = this.imageService.find(this.goat);
+    this.image = images ? images.find(image => image.name.split('.')[0] === 'Display') || images[0] : undefined;
+  }
 }
