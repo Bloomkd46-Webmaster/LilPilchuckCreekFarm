@@ -12,7 +12,7 @@ import KiddingSchedule from './kidding-schedule.json';
   styleUrls: ['./kidding-schedule.component.scss']
 })
 export class KiddingScheduleComponent {
-  public kiddingSchedule = KiddingSchedule.map(schedule => { return { bred: schedule.bred, dam: goats.does.find(doe => doe.registeredName == schedule.dam)!, sire: goats.bucks.find(buck => buck.registeredName == schedule.sire)!, kidding: schedule.kidding }; });
+  public kiddingSchedule = KiddingSchedule.map(schedule => { return { exposed: schedule.exposed, dam: goats.does.find(doe => doe.registeredName == schedule.dam)!, sire: goats.bucks.find(buck => buck.registeredName == schedule.sire)!, kidding: schedule.kidding }; });
 
   constructor(public colorScheme: ColorSchemeService) { }
 
