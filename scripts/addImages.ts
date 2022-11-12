@@ -67,6 +67,7 @@ if (!fs.existsSync(path.resolve(__dirname, '../src/assets/', myArgs[0]))) {
 if (!myArgs[1]) {
   const ask = () => {
     rl.question('What image would you like to add to ' + myArgs[0] + '?\n').then(async res => {
+      res = /'|"|`/g.test(res) ? JSON.parse(res.replace(/'|`/g, '"')) : res;
       if (res.includes('://')) {
         await downloadFile(res, myArgs[0]);
       } else {
