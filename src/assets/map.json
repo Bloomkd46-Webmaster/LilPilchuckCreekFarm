@@ -3,34 +3,12 @@
   "name": "assets",
   "children": [
     {
-      "path": "/assets/Crystal",
-      "name": "Crystal",
-      "children": [
-        {
-          "path": "/assets/Crystal/3AA42183-690E-4654-9048-BE9E28805F98_1_201_a.png",
-          "name": "3AA42183-690E-4654-9048-BE9E28805F98_1_201_a.png"
-        },
-        {
-          "path": "/assets/Crystal/46554A07-FBEF-4E22-94DF-35A235508595_1_105_c.jpeg",
-          "name": "46554A07-FBEF-4E22-94DF-35A235508595_1_105_c.jpeg"
-        },
-        {
-          "path": "/assets/Crystal/CAC935C8-09D0-43C1-A185-E2D27B24C51C_1_105_c.jpeg",
-          "name": "CAC935C8-09D0-43C1-A185-E2D27B24C51C_1_105_c.jpeg"
-        }
-      ]
-    },
-    {
       "path": "/assets/Mystic",
       "name": "Mystic",
       "children": [
         {
-          "path": "/assets/Mystic/Display.jpeg",
-          "name": "Display.jpeg"
-        },
-        {
-          "path": "/assets/Mystic/Evergreen State Fair.JPEG",
-          "name": "Evergreen State Fair.JPEG"
+          "path": "/assets/Mystic/FullSizeRender.JPEG",
+          "name": "FullSizeRender.JPEG"
         }
       ]
     }
