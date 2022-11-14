@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 
-import images from '../assets/map.json';
+import images from '../assets/goats/map.json';
 import { Goat } from './goat.interface';
 
 
