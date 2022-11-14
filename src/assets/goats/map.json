@@ -1,13 +1,13 @@
 {
-  "path": "/assets",
-  "name": "assets",
+  "path": "/assets/goats",
+  "name": "goats",
   "children": [
     {
-      "path": "/assets/Mystic",
+      "path": "/assets/goats/Mystic",
       "name": "Mystic",
       "children": [
         {
-          "path": "/assets/Mystic/FullSizeRender.JPEG",
+          "path": "/assets/goats/Mystic/FullSizeRender.JPEG",
           "name": "FullSizeRender.JPEG"
         }
       ]
