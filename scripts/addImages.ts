@@ -28,7 +28,7 @@ const downloadFile = async (fileUrl: string, downloadFolder: string) => {
     /** The image name to save the file under */
     const fileName = path.basename(fileUrl.split('?')[0]);
     /** The path to save the image in */
-    const localFilePath = path.resolve(__dirname, '../src/assets/', downloadFolder, fileName);
+    const localFilePath = path.resolve(__dirname, '../src/assets/goats/', downloadFolder, fileName);
     /** The link response to pipe */
     axios({
       method: 'GET',
@@ -52,7 +52,7 @@ const copyFile = (fileDir: string, downloadFolder: string) => {
   /** The image name to save the file under */
   const fileName = path.basename(fileDir);
   /** The path to save the image in */
-  const localFilePath = path.resolve(__dirname, '../src/assets/', downloadFolder, fileName);
+  const localFilePath = path.resolve(__dirname, '../src/assets/goats/', downloadFolder, fileName);
   try {
     fs.copyFileSync(fileDir, localFilePath);
     console.log('Successfully copied file');
@@ -61,8 +61,8 @@ const copyFile = (fileDir: string, downloadFolder: string) => {
   }
   return;
 };
-if (!fs.existsSync(path.resolve(__dirname, '../src/assets/', myArgs[0]))) {
-  fs.mkdirSync(path.resolve(__dirname, '../src/assets/', myArgs[0]));
+if (!fs.existsSync(path.resolve(__dirname, '../src/assets/goats/', myArgs[0]))) {
+  fs.mkdirSync(path.resolve(__dirname, '../src/assets/goats/', myArgs[0]));
 }
 if (!myArgs[1]) {
   const ask = () => {
