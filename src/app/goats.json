@@ -1,195 +1,478 @@
 {
-  "$schema": "./goat.interface.json",
-  "bucks": [
-    {
-      "nickname": "Storm",
-      "registeredName": "Timbuckdoe Farm AW Aleut Storm",
-      "color": "Blue-eyed buckskin",
-      "dam": {
-        "dam": {
-          "name": "Camanna RA Uliana",
-          "stars": [
-            "1*M",
-            "AR2019",
-            "ST2018",
-            "LA2019,2018,2017"
-          ]
-        },
-        "sire": {
-          "name": "Old Mountain Farm M Bold N",
-          "DNA": true,
-          "stars": [
-            "LA2019"
-          ]
-        },
-        "name": "Tua Farms MB Calico Rose"
-      },
-      "sire": {
-        "dam": {
-          "name": "Leisure Time TW Pixie Dust",
-          "stars": [
-            "3*M",
-            "AR2018",
-            "LA2019,2018"
-          ]
-        },
-        "sire": {
-          "name": "Hetlandcreek Sharp Dressed Man",
-          "DNA": true,
-          "stars": [
-            "LA2018"
-          ]
-        },
-        "name": "Leisure Time ZZ Aleution Wind",
-        "stars": [
-          "*B"
-        ]
-      },
-      "dob": "03/12/2020",
-      "horns": "polled"
-    }
-  ],
   "does": [
     {
-      "nickname": "Mystic",
-      "registeredName": "Gillis Family Farm Mystic",
-      "description": "{insert description}",
-      "color": "Light chocolate buckskin with minimal white",
-      "horns": "disbudded",
-      "dob": "05/08/2021",
-      "dam": {
-        "dam": {
-          "DNA": true,
-          "stars": [
-            "6*M",
-            "AR2019",
-            "LA2019"
-          ],
-          "name": "SG Leisure Time ZZ Scandalous"
-        },
-        "sire": {
-          "DNA": true,
-          "stars": [
-            "*B"
-          ],
-          "name": "Leisure Time PD Copper Penny"
-        },
-        "name": "Leisure Time Dirty Lil Secret"
-      },
-      "sire": {
-        "name": "Gillis Family Farm Oh Snap!",
-        "sire": {
-          "DNA": true,
-          "stars": [
-            "+*B",
-            "AR2020"
-          ],
-          "name": "SG Sugar Moon NS Alejandro"
-        },
-        "dam": {
-          "stars": [
-            "1*M",
-            "AR2019",
-            "LA2015"
-          ],
-          "name": "SG 5 Fold Farm CC Ginger Snap"
-        },
-        "DNA": true,
-        "stars": [
-          "*B"
-        ]
-      },
-      "awards": [
+      "name": "GILLIS FAMILY FARM CRYSTAL",
+      "normalizeId": "PD2175097",
+      "breedId": 8,
+      "breederAccountId": 1537687,
+      "ownerAccountId": 1634014,
+      "sireId": 1905303,
+      "damId": 1808133,
+      "sex": "Female",
+      "herdBook": "Purebred",
+      "dateOfBirth": "2021-05-26T00:00:00",
+      "dateOfDeath": null,
+      "isActive": true,
+      "hornId": 2,
+      "earId": 3,
+      "colorComment": null,
+      "numberBucks": 1,
+      "numberDoes": 2,
+      "isAlive": true,
+      "isLeased": false,
+      "radioFrequencyLocationId": null,
+      "isRadioFrequencyIdAvailable": false,
+      "radioFrequencyNumber": null,
+      "radioFrequencyLocation": null,
+      "aiMating": null,
+      "embryoTransfer": null,
+      "isAdgaRegistered": true,
+      "isTransferInProcess": false,
+      "horn": null,
+      "ear": null,
+      "breederAccount": null,
+      "ownerAccount": null,
+      "animalTattoo": [
         {
-          "level": "Reserve Grand Champion",
-          "division": "Junior Does",
-          "event": "2022 Evergreen State Fair"
+          "tenantId": 1,
+          "tattooLocationId": 1,
+          "tattoo": "GFF5",
+          "comment": null,
+          "tattooLocation": {
+            "tenantId": 1,
+            "code": "RE",
+            "name": "RE",
+            "isActive": true,
+            "isDeleted": false,
+            "deleterUserId": null,
+            "deletionTime": null,
+            "lastModificationTime": null,
+            "lastModifierUserId": null,
+            "creationTime": "2019-09-30T07:26:51.411",
+            "creatorUserId": null,
+            "id": 1
+          },
+          "isMemberTattoo": true,
+          "isActive": true,
+          "id": 3614337
+        },
+        {
+          "tenantId": 1,
+          "tattooLocationId": 2,
+          "tattoo": "N50",
+          "comment": null,
+          "tattooLocation": {
+            "tenantId": 1,
+            "code": "LE",
+            "name": "LE",
+            "isActive": true,
+            "isDeleted": false,
+            "deleterUserId": null,
+            "deletionTime": null,
+            "lastModificationTime": null,
+            "lastModifierUserId": null,
+            "creationTime": "2019-09-30T07:26:51.411",
+            "creatorUserId": null,
+            "id": 2
+          },
+          "isMemberTattoo": false,
+          "isActive": true,
+          "id": 3614338
         }
-      ]
-    },
-    {
+      ],
+      "breed": {
+        "code": "D",
+        "description": "NIGERIAN DWARF",
+        "usdaCode": "ND",
+        "avgFatPercentage": 6.4,
+        "gestationDays": 140,
+        "pureBred": true,
+        "american": false,
+        "grade": false,
+        "stud": false,
+        "isActive": true,
+        "breedingMinAgeMale": 2,
+        "breedingMinAgeFeMale": 5,
+        "maxNumberOfOffSpring": 6,
+        "herdBookType": "Closed",
+        "breedMarking": [],
+        "breedColor": [],
+        "ear": null,
+        "id": 8
+      },
+      "conformsToBreed": null,
+      "memberTattoo": "GFF5",
+      "memberTattooLocation": "RE",
+      "birthTattoo": "N50",
+      "birthTattooLocation": "LE",
+      "rfidLocation": null,
+      "animalLAScore": null,
+      "freshenDate": null,
+      "lastAppraisalYear": null,
+      "lactationNumber": null,
+      "removalReasonId": null,
+      "laTripAnimalId": null,
+      "laAnimalStatus": 0,
+      "removalReason": null,
+      "id": 2175097,
       "nickname": "Crystal",
-      "registeredName": "Gillis Family Farm Crystal",
-      "color": "Chocolate buckskin with white poll and tail",
-      "horns": "disbudded",
-      "dob": "05/26/2021",
-      "dam": {
-        "dam": {
-          "stars": [
-            "6*M",
-            "AR2020",
-            "AR2019"
-          ],
-          "name": "Hetlandcreek ILM Adagio"
-        },
-        "sire": {
-          "stars": [
-            "*B",
-            "LA2019,2018,2017"
-          ],
-          "DNA": true,
-          "name": "Almar Acres HS Smokin Hot"
-        },
-        "name": "Tua Farms SH Minuette"
-      },
-      "sire": {
-        "dam": {
-          "stars": [
-            "1*M",
-            "AR2019",
-            "LA2015"
-          ],
-          "name": "SG 5 Fold Farm CC Ginger Snap"
-        },
-        "sire": {
-          "name": "SG Sugar Moon NS Alejandro",
-          "DNA": true,
-          "stars": [
-            "+*B",
-            "AR2020"
-          ]
-        },
-        "name": "Gillis Family Farm Oh Snap!",
-        "DNA": true,
-        "stars": [
-          "*B"
-        ]
-      }
+      "description": ""
     },
     {
-      "nickname": "Hazel",
-      "registeredName": "R Serenity CF Blue Haze",
-      "color": "Dark red buckskin with white AD blue eyes",
-      "horns": "disbudded",
-      "dob": "04/08/2019",
-      "dam": {
-        "dam": {
-          "name": "Night Heron Farm AB Kara",
-          "stars": [
-            "LA2019,2018"
-          ]
+      "name": "GILLIS FAMILY FARM MYSTIC",
+      "normalizeId": "PD2174259",
+      "breedId": 8,
+      "breederAccountId": 1537687,
+      "ownerAccountId": 1634014,
+      "sireId": 1905303,
+      "damId": 1832665,
+      "sex": "Female",
+      "herdBook": "Purebred",
+      "dateOfBirth": "2021-05-08T00:00:00",
+      "dateOfDeath": null,
+      "isActive": true,
+      "hornId": 2,
+      "earId": 3,
+      "colorComment": null,
+      "numberBucks": 0,
+      "numberDoes": 2,
+      "isAlive": true,
+      "isLeased": false,
+      "radioFrequencyLocationId": null,
+      "isRadioFrequencyIdAvailable": false,
+      "radioFrequencyNumber": null,
+      "radioFrequencyLocation": null,
+      "aiMating": null,
+      "embryoTransfer": null,
+      "isAdgaRegistered": true,
+      "isTransferInProcess": false,
+      "horn": null,
+      "ear": null,
+      "breederAccount": null,
+      "ownerAccount": null,
+      "animalTattoo": [
+        {
+          "tenantId": 1,
+          "tattooLocationId": 1,
+          "tattoo": "GFF5",
+          "comment": null,
+          "tattooLocation": {
+            "tenantId": 1,
+            "code": "RE",
+            "name": "RE",
+            "isActive": true,
+            "isDeleted": false,
+            "deleterUserId": null,
+            "deletionTime": null,
+            "lastModificationTime": null,
+            "lastModifierUserId": null,
+            "creationTime": "2019-09-30T07:26:51.411",
+            "creatorUserId": null,
+            "id": 1
+          },
+          "isMemberTattoo": true,
+          "isActive": true,
+          "id": 3612660
         },
-        "sire": {
-          "name": "Night Heron Farm WH Rocky Road"
-        },
-        "name": "EZ PZ Farm Blue Mist"
+        {
+          "tenantId": 1,
+          "tattooLocationId": 2,
+          "tattoo": "N43",
+          "comment": null,
+          "tattooLocation": {
+            "tenantId": 1,
+            "code": "LE",
+            "name": "LE",
+            "isActive": true,
+            "isDeleted": false,
+            "deleterUserId": null,
+            "deletionTime": null,
+            "lastModificationTime": null,
+            "lastModifierUserId": null,
+            "creationTime": "2019-09-30T07:26:51.411",
+            "creatorUserId": null,
+            "id": 2
+          },
+          "isMemberTattoo": false,
+          "isActive": true,
+          "id": 3612661
+        }
+      ],
+      "breed": {
+        "code": "D",
+        "description": "NIGERIAN DWARF",
+        "usdaCode": "ND",
+        "avgFatPercentage": 6.4,
+        "gestationDays": 140,
+        "pureBred": true,
+        "american": false,
+        "grade": false,
+        "stud": false,
+        "isActive": true,
+        "breedingMinAgeMale": 2,
+        "breedingMinAgeFeMale": 5,
+        "maxNumberOfOffSpring": 6,
+        "herdBookType": "Closed",
+        "breedMarking": [],
+        "breedColor": [],
+        "ear": null,
+        "id": 8
       },
-      "sire": {
-        "dam": {
-          "name": "Diji Farm MT Ariel",
-          "stars": [
-            "LA2019,2018,2017"
-          ]
+      "conformsToBreed": null,
+      "memberTattoo": "GFF5",
+      "memberTattooLocation": "RE",
+      "birthTattoo": "N43",
+      "birthTattooLocation": "LE",
+      "rfidLocation": null,
+      "animalLAScore": null,
+      "freshenDate": null,
+      "lastAppraisalYear": null,
+      "lactationNumber": null,
+      "removalReasonId": null,
+      "laTripAnimalId": null,
+      "laAnimalStatus": 0,
+      "removalReason": null,
+      "id": 2174259,
+      "nickname": "Mystic",
+      "description": ""
+    },
+    {
+      "name": "R SERENITY CF BLUE HAZE",
+      "normalizeId": "PD2012791",
+      "breedId": 8,
+      "breederAccountId": 1540201,
+      "ownerAccountId": 1634014,
+      "sireId": 1729689,
+      "damId": 1745681,
+      "sex": "Female",
+      "herdBook": "Purebred",
+      "dateOfBirth": "2019-04-08T00:00:00",
+      "dateOfDeath": null,
+      "isActive": true,
+      "hornId": 2,
+      "earId": 3,
+      "colorComment": null,
+      "numberBucks": 1,
+      "numberDoes": 2,
+      "isAlive": true,
+      "isLeased": false,
+      "radioFrequencyLocationId": null,
+      "isRadioFrequencyIdAvailable": false,
+      "radioFrequencyNumber": null,
+      "radioFrequencyLocation": null,
+      "aiMating": null,
+      "embryoTransfer": null,
+      "isAdgaRegistered": true,
+      "isTransferInProcess": false,
+      "horn": null,
+      "ear": null,
+      "breederAccount": null,
+      "ownerAccount": null,
+      "animalTattoo": [
+        {
+          "tenantId": 1,
+          "tattooLocationId": 1,
+          "tattoo": "SLA1",
+          "comment": null,
+          "tattooLocation": {
+            "tenantId": 1,
+            "code": "RE",
+            "name": "RE",
+            "isActive": true,
+            "isDeleted": false,
+            "deleterUserId": null,
+            "deletionTime": null,
+            "lastModificationTime": null,
+            "lastModifierUserId": null,
+            "creationTime": "2019-09-30T07:26:51.411",
+            "creatorUserId": null,
+            "id": 1
+          },
+          "isMemberTattoo": false,
+          "isActive": true,
+          "id": 3366788
         },
-        "sire": {
-          "name": "Castle Rock Elika",
-          "stars": [
-            "*B"
-          ],
-          "DNA": true
+        {
+          "tenantId": 1,
+          "tattooLocationId": 2,
+          "tattoo": "L22",
+          "comment": null,
+          "tattooLocation": {
+            "tenantId": 1,
+            "code": "LE",
+            "name": "LE",
+            "isActive": true,
+            "isDeleted": false,
+            "deleterUserId": null,
+            "deletionTime": null,
+            "lastModificationTime": null,
+            "lastModifierUserId": null,
+            "creationTime": "2019-09-30T07:26:51.411",
+            "creatorUserId": null,
+            "id": 2
+          },
+          "isMemberTattoo": false,
+          "isActive": true,
+          "id": 3366789
+        }
+      ],
+      "breed": {
+        "code": "D",
+        "description": "NIGERIAN DWARF",
+        "usdaCode": "ND",
+        "avgFatPercentage": 6.4,
+        "gestationDays": 140,
+        "pureBred": true,
+        "american": false,
+        "grade": false,
+        "stud": false,
+        "isActive": true,
+        "breedingMinAgeMale": 2,
+        "breedingMinAgeFeMale": 5,
+        "maxNumberOfOffSpring": 6,
+        "herdBookType": "Closed",
+        "breedMarking": [],
+        "breedColor": [],
+        "ear": null,
+        "id": 8
+      },
+      "conformsToBreed": null,
+      "memberTattoo": "SLA1",
+      "memberTattooLocation": "RE",
+      "birthTattoo": "L22",
+      "birthTattooLocation": "LE",
+      "rfidLocation": null,
+      "animalLAScore": null,
+      "freshenDate": null,
+      "lastAppraisalYear": null,
+      "lactationNumber": null,
+      "removalReasonId": null,
+      "laTripAnimalId": null,
+      "laAnimalStatus": 0,
+      "removalReason": null,
+      "id": 1805141,
+      "nickname": "Hazel",
+      "description": ""
+    }
+  ],
+  "bucks": [
+    {
+      "name": "TIMBUCKDOE FARM AW ALEUT STORM",
+      "normalizeId": "PD2131517",
+      "breedId": 8,
+      "breederAccountId": 1546125,
+      "ownerAccountId": 1634014,
+      "sireId": 1824756,
+      "damId": 1800922,
+      "sex": "Male",
+      "herdBook": "Purebred",
+      "dateOfBirth": "2020-03-12T00:00:00",
+      "dateOfDeath": null,
+      "isActive": true,
+      "hornId": 1,
+      "earId": 3,
+      "colorComment": null,
+      "numberBucks": 1,
+      "numberDoes": 1,
+      "isAlive": true,
+      "isLeased": false,
+      "radioFrequencyLocationId": null,
+      "isRadioFrequencyIdAvailable": false,
+      "radioFrequencyNumber": null,
+      "radioFrequencyLocation": null,
+      "aiMating": null,
+      "embryoTransfer": null,
+      "isAdgaRegistered": true,
+      "isTransferInProcess": false,
+      "horn": null,
+      "ear": null,
+      "breederAccount": null,
+      "ownerAccount": null,
+      "animalTattoo": [
+        {
+          "tenantId": 1,
+          "tattooLocationId": 1,
+          "tattoo": "1TBD",
+          "comment": null,
+          "tattooLocation": {
+            "tenantId": 1,
+            "code": "RE",
+            "name": "RE",
+            "isActive": true,
+            "isDeleted": false,
+            "deleterUserId": null,
+            "deletionTime": null,
+            "lastModificationTime": null,
+            "lastModifierUserId": null,
+            "creationTime": "2019-09-30T07:26:51.411",
+            "creatorUserId": null,
+            "id": 1
+          },
+          "isMemberTattoo": false,
+          "isActive": true,
+          "id": 3543028
         },
-        "name": "R Serenity E Cadbury Freddo"
-      }
+        {
+          "tenantId": 1,
+          "tattooLocationId": 2,
+          "tattoo": "M6",
+          "comment": null,
+          "tattooLocation": {
+            "tenantId": 1,
+            "code": "LE",
+            "name": "LE",
+            "isActive": true,
+            "isDeleted": false,
+            "deleterUserId": null,
+            "deletionTime": null,
+            "lastModificationTime": null,
+            "lastModifierUserId": null,
+            "creationTime": "2019-09-30T07:26:51.411",
+            "creatorUserId": null,
+            "id": 2
+          },
+          "isMemberTattoo": false,
+          "isActive": true,
+          "id": 3543029
+        }
+      ],
+      "breed": {
+        "code": "D",
+        "description": "NIGERIAN DWARF",
+        "usdaCode": "ND",
+        "avgFatPercentage": 6.4,
+        "gestationDays": 140,
+        "pureBred": true,
+        "american": false,
+        "grade": false,
+        "stud": false,
+        "isActive": true,
+        "breedingMinAgeMale": 2,
+        "breedingMinAgeFeMale": 5,
+        "maxNumberOfOffSpring": 6,
+        "herdBookType": "Closed",
+        "breedMarking": [],
+        "breedColor": [],
+        "ear": null,
+        "id": 8
+      },
+      "conformsToBreed": null,
+      "memberTattoo": "1TBD",
+      "memberTattooLocation": "RE",
+      "birthTattoo": "M6",
+      "birthTattooLocation": "LE",
+      "rfidLocation": null,
+      "animalLAScore": null,
+      "freshenDate": null,
+      "lastAppraisalYear": null,
+      "lactationNumber": null,
+      "removalReasonId": null,
+      "laTripAnimalId": null,
+      "laAnimalStatus": 0,
+      "removalReason": null,
+      "id": 1924035,
+      "nickname": "Storm",
+      "description": ""
     }
   ]
 }
