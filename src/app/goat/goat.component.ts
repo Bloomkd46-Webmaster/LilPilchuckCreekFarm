@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { ColorSchemeService } from '../color-scheme.service';
-import { Goat } from '../goat.interface';
+import { Goat } from '../goat.service';
 import { ImageService } from '../image.service';
 
 

@@ -4,7 +4,7 @@
   <div class="card-body color-scheme-secondary">
     <div class="container color-scheme-tertiary pb-3">
       <a class="stretched-link" [routerLink]="goat.nickname"></a>
-      <h5 class="card-title text-center">{{goat.registeredName}}</h5>
+      <h5 class="card-title text-center">{{goat.name}}</h5>
       <h6 class="card-subtitle pb-2 text-center text-muted">"{{goat.nickname}}"</h6>
       <div class="card-text text-center" *ngIf="goat.description" [innerHTML]="goat.description">
         <!--<dl>

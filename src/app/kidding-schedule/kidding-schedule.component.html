@@ -16,10 +16,10 @@
         <th scope="row">{{breeding.exposed}}</th>
         <td>
           <a type="button" class="btn h-100 w-100" [class.btn-outline-light]="colorScheme.darkMode"
-            [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.dam.nickname">{{breeding.dam.registeredName}}</a>
+            [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.dam.nickname">{{breeding.dam.name}}</a>
         </td>
         <td><a type="button" class="btn h-100 w-100" [class.btn-outline-light]="colorScheme.darkMode"
-            [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.sire.nickname">{{breeding.sire.registeredName}}</a></td>
+            [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.sire.nickname">{{breeding.sire.name}}</a></td>
         <td>{{breeding.kidding}}</td>
       </tr>
     </tbody>

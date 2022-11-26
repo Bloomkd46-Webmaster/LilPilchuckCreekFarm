@@ -1,17 +1,10 @@
-import * as Bootstrap from 'bootstrap';
 import { ColorSchemeService } from 'src/app/color-scheme.service';
-import { Goat } from 'src/app/goat.interface';
-import { MetaService } from 'src/app/meta.service';
 
 import { Component } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
 
-import goats from '../goats.json';
+import { Goat, GoatService } from '../goat.service';
 
 
-
-declare const bootstrap: typeof Bootstrap;
 
 @Component({
   selector: 'app-does',
@@ -19,8 +12,8 @@ declare const bootstrap: typeof Bootstrap;
   styleUrls: ['./does.component.scss']
 })
 export class DoesComponent {
-  public does: Goat[] = goats.does;
+  public does: Goat[] = this.goatService.does;
 
-  constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router) { }
+  constructor(public colorScheme: ColorSchemeService, private goatService: GoatService) { }
 
 }

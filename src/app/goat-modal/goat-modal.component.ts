@@ -1,3 +1,4 @@
+import { Awards } from 'adga';
 import * as Bootstrap from 'bootstrap';
 
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
@@ -5,8 +6,7 @@ import { Meta } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
-import { Goat } from '../goat.interface';
-import goats from '../goats.json';
+import { ExternalGoat, Goat, GoatService } from '../goat.service';
 import { ImageService } from '../image.service';
 import { MetaService } from '../meta.service';
 
@@ -21,15 +21,16 @@ declare const bootstrap: typeof Bootstrap;
 export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public images?: { path: string; name: string; }[];
 
-  public does: Goat[] = goats.does;
-  public bucks: Goat[] = goats.bucks;
+  public does: Goat[] = this.goatService.does;
+  public bucks: Goat[] = this.goatService.bucks;
   public goat?: Goat;
+  public parents!: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; };
   public nickname = this.activatedRoute.snapshot.paramMap.get("doe") || this.activatedRoute.snapshot.paramMap.get("buck");
 
   @Input() title?: string;
   @Input() noIndex?: boolean;
   @Input() ignoreNotFound?: boolean;
-  constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router, public imageService: ImageService) { }
+  constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router, public imageService: ImageService, private goatService: GoatService) { }
 
   ngOnInit(): void {
     this.goat = this.does.find(doe => doe.nickname === this.nickname) ||
@@ -45,6 +46,8 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       this.goat.description !== undefined ? this.metaService.updateDescription(this.goat.description) : undefined;
       if (this.noIndex) this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
       this.images = this.imageService.find(this.goat);
+
+      this.parents = this.goatService.getParents(this.goat);
     }/* else {
       this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
     }*/
@@ -64,10 +67,13 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       });
     }
     if (this.images) {
-      const bsCarousel = new bootstrap.Carousel(this.carousel.nativeElement, {
+      new bootstrap.Carousel(this.carousel.nativeElement, {
         ride: "carousel",
         interval: 2000
       });
     }
+  }
+  getAwards(awards: Awards['result']['items']): string {
+    return awards.map(award => award.awardCode).join('; ');
   }
 }
