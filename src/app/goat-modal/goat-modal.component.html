@@ -3,11 +3,13 @@
     <!--<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable color-scheme-secondary">-->
     <div class="modal-content">
       <div class="modal-header color-scheme-tertiary">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{goat?.name || 'Not Found'}}</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{goat?.nickname || 'Not Found'}}</h1>
         <button type="button" class="btn-close" [class.btn-close-white]="colorScheme.darkMode" data-bs-dismiss="modal"
           aria-label="Close"></button>
       </div>
       <div class="modal-body color-scheme-quaternary card">
+        <h5 class="card-title text-center">{{goat?.name || 'The Requested Goat: "' + nickname + '" Was Not Found'}}</h5>
+        <h6 class="card-subtitle mb-2 text-center" *ngIf="goat">"{{goat.nickname}}"</h6>
         <div class="card-header color-scheme-quaternary" *ngIf="images">
           <div #carousel id="goatImageCarousel" class="carousel slide" data-bs-ride="true" [class.carousel-dark]="colorScheme.lightMode">
             <div class="carousel-indicators">
@@ -16,7 +18,7 @@
               <!--<button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
             </div>
-            <div class="carousel-inner d-flex align-items-center ratio ratio-1x1">
+            <div class="carousel-inner d-flex align-items-center" style="height: 50vh">
               <div *ngFor="let image of images; index as i" class="carousel-item" [class.active]="i === 0">
                 <img [src]="image.path" [alt]="image.name" class="w-100">
               </div>
@@ -31,38 +33,36 @@
             </button>
           </div>
         </div>
-        <h5 class="card-title text-center">{{goat?.name || 'The Requested Goat: "' + nickname + '" Was Not Found'}}</h5>
-        <h6 class="card-subtitle mb-2 text-center text-muted" *ngIf="goat">"{{goat.nickname}}"</h6>
         <div class="card-text text-center" *ngIf="goat">
           <div class="container color-scheme-tertiary" *ngIf="goat.description" [innerHTML]="goat.description"></div>
-          <div class="container border">
-            <div class="row">
-              <th class="col border">Sire:</th>
-              <th class="col border">Dam:</th>
+          <div class="container border rounded-4">
+            <div class="row border-bottom">
+              <th class="col border-end border-3">Sire:</th>
+              <th class="col">Dam:</th>
             </div>
-            <div class="row">
-              <td class="col border">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>Awards:
+            <div class="row border-bottom border-3">
+              <td class="col border-end border-3">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>Awards:
                     {{getAwards(parents.sire.awards)}}</small></span></td>
-              <td class="col border">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>Awards:
+              <td class="col">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>Awards:
                     {{getAwards(parents.dam.awards)}}</small></span></td>
             </div>
-            <div class="row">
-              <th class="col border">Sire's Sire (SS):</th>
-              <th class="col border">Sire's Dam (SD):</th>
-              <th class="col border">Dam's Sire (DS):</th>
-              <th class="col border">Dam's Dam (DD):</th>
+            <div class="row border-bottom">
+              <th class="col border-end border-3">Sire's Sire (SS):</th>
+              <th class="col border-end border-5">Sire's Dam (SD):</th>
+              <th class="col border-end border-3">Dam's Sire (DS):</th>
+              <th class="col">Dam's Dam (DD):</th>
             </div>
             <div class="row">
-              <td class="col border">{{parents.siresSire.name}}
+              <td class="col border-end border-3">{{parents.siresSire.name}}
                 <span *ngIf="parents.siresSire.awards.length"><br><small>Awards: {{getAwards(parents.siresSire.awards)}}</small></span>
               </td>
-              <td class="col border">{{parents.siresDam.name}}
+              <td class="col border-end border-5">{{parents.siresDam.name}}
                 <span *ngIf="parents.siresDam.awards.length"><br><small>Awards: {{getAwards(parents.siresDam.awards)}}</small></span>
               </td>
-              <td class="col border">{{parents.damsSire.name}}
+              <td class="col border-end border-3">{{parents.damsSire.name}}
                 <span *ngIf="parents.damsSire.awards.length"><br><small>Awards: {{getAwards(parents.damsSire.awards)}}</small></span>
               </td>
-              <td class="col border">{{parents.damsDam.name}}
+              <td class="col">{{parents.damsDam.name}}
                 <span *ngIf="parents.damsDam.awards.length"><br><small>Awards: {{getAwards(parents.damsDam.awards)}}</small></span>
               </td>
             </div>
@@ -92,7 +92,7 @@
                 <dd>{{award.awardDescription}}</dd>
               </div>
             </dl>
-          <!-<table class="table table-striped table-hover table-bordered text-center-bordered" [class.table-dark]="colorScheme.darkMode"
+          <!-<table class="table table-striped table-hover table-border bordered text-center-border bordered" [class.table-dark]="colorScheme.darkMode"
               [class.table-info]="colorScheme.lightMode">
               <thead>
                 <tr>

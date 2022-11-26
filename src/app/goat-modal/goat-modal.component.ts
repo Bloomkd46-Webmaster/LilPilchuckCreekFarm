@@ -58,7 +58,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild("modal") modal!: ElementRef;
   @ViewChild("carousel") carousel!: ElementRef;
   ngAfterViewInit(): void {
-    if (this.goat || (this.nickname && this.ignoreNotFound)) {
+    if (this.goat || (this.nickname && !this.ignoreNotFound)) {
       const bsModal = new bootstrap.Modal(this.modal.nativeElement);
       bsModal.show();
       this.modal.nativeElement.addEventListener('hidden.bs.modal', () => {

@@ -1,11 +1,11 @@
 <div class="card color-scheme-secondary" *ngIf="goat">
   <!--<div class="card-header text-center color-scheme-tertiary"></div>-->
-  <img *ngIf="image" [src]="image.path" [alt]="image.name" class="card-img-top rounded px-3 pt-3">
+  <img *ngIf="image" [src]="image.path" [alt]="image.name" class="card-img-top rounded px-3 pt-3 ratio ratio-16x9">
   <div class="card-body color-scheme-secondary">
     <div class="container color-scheme-tertiary pb-3">
       <a class="stretched-link" [routerLink]="goat.nickname"></a>
       <h5 class="card-title text-center">{{goat.name}}</h5>
-      <h6 class="card-subtitle pb-2 text-center text-muted">"{{goat.nickname}}"</h6>
+      <h6 class="card-subtitle pb-2 text-center">"{{goat.nickname}}"</h6>
       <div class="card-text text-center" *ngIf="goat.description" [innerHTML]="goat.description">
         <!--<dl>
           <dt>Sire: {{goat.sire.name}}<span *ngIf="goat.sire.stars"><br><small>Awards: {{goat.sire.stars.join(', ')}}</small></span>
