@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+  .mobile-grid {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .desktop-grid {
+    display: none;
+  }
+}
