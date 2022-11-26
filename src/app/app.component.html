@@ -1,14 +1,17 @@
 <!-- Navbar to display tabs at the top of the page -->
 <header class="navbar navbar-expand-lg sticky-top color-scheme-secondary" [class.navbar-dark]="colorScheme.darkMode">
   <div class="container-fluid">
-    <img src="./assets/logo.svg" class="d-inline-block align-text-top" width="50" height="50">
+    <a class="navbar-brand" routerLink="/">
+      <img src="./assets/logo.svg" alt="Logo" width="70" height="70" class="d-inline-block align-text-middle">
+    </a>
+    <!--<img src="./assets/logo.svg" class="d-inline-block align-text-top" width="50" height="50">
     <a class="navbar-brand" routerLink="/">
       <span>
         <strong class="h3">BFFN</strong>
-        <!--<br>
-        <small class="text-muted">Bloom Family Farm Nigerians</small>-->
+        <!-<br>
+        <small class="text-muted">Bloom Family Farm Nigerians</small>->
       </span>
-    </a>
+    </a>-->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -79,9 +82,8 @@
 <footer class="bd-footer color-scheme-secondary">
   <br>
   <div class="container  text-center" style="min-height: 5vh;"> This Site Was Created and Is Maintained By <a
-      [class.text-info]="colorScheme.darkMode" href="https://github.com/bloomkd46-webmaster" target="_blank">Bloomkd46(Webmaster)</a>
-    <br> See The Source Code On <a [class.text-info]="colorScheme.darkMode"
-      href="https://github.com/bloomkd46-webmaster/BloomFamilyFarmNigerians" target="_blank">Github</a>
+      href="https://github.com/bloomkd46-webmaster" target="_blank">Bloomkd46(Webmaster)</a>
+    <br> See The Source Code On <a href="https://github.com/bloomkd46-webmaster/BloomFamilyFarmNigerians" target="_blank">Github</a>
   </div>
   <br>
 </footer>
