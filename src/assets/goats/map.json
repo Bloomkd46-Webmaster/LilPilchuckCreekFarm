@@ -3,9 +3,31 @@
   "name": "goats",
   "children": [
     {
+      "path": "/assets/goats/Crystal",
+      "name": "Crystal",
+      "children": [
+        {
+          "path": "/assets/goats/Crystal/0AD3E5E1-DF74-44EC-9ADB-B9A9AABEA3DF_1_105_c.jpeg",
+          "name": "0AD3E5E1-DF74-44EC-9ADB-B9A9AABEA3DF_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Crystal/IMG_1732.jpeg",
+          "name": "IMG_1732.jpeg"
+        },
+        {
+          "path": "/assets/goats/Crystal/IMG_2805.jpeg",
+          "name": "IMG_2805.jpeg"
+        }
+      ]
+    },
+    {
       "path": "/assets/goats/Mystic",
       "name": "Mystic",
       "children": [
+        {
+          "path": "/assets/goats/Mystic/61E6552D-4F59-40A7-B388-523A787FD8A1_1_105_c.jpeg",
+          "name": "61E6552D-4F59-40A7-B388-523A787FD8A1_1_105_c.jpeg"
+        },
         {
           "path": "/assets/goats/Mystic/FullSizeRender.JPEG",
           "name": "FullSizeRender.JPEG"
