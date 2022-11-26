@@ -17,7 +17,14 @@ if (myArgs.length < 1) {
   console.log('Usage:  <goat nickname> [image url/path]');
   process.exit(1);
 }
-
+function titleCase(string: string) {
+  var sentence = string.toLowerCase().split(' ');
+  for (var i = 0; i < sentence.length; i++) {
+    sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
+  }
+  return sentence.join(' ');
+}
+myArgs[0] = titleCase(myArgs[0]);
 /**
  * download a file from {@link fileUrl} to {@link downloadFolder}
  * @param {string} fileUrl the link to download
