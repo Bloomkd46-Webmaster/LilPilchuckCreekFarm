@@ -21,6 +21,24 @@
       ]
     },
     {
+      "path": "/assets/goats/Hazel",
+      "name": "Hazel",
+      "children": [
+        {
+          "path": "/assets/goats/Hazel/B4E3143A-C445-4B48-AEF1-354249174A5E_1_105_c.jpeg",
+          "name": "B4E3143A-C445-4B48-AEF1-354249174A5E_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Hazel/D836A4DA-4D75-480D-A170-3C20692758A2_1_105_c.jpeg",
+          "name": "D836A4DA-4D75-480D-A170-3C20692758A2_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Hazel/IMG_0830.jpeg",
+          "name": "IMG_0830.jpeg"
+        }
+      ]
+    },
+    {
       "path": "/assets/goats/Mystic",
       "name": "Mystic",
       "children": [
