@@ -28,7 +28,7 @@ jobs:
       - name: Sync Goats 
         run: |
           npm install
-          npm run sync headless ${{ secrets.ADGA_USERNAME }} ${{ secrets.ADGA_PASSWORD }}
+          npm run sync ${{ secrets.ADGA_USERNAME }} ${{ secrets.ADGA_PASSWORD }} -- --headless
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"
           git add -A

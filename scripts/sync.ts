@@ -23,7 +23,7 @@ if (config.bucks === undefined) {
 const credentials: { username?: string, password?: string, accountId?: number; } = {};
 /** Remove the first two irrelevant arguments */
 const myArgs = process.argv.slice(2);
-const headlessArg = myArgs.find(arg => /-H|headless|Headless/.test(arg));
+const headlessArg = myArgs.find(arg => /-H|--headless|--Headless/.test(arg));
 if (headlessArg) {
   console.warn(`Running In Headless Mode. Some Features Have Been Disabled. Run Again Without '${headlessArg}' To Re-Enable.`);
   myArgs.splice(myArgs.indexOf(headlessArg), 1);
@@ -37,7 +37,7 @@ if (myArgs.length < 2) {
     const splitCredentials = credentialFile.split('\n');
     Object.assign(credentials, { username: splitCredentials[0], password: splitCredentials[1], accountId: splitCredentials[2] });
   } else {
-    console.error('Usage:  <Username> <Password> [Account ID] [-H | --headless]');
+    console.error('Usage:  <Username> <Password> [Account ID] [ -- (-H | --headless)]');
     process.exit(1);
   }
 } else {
