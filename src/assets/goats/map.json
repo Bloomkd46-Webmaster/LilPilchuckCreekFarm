@@ -55,6 +55,28 @@
           "name": "FullSizeRender.JPEG"
         }
       ]
+    },
+    {
+      "path": "/assets/goats/Storm",
+      "name": "Storm",
+      "children": [
+        {
+          "path": "/assets/goats/Storm/.placeholder",
+          "name": ".placeholder"
+        },
+        {
+          "path": "/assets/goats/Storm/066239B7-EDE5-458D-A252-ACD6092916DB_1_102_o.jpeg",
+          "name": "066239B7-EDE5-458D-A252-ACD6092916DB_1_102_o.jpeg"
+        },
+        {
+          "path": "/assets/goats/Storm/373BEEAD-3A8B-41A8-BCF5-6B04555340A1_1_102_o.jpeg",
+          "name": "373BEEAD-3A8B-41A8-BCF5-6B04555340A1_1_102_o.jpeg"
+        },
+        {
+          "path": "/assets/goats/Storm/D70371BA-C8BE-4FF9-99D1-AF8EE967CBE5_1_102_o.jpeg",
+          "name": "D70371BA-C8BE-4FF9-99D1-AF8EE967CBE5_1_102_o.jpeg"
+        }
+      ]
     }
   ]
 }
