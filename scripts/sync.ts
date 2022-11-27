@@ -33,7 +33,7 @@ const rl = headlessArg ? undefined : readline.createInterface({ input, output })
 if (myArgs.length < 2) {
   if (fs.existsSync(path.join(process.cwd(), 'credentials.txt'))) {
     console.log('Using credentials from', path.join(process.cwd(), 'credentials.txt'));
-    const credentialFile = fs.readFileSync(path.join(process.cwd(), 'credentials.txt'), 'utf8');
+    const credentialFile = fs.readFileSync(path.join(process.cwd(), 'credentials.txt'), 'utf8').replace(/\r/g, '');
     const splitCredentials = credentialFile.split('\n');
     Object.assign(credentials, { username: splitCredentials[0], password: splitCredentials[1], accountId: splitCredentials[2] });
   } else {
@@ -52,7 +52,7 @@ function titleCase(string: string) {
 }
 (async () => {
   console.log('Initializing...');
-  const adga = await ADGA.init(credentials.username!, credentials.password!);
+  const adga = await ADGA.init(credentials.username!, credentials.password!).catch(err => { console.error(err.config); process.exit(1); });
   console.log('Downloading Goats...');
   const goats = await adga.getOwnedGoats(credentials.accountId || undefined);
   console.log('Downloaded', goats.totalCount, 'Goats From ADGA');
@@ -63,13 +63,13 @@ function titleCase(string: string) {
     const buck = config.bucks.find(configGoat => configGoat.name === goat.name);
     if (doe) {
       console.log(`Updating ${doe.nickname}...`);
-      if (doe.description === '') {
+      if (doe.description === '' && headlessArg) {
         console.warn(`Empty Description For ${doe.nickname}. Run Again Without '${headlessArg}' To Update`);
       }
       Object.assign(config.does[config.does.indexOf(doe)], goat, { description: doe.description || await rl?.question(`What would you like to set the description to for '${doe.nickname}'?\n(optional) `) || '', awards: awards });
     } else if (buck) {
       console.log(`Updating ${buck.nickname}...`);
-      if (buck.description === '') {
+      if (buck.description === '' && headlessArg) {
         console.warn(`Empty Description For ${buck.nickname}. Run Again Without '${headlessArg}' To Update`);
       }
       Object.assign(config.bucks[config.bucks.indexOf(buck)], goat, { description: buck.description || await rl?.question(`What would you like to set the description to for '${buck.nickname}'?\n(optional) `) || '', awards: awards });
