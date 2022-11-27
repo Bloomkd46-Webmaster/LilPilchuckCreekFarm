@@ -65,10 +65,6 @@
       "name": "Storm",
       "children": [
         {
-          "path": "/assets/goats/Storm/.placeholder",
-          "name": ".placeholder"
-        },
-        {
           "path": "/assets/goats/Storm/066239B7-EDE5-458D-A252-ACD6092916DB_1_102_o.jpeg",
           "name": "066239B7-EDE5-458D-A252-ACD6092916DB_1_102_o.jpeg"
         },
