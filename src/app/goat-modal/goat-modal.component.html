@@ -18,9 +18,10 @@
               <!--<button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
             </div>
-            <div class="carousel-inner d-flex align-items-center" style="height: 50vw">
+            <div class="carousel-inner d-flex align-items-center color-scheme-main" style="max-height: 75vh;">
               <div *ngFor="let image of images; index as i" class="carousel-item" [class.active]="i === 0">
-                <img [src]="image.path" [alt]="image.name" class="w-100">
+                <img [src]="image.path" [alt]="image.name" style="aspect-ratio: 4/3; width: 100%;object-fit:contain;object-position: center;
+">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#goatImageCarousel" data-bs-slide="prev">
