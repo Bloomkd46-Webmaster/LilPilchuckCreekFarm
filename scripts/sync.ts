@@ -52,7 +52,7 @@ function titleCase(string: string) {
 }
 (async () => {
   console.log('Initializing...');
-  const adga = await ADGA.init(credentials.username!, credentials.password!).catch(err => { console.error(err.config); process.exit(1); });
+  const adga = new ADGA(credentials.username!, credentials.password!);
   console.log('Downloading Goats...');
   const goats = await adga.getOwnedGoats(credentials.accountId || undefined);
   console.log('Downloaded', goats.totalCount, 'Goats From ADGA');
