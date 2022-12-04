@@ -2040,8 +2040,8 @@
         "associatedUserId": 17000,
         "isPrimary": true,
         "creditLimit": 20,
-        "lifeTimeCredit": null,
-        "membershipStatus": "NonMember",
+        "lifeTimeCredit": 1,
+        "membershipStatus": "Active",
         "defaultAddress": null,
         "id": 1494498
       },
