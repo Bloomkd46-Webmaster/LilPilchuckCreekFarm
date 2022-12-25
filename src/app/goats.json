@@ -1705,7 +1705,7 @@
         "associatedUserId": 20975,
         "isPrimary": true,
         "creditLimit": 20,
-        "lifeTimeCredit": 1,
+        "lifeTimeCredit": 2,
         "membershipStatus": "Active",
         "defaultAddress": null,
         "id": 1539066
