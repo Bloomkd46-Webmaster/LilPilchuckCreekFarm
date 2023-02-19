@@ -117,7 +117,8 @@
       "id": 2175097,
       "nickname": "Crystal",
       "description": "",
-      "awards": []
+      "awards": [],
+      "markedSold": null
     },
     {
       "name": "GILLIS FAMILY FARM MYSTIC",
@@ -236,7 +237,8 @@
       "id": 2174259,
       "nickname": "Mystic",
       "description": "",
-      "awards": []
+      "awards": [],
+      "markedSold": null
     },
     {
       "name": "R SERENITY CF BLUE HAZE",
@@ -355,7 +357,8 @@
       "id": 1805141,
       "nickname": "Hazel",
       "description": "",
-      "awards": []
+      "awards": [],
+      "markedSold": null
     }
   ],
   "bucks": [
@@ -476,7 +479,8 @@
       "id": 1924035,
       "nickname": "Storm",
       "description": "",
-      "awards": []
+      "awards": [],
+      "markedSold": null
     }
   ],
   "references": [
