@@ -684,7 +684,7 @@
         "isPrimary": true,
         "creditLimit": 20,
         "lifeTimeCredit": null,
-        "membershipStatus": "Active",
+        "membershipStatus": "NonMember",
         "defaultAddress": null,
         "id": 1546125
       },
@@ -834,7 +834,7 @@
         "isPrimary": true,
         "creditLimit": 20,
         "lifeTimeCredit": null,
-        "membershipStatus": "Active",
+        "membershipStatus": "NonMember",
         "defaultAddress": null,
         "id": 1546125
       },
@@ -1006,7 +1006,7 @@
         "isPrimary": true,
         "creditLimit": 20,
         "lifeTimeCredit": null,
-        "membershipStatus": "Active",
+        "membershipStatus": "NonMember",
         "defaultAddress": null,
         "id": 1518479
       },
@@ -1411,7 +1411,7 @@
         "isPrimary": true,
         "creditLimit": 20,
         "lifeTimeCredit": null,
-        "membershipStatus": "Active",
+        "membershipStatus": "NonMember",
         "defaultAddress": null,
         "id": 1518479
       },
@@ -1627,7 +1627,7 @@
         "isPrimary": true,
         "creditLimit": 20,
         "lifeTimeCredit": null,
-        "membershipStatus": "Active",
+        "membershipStatus": "NonMember",
         "defaultAddress": null,
         "id": 1511649
       },
