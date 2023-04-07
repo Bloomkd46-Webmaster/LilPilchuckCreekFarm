@@ -5,20 +5,25 @@ import * as readline from 'node:readline/promises';
 import * as path from 'path';
 
 
-
-if (!fs.existsSync(path.join(__dirname, '../src/app/goats.json'))) {
-  console.log('goats.json Not Found, Creating It...');
-  fs.writeFileSync(path.join(__dirname, '../src/app/goats.json'), JSON.stringify({}));
+if (!fs.existsSync(path.join(__dirname, '../src/assets/goats/does.json'))) {
+  console.log('does.json Not Found, Creating It...');
+  fs.writeFileSync(path.join(__dirname, '../src/assets/goats/does.json'), JSON.stringify([]));
 }
-const config: { does: (OwnedGoats['result']['items'][number] & { nickname: string; description: string; awards: Awards['result']['items']; })[]; bucks: (OwnedGoats['result']['items'][number] & { nickname: string; description: string; })[]; awards: Awards['result']['items']; } = require('../src/app/goats.json');
-if (config.does === undefined) {
+if (!fs.existsSync(path.join(__dirname, '../src/assets/goats/bucks.json'))) {
+  console.log('bucks.json Not Found, Creating It...');
+  fs.writeFileSync(path.join(__dirname, '../src/assets/goats/bucks.json'), JSON.stringify([]));
+}
+const does: (OwnedGoats['result']['items'][number] & { nickname: string; description: string; awards: Awards['result']['items']; })[] = require(path.join(__dirname, '../src/assets/goats/does.json'));
+const bucks: (OwnedGoats['result']['items'][number] & { nickname: string; description: string; })[] = require(path.join(__dirname, '../src/assets/goats/bucks.json'));
+////const config: { does: (OwnedGoats['result']['items'][number] & { nickname: string; description: string; awards: Awards['result']['items']; })[]; bucks: (OwnedGoats['result']['items'][number] & { nickname: string; description: string; })[]; awards: Awards['result']['items']; } = { does: require('../src/assets/goats/does.json'), bucks: require('../src/assets/goats/bucks.json') };
+/*if (config.does === undefined) {
   console.log('Does Not Found In goats.json, Adding It...');
   config.does = [];
 }
 if (config.bucks === undefined) {
   console.log('Bucks Not Found In goats.json, Adding It...');
   config.bucks = [];
-}
+}*/
 
 const credentials: { username?: string, password?: string, accountId?: number; } = {};
 /** Remove the first two irrelevant arguments */
@@ -51,7 +56,7 @@ function titleCase(string: string) {
   return sentence.join(' ');
 }
 (async () => {
-  console.log('Initializing...');
+  console.log('Logging In...');
   const adga = new ADGA(credentials.username!, credentials.password!);
   console.log('Downloading Goats...');
   const goats = await adga.getOwnedGoats(credentials.accountId || undefined);
@@ -59,43 +64,63 @@ function titleCase(string: string) {
   const unconfiguredGoats = [];
   for (const goat of goats.items) {
     const awards = (await adga.getAwards(goat.id)).items;
-    const doe = config.does.find(configGoat => configGoat.name === goat.name);
-    const buck = config.bucks.find(configGoat => configGoat.name === goat.name);
+    const doe = does.find(configDoe => configDoe.name === goat.name);
+    const buck = bucks.find(configBuck => configBuck.name === goat.name);
     if (doe) {
       console.log(`Updating ${doe.nickname}...`);
       if (doe.description === '' && headlessArg) {
         console.warn(`Empty Description For ${doe.nickname}. Run Again Without '${headlessArg}' To Update`);
       }
-      Object.assign(config.does[config.does.indexOf(doe)], goat, { description: doe.description || await rl?.question(`What would you like to set the description to for '${doe.nickname}'?\n(optional) `) || '', awards: awards });
+      Object.assign(does[does.indexOf(doe)], goat, { description: doe.description || await rl?.question(`What would you like to set the description to for '${doe.nickname}'?\n(optional) `) || '', awards: awards });
     } else if (buck) {
       console.log(`Updating ${buck.nickname}...`);
       if (buck.description === '' && headlessArg) {
         console.warn(`Empty Description For ${buck.nickname}. Run Again Without '${headlessArg}' To Update`);
       }
-      Object.assign(config.bucks[config.bucks.indexOf(buck)], goat, { description: buck.description || await rl?.question(`What would you like to set the description to for '${buck.nickname}'?\n(optional) `) || '', awards: awards });
+      Object.assign(bucks[bucks.indexOf(buck)], goat, { description: buck.description || await rl?.question(`What would you like to set the description to for '${buck.nickname}'?\n(optional) `) || '', awards: awards });
     } else if (rl) {
       console.log('Creating', goat.name);
       const nickname = titleCase(await rl.question(`What would you like to set the nickname to for '${goat.name}'?\n(${titleCase(goat.name.split(' ').pop()!)}) `) || goat.name.split(' ').pop()!);
-      config[goat.sex === 'Female' ? 'does' : 'bucks'].push(Object.assign(goat, {
+      if (goat.sex === 'Female') {
+        does.push(Object.assign(goat, {
+          nickname: nickname,
+          description: await rl.question(`What would you like to set the description to for '${nickname}'?\n(optional) `) || '',
+          awards: awards
+        }));
+      } else {
+        bucks.push(Object.assign(goat, {
+          nickname: nickname,
+          description: await rl.question(`What would you like to set the description to for '${nickname}'?\n(optional) `) || '',
+          awards: awards
+        }));
+      }
+      /*config[goat.sex === 'Female' ? 'does' : 'bucks'].push(Object.assign(goat, {
         nickname: nickname,
         description: await rl.question(`What would you like to set the description to for '${nickname}'?\n(optional) `) || '',
         awards: awards
-      }));
+      }));*/
     } else {
       console.warn(`Ignoring ${goat.name}. Run Again Without '${headlessArg}' To Configure`);
       unconfiguredGoats.push(goat);
     }
   }
   console.log('Saving Updates...');
-  fs.writeFileSync(path.join(__dirname, '../src/app/goats.json'), JSON.stringify(config, null, 2));
+  fs.writeFileSync(path.join(__dirname, '../src/assets/goats/does.json'), JSON.stringify(does, null, 2));
+  fs.writeFileSync(path.join(__dirname, '../src/assets/goats/bucks.json'), JSON.stringify(bucks, null, 2));
+  ////fs.writeFileSync(path.join(__dirname, '../src/assets/goats/goats.json'), JSON.stringify(config, null, 2));
   console.log('Updating Reference Goats...');
-  const newConfig: { does: OwnedGoats['result']['items'] & { nickname: string; description: string; }[]; bucks: OwnedGoats['result']['items'] & { nickname: string; description: string; }[]; references: (Goats['result']['items'][number] & { awards: Awards['result']['items']; })[]; } = require('../src/app/goats.json');
-  if (newConfig.references === undefined) {
+  ////const newConfig: { does: OwnedGoats['result']['items'] & { nickname: string; description: string; }[]; bucks: OwnedGoats['result']['items'] & { nickname: string; description: string; }[]; references: (Goats['result']['items'][number] & { awards: Awards['result']['items']; })[]; } = require('../src/assets/goats/goats.json');
+  /*if (references === undefined) {
     console.log('Reference Goats Not Found In goats.json, Adding Them...');
-    newConfig.references = [];
+    references = [];
+  }*/
+  if (!fs.existsSync(path.join(__dirname, '../src/assets/goats/references.json'))) {
+    console.log('references.json Not Found, Creating It...');
+    fs.writeFileSync(path.join(__dirname, '../src/assets/goats/references.json'), JSON.stringify([]));
   }
+  const references: (Goats['result']['items'][number] & { awards: Awards['result']['items']; })[] = require('../src/assets/goats/references.json');
   const ids: number[] = [];//newConfig.references.map(reference => reference.id);
-  for (const goat of [...newConfig.does, ...newConfig.bucks]) {
+  for (const goat of [...does, ...bucks]) {
     //const dam = newConfig.references.find(reference => reference.id === goat.damId);
     //const sire = newConfig.references.find(reference => reference.id === goat.sireId);
     if (/*!dam && */!ids.includes(goat.damId)) {
@@ -120,17 +145,17 @@ function titleCase(string: string) {
   console.log('Downloaded', referenceGoats.length, 'Reference Goats From ADGA.');
   for (const goat of referenceGoats) {
     const awards = (await adga.getAwards(goat.id)).items;
-    const reference = newConfig.references.find(reference => reference.id === goat.id);
+    const reference = references.find(reference => reference.id === goat.id);
     if (reference) {
       console.log(`Updating ${reference.name}...`);
-      Object.assign(newConfig.references[newConfig.references.indexOf(reference)], goat, { awards: awards });
+      Object.assign(references[references.indexOf(reference)], goat, { awards: awards });
     } else {
       console.log(`Creating ${goat.name}...`);
-      newConfig.references.push(Object.assign(goat, { awards: awards }));
+      references.push(Object.assign(goat, { awards: awards }));
     }
   }
   console.log('Saving Reference Goats...');
-  fs.writeFileSync(path.join(__dirname, '../src/app/goats.json'), JSON.stringify(newConfig, null, 2));
+  fs.writeFileSync(path.join(__dirname, '../src/assets/goats/references.json'), JSON.stringify(references, null, 2));
   console.log('Done.');
   if (unconfiguredGoats.length) {
     console.error(unconfiguredGoats.length, `Unconfigured Goats. Run Again Without '${headlessArg}' To Configure`);
