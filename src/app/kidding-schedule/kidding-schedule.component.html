@@ -1,28 +1,56 @@
 <h1 class="text-center">Kidding Schedule</h1>
 <app-goat-modal title="Kidding Schedule" [noIndex]="true"></app-goat-modal>
-<div class="container color-scheme-tertiary py-3 px-3 vh-100 text-center" style="overflow-x: scroll;">
-  <table class="table table-striped table-hover table-bordered text-center-bordered align-middle" [class.table-dark]="colorScheme.darkMode">
-    <thead>
-      <tr>
-        <th scope="col">Date Exposed</th>
-        <th scope="col">Dam</th>
-        <th scope="col">Sire</th>
-        <th scope="col">Projected Kidding Date*</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let breeding of kiddingSchedule">
-        <!--*ngIf="breeding.dam && breeding.sire"-->
-        <th scope="row">{{breeding.exposed}}</th>
-        <td>
-          <a type="button" class="btn h-100 w-100" [class.btn-outline-light]="colorScheme.darkMode"
-            [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.dam.nickname">{{breeding.dam.name}}</a>
-        </td>
-        <td><a type="button" class="btn h-100 w-100" [class.btn-outline-light]="colorScheme.darkMode"
-            [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.sire.nickname">{{breeding.sire.name}}</a></td>
-        <td>{{breeding.kidding}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<p class="text-center">*Date Exposed + 145 Days</p>
+<app-goat-modal title="Does"></app-goat-modal>
+<div class="container">
+  <!--<div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="does">
+    <div class="col py-3" *ngFor="let goat of does">
+      <app-goat [goat]="goat"></app-goat>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="!does">
+    <div class="col py-3" *ngFor="let placeholder of [1,2,3,4,5,6]">
+      <div class="card color-scheme-secondary" aria-hidden="true">
+        <img src="" class="card-img-top" style="height: 25vh;">
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder col-8"></span>
+          </p>
+          <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+        </div>
+      </div>
+    </div>
+  </div>-->
+  <div class="container color-scheme-tertiary py-3 px-3 vh-100 text-center" style="overflow-x: scroll;">
+    <table class="table table-striped table-hover table-bordered text-center-bordered align-middle"
+      [class.table-dark]="colorScheme.darkMode">
+      <thead>
+        <tr>
+          <th scope="col">Date Bred</th>
+          <th scope="col">Dam</th>
+          <th scope="col">Sire</th>
+          <th scope="col">Projected Kidding Date*</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let breeding of kiddingSchedule || []">
+          <!--*ngIf="breeding.dam && breeding.sire"-->
+          <th scope="row">{{breeding.bred}}</th>
+          <td>
+            <a type="button" class="btn h-100 w-100" [class.btn-outline-light]="colorScheme.darkMode"
+              [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.dam.nickname">{{breeding.dam.name}}</a>
+          </td>
+          <td><a type="button" class="btn h-100 w-100" [class.btn-outline-light]="colorScheme.darkMode"
+              [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.sire.nickname">{{breeding.sire.name}}</a></td>
+          <td>{{breeding.due}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-center">*145 Days After Breeding</p>

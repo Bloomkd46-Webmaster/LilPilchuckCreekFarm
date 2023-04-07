@@ -1,3 +1,5 @@
+import { CookieService } from 'ngx-cookie-service';
+
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule, Meta } from '@angular/platform-browser';
@@ -11,7 +13,6 @@ import { GoatModalComponent } from './goat-modal/goat-modal.component';
 import { GoatComponent } from './goat/goat.component';
 import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
-
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.co
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [Meta],
+  providers: [Meta, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

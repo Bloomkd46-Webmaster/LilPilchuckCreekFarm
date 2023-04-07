@@ -2,11 +2,28 @@
 <h5 class="text-center">Click on a Doe Below For More Info</h5>
 <app-goat-modal title="Does"></app-goat-modal>
 <div class="container">
-  <h2 *ngIf="!does.length" class="text-center">We currently don't have any does.</h2>
-  <h3 *ngIf="!does.length" class="text-center">Please see the <a routerLink="/kidding-schedule">Kidding Schedule</a> for more info</h3>
-  <div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 align-items-center justify-content-center">
+  <div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="does">
     <div class="col py-3" *ngFor="let goat of does">
       <app-goat [goat]="goat"></app-goat>
     </div>
   </div>
-</div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="!does">
+    <div class="col py-3" *ngFor="let placeholder of [1,2,3,4,5,6]">
+      <div class="card color-scheme-secondary" aria-hidden="true">
+        <img src="" class="card-img-top" style="height: 25vh;">
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder col-8"></span>
+          </p>
+          <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+        </div>
+      </div>
+    </div>
+  </div>

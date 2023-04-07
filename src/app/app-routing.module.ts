@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
 
 
-
 const routes: Routes = [
   {
     path: '', component: HomeComponent, data: {
@@ -45,7 +44,8 @@ const routes: Routes = [
       keywords: ['Kidding', 'Schedule']
     }, children: [
       { path: '', component: KiddingScheduleComponent },
-      { path: ':doe', component: KiddingScheduleComponent }
+      { path: ':doe', component: KiddingScheduleComponent },
+      { path: ':buck', component: KiddingScheduleComponent }
     ]
   },
   {

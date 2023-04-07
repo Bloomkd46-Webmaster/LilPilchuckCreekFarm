@@ -1,9 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ColorSchemeService } from '../color-scheme.service';
-import { GoatService } from '../goat.service';
-import KiddingSchedule from './kidding-schedule.json';
-
+import { GoatService, KiddingSchedule } from '../goat.service';
 
 
 @Component({
@@ -11,9 +9,11 @@ import KiddingSchedule from './kidding-schedule.json';
   templateUrl: './kidding-schedule.component.html',
   styleUrls: ['./kidding-schedule.component.scss']
 })
-export class KiddingScheduleComponent {
-  public kiddingSchedule = KiddingSchedule.map(schedule => { return { exposed: schedule.exposed, dam: this.goatService.does.find(doe => doe.name == schedule.dam.toUpperCase())!, sire: this.goatService.bucks.find(buck => buck.name == schedule.sire.toUpperCase())!, kidding: schedule.kidding }; });
-
+export class KiddingScheduleComponent implements OnInit {
+  public kiddingSchedule?: KiddingSchedule[];
   constructor(public colorScheme: ColorSchemeService, private goatService: GoatService) { }
+  ngOnInit(): void {
+    this.goatService.getKiddingSchedule().then(data => this.kiddingSchedule = data);
+  }
 
 }

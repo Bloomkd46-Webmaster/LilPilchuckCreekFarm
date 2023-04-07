@@ -11,7 +11,6 @@ import { ImageService } from '../image.service';
 import { MetaService } from '../meta.service';
 
 
-
 declare const bootstrap: typeof Bootstrap;
 @Component({
   selector: 'app-goat-modal',
@@ -20,11 +19,8 @@ declare const bootstrap: typeof Bootstrap;
 })
 export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public images?: { path: string; name: string; }[];
-
-  public does: Goat[] = this.goatService.does;
-  public bucks: Goat[] = this.goatService.bucks;
   public goat?: Goat;
-  public parents!: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; };
+  public parents?: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; };
   public nickname = this.activatedRoute.snapshot.paramMap.get("doe") || this.activatedRoute.snapshot.paramMap.get("buck");
 
   @Input() title?: string;
@@ -32,13 +28,8 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() ignoreNotFound?: boolean;
   constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router, public imageService: ImageService, private goatService: GoatService) { }
 
-  ngOnInit(): void {
-    this.goat = this.does.find(doe => doe.nickname === this.nickname) ||
-      this.bucks.find(buck => buck.nickname === this.nickname);
-
-    //    const specificDoe: boolean = this.activatedRoute.snapshot.paramMap.get("doe") !== null;
-    //    const specificBuck: boolean = this.activatedRoute.snapshot.paramMap.get("buck") !== null;
-
+  async setup(goat?: Goat) {
+    this.goat = goat;
     if (this.goat/*specificDoe || specificBuck*/) {
       console.log(this.goat);
       //this.metaService.updateKeywords(['News', 'Post', 'Blog', ...(this.post.categories ?? [])]);
@@ -47,10 +38,21 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       if (this.noIndex) this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
       this.images = this.imageService.find(this.goat);
 
-      this.parents = this.goatService.getParents(this.goat);
+      this.parents = await this.goatService.getParents(this.goat);
     }/* else {
       this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
     }*/
+  }
+  ngOnInit(): void {
+    const doe = new Promise<Goat>(resolve => this.goatService.getDoes().then(does => {
+      const doe = does.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe"));
+      doe ? resolve(doe) : undefined;
+    }));
+    const buck = new Promise<Goat>(resolve => this.goatService.getBucks().then(bucks => {
+      const buck = bucks.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("buck"));
+      buck ? resolve(buck) : undefined;
+    }));
+    Promise.race([doe, buck]).then(goat => this.setup(goat));
   }
   ngOnDestroy(): void {
     this.meta.removeTag('name="robots"');
