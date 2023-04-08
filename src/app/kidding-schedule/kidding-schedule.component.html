@@ -1,56 +1,59 @@
 <h1 class="text-center">Kidding Schedule</h1>
-<app-goat-modal title="Kidding Schedule" [noIndex]="true"></app-goat-modal>
-<app-goat-modal title="Does"></app-goat-modal>
-<div class="container">
-  <!--<div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="does">
-    <div class="col py-3" *ngFor="let goat of does">
-      <app-goat [goat]="goat"></app-goat>
-    </div>
-  </div>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="!does">
-    <div class="col py-3" *ngFor="let placeholder of [1,2,3,4,5,6]">
-      <div class="card color-scheme-secondary" aria-hidden="true">
-        <img src="" class="card-img-top" style="height: 25vh;">
-        <div class="card-body">
-          <h5 class="card-title placeholder-glow">
-            <span class="placeholder col-6"></span>
-          </h5>
-          <p class="card-text placeholder-glow">
-            <span class="placeholder col-7"></span>
-            <span class="placeholder col-4"></span>
-            <span class="placeholder col-4"></span>
-            <span class="placeholder col-6"></span>
-            <span class="placeholder col-8"></span>
-          </p>
-          <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+<app-goat-modal title="Kidding Schedule" [noIndex]="true" [goats]="goats" *ngIf="goats.length"></app-goat-modal>
+<div class="container text-center" *ngFor="let breeding of kiddingSchedule">
+  <div class="row color-scheme-tertiary py-3">
+    <div class="col"> <app-goat [goat]="breeding.dam"></app-goat> </div>
+    <div class="col"> <app-goat [goat]="breeding.sire"></app-goat> </div>
+    <div class="col-auto pt-5">
+      <h3>Bred: {{breeding.bred}}</h3>
+      <br>
+      <h3>Due: {{breeding.due}}*</h3>
+      <br>
+      <h5>${{breeding.price}}</h5>
+      <br>
+      <div *ngIf="breeding.reservations.length">
+        <h5>Reservations:</h5>
+        <div class="row justify-content-center">
+          <div class="col" *ngFor="let reservation of breeding.reservations">{{reservation}} </div>
         </div>
       </div>
     </div>
-  </div>-->
-  <div class="container color-scheme-tertiary py-3 px-3 vh-100 text-center" style="overflow-x: scroll;">
-    <table class="table table-striped table-hover table-bordered text-center-bordered align-middle"
-      [class.table-dark]="colorScheme.darkMode">
-      <thead>
-        <tr>
-          <th scope="col">Date Bred</th>
-          <th scope="col">Dam</th>
-          <th scope="col">Sire</th>
-          <th scope="col">Projected Kidding Date*</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let breeding of kiddingSchedule || []">
-          <!--*ngIf="breeding.dam && breeding.sire"-->
-          <th scope="row">{{breeding.bred}}</th>
-          <td>
-            <a type="button" class="btn h-100 w-100" [class.btn-outline-light]="colorScheme.darkMode"
-              [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.dam.nickname">{{breeding.dam.name}}</a>
-          </td>
-          <td><a type="button" class="btn h-100 w-100" [class.btn-outline-light]="colorScheme.darkMode"
-              [class.btn-outline-dark]="colorScheme.lightMode" [routerLink]="breeding.sire.nickname">{{breeding.sire.name}}</a></td>
-          <td>{{breeding.due}}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
-  <p class="text-center">*145 Days After Breeding</p>
+  <br>
+</div>
+<div *ngIf="!kiddingSchedule">
+  <div class="container text-center" *ngFor="let placeholder of [1,2]">
+    <div class="row color-scheme-tertiary py-3">
+      <div class="col" *ngFor="let card of [1,2]">
+        <div class="card color-scheme-secondary">
+          <!--<div class="card-header text-center color-scheme-tertiary"></div>-->
+          <div class="card-img-top rounded px-3 pt-3 ratio ratio-16x9 placeholder"></div>
+          <div class="card-body color-scheme-secondary">
+            <div class="container color-scheme-tertiary pb-3 placeholder-glow text-center">
+              <!--<a class="stretched-link" [routerLink]="goat.nickname"></a>-->
+              <h5 class="card-title text-center placeholder">GILLIS FAMILY FARM MYSTIC</h5>
+              <h6 class="card-subtitle pb-2 text-center placeholder">"Mystic"</h6>
+              <div class="card-text text-center placeholder"> lorem ipsum dolor sit amet, consect et met eiusmod </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-auto pt-5 placeholder-wave">
+        <h3>Bred: <span class="placeholder">November 22nd, 2022</span></h3>
+        <br>
+        <h3>Due: <span class="placeholder">April 16th, 2023</span></h3>
+        <br>
+        <h5>$<span class="placeholder">350</span></h5>
+        <br>
+        <div>
+          <h5>Reservations:</h5>
+          <div class="row justify-content-center placeholder-glow" *ngFor="let reservation of [1,2,3]">
+            <div class="col-6 placeholder">Doe: Retained</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+<p class="text-center">*145 Days After Breeding</p>

@@ -10,11 +10,10 @@ import { Goat, GoatService } from '../goat.service';
   styleUrls: ['./bucks.component.scss']
 })
 export class BucksComponent implements OnInit {
-  public bucks?: Goat[];
-
+  public bucks?: Goat[] = [];
   constructor(public colorScheme: ColorSchemeService, private goatService: GoatService) { }
   ngOnInit(): void {
-    const bucks = this.goatService.getBucks();
-    setTimeout(() => bucks.then(bucks => this.bucks = bucks), 500);
+    this.goatService.getBucks().then(bucks => this.bucks = bucks);
+    setTimeout(() => this.bucks?.length ? undefined : this.bucks = undefined, 100);
   }
 }

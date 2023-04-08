@@ -1,6 +1,6 @@
 <h1 class="text-center">Does</h1>
 <h5 class="text-center">Click on a Doe Below For More Info</h5>
-<app-goat-modal title="Does"></app-goat-modal>
+<app-goat-modal title="Does" [goats]="does" *ngIf="does && does.length"></app-goat-modal>
 <div class="container">
   <div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="does">
     <div class="col py-3" *ngFor="let goat of does">
@@ -8,21 +8,29 @@
     </div>
   </div>
   <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="!does">
-    <div class="col py-3" *ngFor="let placeholder of [1,2,3,4,5,6]">
-      <div class="card color-scheme-secondary" aria-hidden="true">
-        <img src="" class="card-img-top" style="height: 25vh;">
+    <div class="col py-3" *ngFor="let placeholder of [1,2,3,4,5,6,7,8]">
+      <!--<div class="card color-scheme-secondary" aria-hidden="true">
+        <div class="card-img-top rounded px-3 pt-3 ratio ratio-16x9 placeholder"></div>
         <div class="card-body">
           <h5 class="card-title placeholder-glow">
             <span class="placeholder col-6"></span>
           </h5>
           <p class="card-text placeholder-glow">
-            <span class="placeholder col-7"></span>
-            <span class="placeholder col-4"></span>
-            <span class="placeholder col-4"></span>
-            <span class="placeholder col-6"></span>
             <span class="placeholder col-8"></span>
+            <span class="placeholder col-4"></span>
           </p>
-          <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+        </div>
+      </div>-->
+      <div class="card color-scheme-secondary">
+        <!--<div class="card-header text-center color-scheme-tertiary"></div>-->
+        <div class="card-img-top rounded px-3 pt-3 ratio ratio-16x9 placeholder"></div>
+        <div class="card-body color-scheme-secondary">
+          <div class="container color-scheme-tertiary pb-3 placeholder-glow text-center">
+            <!--<a class="stretched-link" [routerLink]="goat.nickname"></a>-->
+            <h5 class="card-title text-center placeholder">GILLIS FAMILY FARM MYSTIC</h5>
+            <h6 class="card-subtitle pb-2 text-center placeholder">"Mystic"</h6>
+            <div class="card-text text-center placeholder"> lorem ipsum dolor sit amet, consect et met eiusmod </div>
+          </div>
         </div>
       </div>
     </div>

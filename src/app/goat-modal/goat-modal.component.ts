@@ -26,6 +26,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() title?: string;
   @Input() noIndex?: boolean;
   @Input() ignoreNotFound?: boolean;
+  @Input() goats: Goat[] = [];
   constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router, public imageService: ImageService, private goatService: GoatService) { }
 
   async setup(goat?: Goat) {
@@ -44,7 +45,9 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
     }*/
   }
   ngOnInit(): void {
-    const doe = new Promise<Goat>(resolve => this.goatService.getDoes().then(does => {
+    this.setup(this.goats.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe")) ??
+      this.goats.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("buck")));
+    /*const doe = new Promise<Goat>(resolve => this.goatService.getDoes().then(does => {
       const doe = does.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe"));
       doe ? resolve(doe) : undefined;
     }));
@@ -52,7 +55,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       const buck = bucks.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("buck"));
       buck ? resolve(buck) : undefined;
     }));
-    Promise.race([doe, buck]).then(goat => this.setup(goat));
+    Promise.race([doe, buck]).then(goat => this.setup(goat));*/
   }
   ngOnDestroy(): void {
     this.meta.removeTag('name="robots"');
