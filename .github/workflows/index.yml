@@ -27,7 +27,8 @@ jobs:
           node-version: 18.x
 
       - run: |
-          npm install
+          npm install -g yarn
+          yarn
           npm run index
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"

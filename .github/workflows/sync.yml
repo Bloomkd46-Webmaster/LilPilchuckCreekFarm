@@ -25,9 +25,10 @@ jobs:
           node-version: 18
           cache: 'npm'
 
-      - name: Sync Goats 
+      - name: Sync Goats
         run: |
-          npm install
+          npm install -g yarn
+          yarn
           npm run sync ${{ secrets.ADGA_USERNAME }} ${{ secrets.ADGA_PASSWORD }} -- --headless
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"

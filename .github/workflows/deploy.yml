@@ -31,7 +31,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm install
+          npm install -g yarn
+          yarn
           npm run lint
           ###
           # Configure Angular first!
