@@ -1,4 +1,4 @@
-import { CookieService } from 'ngx-cookie-service';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -31,7 +31,7 @@ import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.co
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [Meta, CookieService],
+  providers: [Meta],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
