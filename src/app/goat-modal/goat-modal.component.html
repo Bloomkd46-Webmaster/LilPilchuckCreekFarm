@@ -36,16 +36,20 @@
         </div>
         <div class="card-text text-center" *ngIf="goat">
           <div class="container color-scheme-tertiary" *ngIf="goat.description" [innerHTML]="goat.description"></div>
-          <div class="container border rounded-4 desktop-grid" *ngIf="parents">
+          <div class="container border rounded-4 desktop-grid">
             <div class="row row-cols-2 border-bottom">
               <th class="col border-end border-3">Sire:</th>
               <th class="col">Dam:</th>
             </div>
-            <div class="row row-cols-2 border-bottom border-3">
-              <td class="col border-end border-3">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>
-                    {{getAwards(parents.sire.awards)}}</small></span></td>
-              <td class="col">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>
-                    {{getAwards(parents.dam.awards)}}</small></span></td>
+            <div class="row row-cols-2 border-bottom border-3" *ngIf="parents">
+              <div class="col border-end border-3">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>
+                    {{getAwards(parents.sire.awards)}}</small></span></div>
+              <div class="col">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>
+                    {{getAwards(parents.dam.awards)}}</small></span></div>
+            </div>
+            <div class="row row-cols-2 border-bottom border-3" *ngIf="parents === undefined">
+              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum </small></div>
+              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
             </div>
             <div class="row row-cols-4 border-bottom">
               <th class="col border-end border-3">Sire's Sire (SS):</th>
@@ -53,111 +57,96 @@
               <th class="col border-end border-3">Dam's Sire (DS):</th>
               <th class="col">Dam's Dam (DD):</th>
             </div>
-            <div class="row row-cols-4">
-              <td class="col border-end border-3">{{parents.siresSire.name}}
+            <div class="row row-cols-4" *ngIf="parents">
+              <div class="col border-end border-3">{{parents.siresSire.name}}
                 <span *ngIf="parents.siresSire.awards.length"><br><small> {{getAwards(parents.siresSire.awards)}}</small></span>
-              </td>
-              <td class="col border-end border-5">{{parents.siresDam.name}}
+              </div>
+              <div class="col border-end border-5">{{parents.siresDam.name}}
                 <span *ngIf="parents.siresDam.awards.length"><br><small> {{getAwards(parents.siresDam.awards)}}</small></span>
-              </td>
-              <td class="col border-end border-3">{{parents.damsSire.name}}
+              </div>
+              <div class="col border-end border-3">{{parents.damsSire.name}}
                 <span *ngIf="parents.damsSire.awards.length"><br><small> {{getAwards(parents.damsSire.awards)}}</small></span>
-              </td>
-              <td class="col">{{parents.damsDam.name}}
+              </div>
+              <div class="col">{{parents.damsDam.name}}
                 <span *ngIf="parents.damsDam.awards.length"><br><small> {{getAwards(parents.damsDam.awards)}}</small></span>
-              </td>
+              </div>
+            </div>
+            <div class="row row-cols-4" *ngIf="parents === undefined">
+              <div class="col border-end border-3 placeholder-wave placeholder">lorem <br><small>ipsum</small>
+              </div>
+              <div class="col border-end border-5 placeholder-wave placeholder">lorem <br><small>ipsum</small>
+              </div>
+              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
+              </div>
+              <div class="col placeholder placeholder-wave">lorem <br><small>ipsum</small>
+              </div>
             </div>
           </div>
-          <div class="container border rounded-4 mobile-grid" *ngIf="parents">
+          <div class="container border rounded-4 mobile-grid">
             <div class="row row-cols-1 border-bottom">
               <th class="col">Sire:</th>
             </div>
-            <div class="row row-cols-1 border-bottom border-3">
-              <td class="col">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>
-                    {{getAwards(parents.sire.awards)}}</small></span></td>
+            <div class="row row-cols-1 border-bottom border-3" *ngIf="parents">
+              <div class="col">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>
+                    {{getAwards(parents.sire.awards)}}</small></span></div>
+            </div>
+            <div class="row row-cols-1 border-bottom border-3" *ngIf="parents === undefined">
+              <div class="col placeholder-wave placeholder">lorem<br><small> ipsum</small></div>
             </div>
             <div class="row row-cols-2 border-bottom">
               <th class="col border-end border-3">Sire's Sire (SS):</th>
               <th class="col">Sire's Dam (SD):</th>
             </div>
-            <div class="row row-cols-2">
-              <td class="col border-end border-3">{{parents.siresSire.name}}
+            <div class="row row-cols-2" *ngIf="parents">
+              <div class="col border-end border-3">{{parents.siresSire.name}}
                 <span *ngIf="parents.siresSire.awards.length"><br><small> {{getAwards(parents.siresSire.awards)}}</small></span>
-              </td>
-              <td class="col">{{parents.siresDam.name}}
+              </div>
+              <div class="col">{{parents.siresDam.name}}
                 <span *ngIf="parents.siresDam.awards.length"><br><small> {{getAwards(parents.siresDam.awards)}}</small></span>
-              </td>
+              </div>
+            </div>
+            <div class="row row-cols-2" *ngIf="parents === undefined">
+              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
+              </div>
+              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small>
+              </div>
             </div>
           </div>
-          <div class="container border rounded-4 mobile-grid" *ngIf="parents">
+          <br>
+          <div class="container border rounded-4 mobile-grid">
             <div class="row row-cols-1 border-bottom">
               <th class="col">Dam:</th>
             </div>
-            <div class="row row-cols-1 border-bottom border-3">
-              <td class="col">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>
-                    {{getAwards(parents.dam.awards)}}</small></span></td>
+            <div class="row row-cols-1 border-bottom border-3" *ngIf="parents">
+              <div class="col">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>
+                    {{getAwards(parents.dam.awards)}}</small></span></div>
+            </div>
+            <div class="row row-cols-1 border-bottom border-3" *ngIf="parents === undefined">
+              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
             </div>
             <div class="row row-cols-2 border-bottom">
               <th class="col border-end border-3">Dam's Sire (DS):</th>
               <th class="col">Dam's Dam (DD):</th>
             </div>
-            <div class="row row-cols-2">
-              <td class="col border-end border-3">{{parents.damsSire.name}}
+            <div class="row row-cols-2" *ngIf="parents">
+              <div class="col border-end border-3">{{parents.damsSire.name}}
                 <span *ngIf="parents.damsSire.awards.length"><br><small> {{getAwards(parents.damsSire.awards)}}</small></span>
-              </td>
-              <td class="col">{{parents.damsDam.name}}
+              </div>
+              <div class="col">{{parents.damsDam.name}}
                 <span *ngIf="parents.damsDam.awards.length"><br><small> {{getAwards(parents.damsDam.awards)}}</small></span>
-              </td>
+              </div>
+            </div>
+            <div class="row row-cols-2" *ngIf="parents === undefined">
+              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
+              </div>
+              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small>
+              </div>
             </div>
           </div>
-          <!--<dl>
-            <dt>Sire: {{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>
-                  {{getAwards(parents.sire.awards)}}</small></span>
-            </dt>
-            <dd>Sire's Sire (SS): {{parents.siresSire.name}}
-              <span *ngIf="parents.siresSire.awards.length"><br><small>
-                  {{getAwards(parents.siresSire.awards)}}</small></span><br>Sire's Dam (SD): {{parents.siresDam.name}}<span
-                *ngIf="parents.siresDam.awards.length"><br><small> {{getAwards(parents.siresDam.awards)}}</small></span>
-            </dd>
-            <dt>Dam: {{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>
-                  {{getAwards(parents.dam.awards)}}</small></span>
-            </dt>
-            <dd>Dam's Sire (DS): {{parents.damsSire.name}}<span *ngIf="parents.damsSire.awards.length"><br><small>
-                  {{getAwards(parents.damsSire.awards)}}</small></span><br> Dam's Dam (DD): {{parents.damsDam.name}}<span
-                *ngIf="parents.damsDam.awards.length"><br><small> {{getAwards(parents.damsDam.awards)}}</small></span>
-            </dd>
-          </dl>
-          <div *ngIf="goat.awards.length">
-            <h4 class="text-center"></h4>
-            <dl>
-              <div *ngFor="let award of goat.awards">
-                <dt>{{award.awardYear}}</dt>
-                <dd>{{award.awardDescription}}</dd>
-              </div>
-            </dl>
-          <!-<table class="table table-striped table-hover table-border bordered text-center-border bordered" [class.table-dark]="colorScheme.darkMode"
-              [class.table-info]="colorScheme.lightMode">
-              <thead>
-                <tr>
-                  <th scope="col">Award</th>
-                  <th scope="col">Division</th>
-                  <th scope="col">Event</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let award of goat.awards">
-                  <th scope="row">{{award.level}}</th>
-                  <td>{{award.division}}</td>
-                  <td>{{award.event}}</td>
-                </tr>
-              </tbody>
-            </table>->
-        </div>-->
         </div>
       </div>
       <div class="modal-footer color-scheme-tertiary">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <!--<button type="button" class="btn btn-primary">Understood</button>-->
       </div>
     </div>
   </div>

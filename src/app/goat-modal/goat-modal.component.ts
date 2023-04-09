@@ -20,7 +20,7 @@ declare const bootstrap: typeof Bootstrap;
 export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public images?: { path: string; name: string; }[];
   public goat?: Goat;
-  public parents?: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; };
+  public parents?: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; } | null = null;
   public nickname = this.activatedRoute.snapshot.paramMap.get("doe") || this.activatedRoute.snapshot.paramMap.get("buck");
 
   @Input() title?: string;
@@ -39,7 +39,9 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       if (this.noIndex) this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
       this.images = this.imageService.find(this.goat);
 
-      this.parents = await this.goatService.getParents(this.goat);
+      //this.parents = await this.goatService.getParents(this.goat);
+      this.goatService.getParents(this.goat).then(parents => this.parents = parents);
+      setTimeout(() => this.parents ? undefined : this.parents = undefined, 100);
     }/* else {
       this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
     }*/
