@@ -16,13 +16,13 @@ export class ImageService {
   constructor(private http: HttpClient) {
     console.log('Fetching pre-compiled images...');
     this.http.get('/assets/goats/map.data.json').subscribe((data: any) => {
-      console.log('F etched pre-compiled images');
+      console.log('Fetched pre-compiled images');
       Object.assign(this.images, data);
     });
   }
 
   find(goat: Goat): Images | undefined {
-    return this.images.children.find(child => child.name === goat.nickname)?.children;//?.map(image => image.path);
+    return this.images.children.find(child => child.name === goat.nickname)?.children;//.map(image => image.path);
   }
 
   extractDisplay(images: Images): Image {
