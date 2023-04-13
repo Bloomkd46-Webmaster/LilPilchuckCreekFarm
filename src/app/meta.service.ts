@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +11,7 @@ export class MetaService {
   /**@deprecated Use `updateDescription()` and `updateKeywords()` instead*/
   updateMetaTags(tags: { description?: string, keywords?: string[]; }) {
     this.meta.updateTag({ name: 'description', content: tags.description ?? '' }, 'name=\'description\'');
-    const keywords = ['4-H', '4H', 'Botsmiths', 'Robotics', 'Snohomish', 'FIRST'];
+    const keywords = ['4-H', '4H'];//, 'Botsmiths', 'Robotics', 'Snohomish', 'FIRST'];
     tags.keywords ? keywords.push(...tags.keywords) : undefined;
     this.meta.updateTag({
       name: 'keywords', content: keywords.join(', ')
@@ -43,7 +42,7 @@ export class MetaService {
    * @param title the description to input
    */
   updateTitle(title: string) {
-    this.title.setTitle(title + ' · BFFN');
+    this.title.setTitle(title + ' · Lil\' Pilchuck Creek');
     this.meta.updateTag({ name: 'og:title', content: title ?? '' }, 'name=\'og:title\'');
   }
 }
