@@ -33,7 +33,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"
           git add -A
-          git commit -m "Indexed Images"
+          git commit -m "Indexed Images" || echo "No Changes"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
