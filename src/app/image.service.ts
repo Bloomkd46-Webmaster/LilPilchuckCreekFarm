@@ -27,18 +27,25 @@ export class ImageService {
         }));
     }
   }
-  private _displayImages?: DisplayImages;
+  private _displayImages?: DisplayImages | null;
   getDisplayImages(): Promise<DisplayImages> {
     if (this._displayImages) {
       console.debug('Used Display Images From Cache', this._displayImages);
       return Promise.resolve(this._displayImages);
     } else {
-      return new Promise(resolve => this.http.get<DisplayImages>('/assets/goats/display-images.json')
-        .subscribe(data => {
-          this._displayImages = data;
-          console.debug('Loaded Display Images From Server', data);
-          resolve(data);
-        }));
+      return new Promise(resolve => {
+        if (this._displayImages === null) {
+          setInterval(() => this._displayImages ? resolve(this._displayImages) : null);
+        } else {
+          this._displayImages = null;
+          this.http.get<DisplayImages>('/assets/goats/display-images.json')
+            .subscribe(data => {
+              this._displayImages = data;
+              console.debug('Loaded Display Images From Server', data);
+              resolve(data);
+            });
+        }
+      });
     }
   }
 
