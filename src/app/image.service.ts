@@ -3,7 +3,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import images from '../assets/goats/map.json';
 import { Goat } from './goat.service';
 
 
@@ -11,27 +10,54 @@ import { Goat } from './goat.service';
   providedIn: 'root'
 })
 export class ImageService {
-  images = images;
 
   constructor(private http: HttpClient) {
-    console.log('Fetching pre-compiled images...');
-    this.http.get('/assets/goats/map.data.json').subscribe((data: any) => {
-      console.log('Fetched pre-compiled images');
-      Object.assign(this.images, data);
-    });
+  }
+  private _imageMap?: ImageMap;
+  getImageMap(): Promise<ImageMap> {
+    if (this._imageMap) {
+      console.debug('Used Image Map From Cache', this._imageMap);
+      return Promise.resolve(this._imageMap);
+    } else {
+      return new Promise(resolve => this.http.get<ImageMap>('/assets/goats/map.json')
+        .subscribe(data => {
+          this._imageMap = data;
+          console.debug('Loaded Image Map From Server', data);
+          resolve(data);
+        }));
+    }
+  }
+  private _displayImages?: DisplayImages;
+  getDisplayImages(): Promise<DisplayImages> {
+    if (this._displayImages) {
+      console.debug('Used Display Images From Cache', this._displayImages);
+      return Promise.resolve(this._displayImages);
+    } else {
+      return new Promise(resolve => this.http.get<DisplayImages>('/assets/goats/display-images.json')
+        .subscribe(data => {
+          this._displayImages = data;
+          console.debug('Loaded Display Images From Server', data);
+          resolve(data);
+        }));
+    }
   }
 
-  find(goat: Goat): Images | undefined {
-    return this.images.children.find(child => child.name === goat.nickname)?.children;//.map(image => image.path);
+  async find(goat: Goat): Promise<Images | undefined> {
+
+    return (await this.getImageMap()).children!.find(child => child.name === goat.nickname)?.children;//.map(image => image.path);
   }
 
-  extractDisplay(images: Images): Image {
-    return images.find(image => image.name.startsWith('display')) ?? images[0];
+  async extractDisplay(goat: string): Promise<string> {
+    const displayImages = await this.getDisplayImages();
+    return displayImages[Object.keys(displayImages).find(_goat => _goat === goat)!];
   }
 }
-export type Images = Image[];
-export interface Image {
+export type Images = ImageMap[];
+export interface ImageMap {
   path: string;
   name: string;
   children?: Images;
+}
+export interface DisplayImages {
+  [goat: string]: string;
 }
