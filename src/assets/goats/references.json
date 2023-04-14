@@ -147,7 +147,138 @@
     "birthTattoo": "",
     "birthTattooLocation": "",
     "id": 1832665,
-    "awards": []
+    "awards": [
+      {
+        "animalId": 1832665,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1037355
+      },
+      {
+        "animalId": 1832665,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1037354
+      },
+      {
+        "animalId": 1832665,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1037353
+      },
+      {
+        "animalId": 1832665,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1037352
+      },
+      {
+        "animalId": 1832665,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1037351
+      },
+      {
+        "animalId": 1832665,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1037350
+      },
+      {
+        "animalId": 1832665,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1037349
+      },
+      {
+        "animalId": 1832665,
+        "awardId": 7,
+        "awardCode": "*M (AR)",
+        "awardDescription": "*MILKER (AR) PROTEIN",
+        "awardYear": 2021,
+        "creationTime": "2022-03-29T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1029293
+      },
+      {
+        "animalId": 1832665,
+        "awardId": 6,
+        "awardCode": "*M (AR)",
+        "awardDescription": "*MILKER (AR) MILK",
+        "awardYear": 2021,
+        "creationTime": "2022-03-29T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1027188
+      },
+      {
+        "animalId": 1832665,
+        "awardId": 5,
+        "awardCode": "*M (AR)",
+        "awardDescription": "*MILKER (AR) BUTTERFAT",
+        "awardYear": 2021,
+        "creationTime": "2022-03-29T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1024960
+      }
+    ]
   },
   {
     "name": "LEISURE TIME ZZ ALEUTIAN WIND",
@@ -879,6 +1010,19 @@
     "awards": [
       {
         "animalId": 1712578,
+        "awardId": 12,
+        "awardCode": "*B",
+        "awardDescription": "*BUCK",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1030820
+      },
+      {
+        "animalId": 1712578,
         "awardId": 13,
         "awardCode": "+B (AR)",
         "awardDescription": "3 AR DOES - DIFFERENT DAMS",
@@ -959,6 +1103,19 @@
     "birthTattooLocation": "",
     "id": 1644245,
     "awards": [
+      {
+        "animalId": 1644245,
+        "awardId": 23,
+        "awardCode": "+B (ST)",
+        "awardDescription": "1 AR BUCK AND 2 AR/ST DOES",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1032108
+      },
       {
         "animalId": 1644245,
         "awardId": 13,
@@ -1242,6 +1399,19 @@
     "birthTattooLocation": "",
     "id": 1595634,
     "awards": [
+      {
+        "animalId": 1595634,
+        "awardId": 23,
+        "awardCode": "+B (ST)",
+        "awardDescription": "1 AR BUCK AND 2 AR/ST DOES",
+        "awardYear": 2021,
+        "creationTime": "2022-05-13T00:00:00",
+        "processedDate": "2022-05-13T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1032099
+      },
       {
         "animalId": 1595634,
         "awardId": 13,
@@ -1593,6 +1763,45 @@
     "birthTattooLocation": "",
     "id": 1522367,
     "awards": [
+      {
+        "animalId": 1522367,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-07-18T00:00:00",
+        "processedDate": "2022-07-18T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1032431
+      },
+      {
+        "animalId": 1522367,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-07-18T00:00:00",
+        "processedDate": "2022-07-18T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1032430
+      },
+      {
+        "animalId": 1522367,
+        "awardId": 30,
+        "awardCode": "*M",
+        "awardDescription": "*MILKER GEN. ANCESTRY",
+        "awardYear": 2021,
+        "creationTime": "2022-07-18T00:00:00",
+        "processedDate": "2022-07-18T00:00:00",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 1032429
+      },
       {
         "animalId": 1522367,
         "awardId": 36,
