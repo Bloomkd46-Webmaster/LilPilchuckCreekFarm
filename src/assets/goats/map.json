@@ -3,6 +3,24 @@
   "name": "goats",
   "children": [
     {
+      "path": "/assets/goats/Basil",
+      "name": "Basil",
+      "children": [
+        {
+          "path": "/assets/goats/Basil/28C78950-3506-46AD-AA4F-C35AEA8DCAB5_1_105_c.jpeg",
+          "name": "28C78950-3506-46AD-AA4F-C35AEA8DCAB5_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Basil/51167169-C808-4788-8338-120F8B99805A_1_105_c.jpeg",
+          "name": "51167169-C808-4788-8338-120F8B99805A_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Basil/F0C4128A-1221-4F34-8B98-8029A23EF4CA_1_105_c.jpeg",
+          "name": "F0C4128A-1221-4F34-8B98-8029A23EF4CA_1_105_c.jpeg"
+        }
+      ]
+    },
+    {
       "path": "/assets/goats/Crystal",
       "name": "Crystal",
       "children": [
