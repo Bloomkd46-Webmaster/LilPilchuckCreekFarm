@@ -52,7 +52,7 @@
                     {{getAwards(parents.dam.awards)}}</small></span></div>
             </div>
             <div class="row row-cols-2 border-bottom border-3" *ngIf="parents === undefined">
-              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum </small></div>
+              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
               <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
             </div>
             <div class="row row-cols-4 border-bottom">
@@ -63,16 +63,16 @@
             </div>
             <div class="row row-cols-4" *ngIf="parents">
               <div class="col border-end border-3">{{parents.siresSire.name}}
-                <span *ngIf="parents.siresSire.awards.length"><br><small> {{getAwards(parents.siresSire.awards)}}</small></span>
+                <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
               </div>
               <div class="col border-end border-5">{{parents.siresDam.name}}
-                <span *ngIf="parents.siresDam.awards.length"><br><small> {{getAwards(parents.siresDam.awards)}}</small></span>
+                <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
               </div>
               <div class="col border-end border-3">{{parents.damsSire.name}}
-                <span *ngIf="parents.damsSire.awards.length"><br><small> {{getAwards(parents.damsSire.awards)}}</small></span>
+                <span *ngIf="parents.damsSire.awards.length"><br><small>{{getAwards(parents.damsSire.awards)}}</small></span>
               </div>
               <div class="col">{{parents.damsDam.name}}
-                <span *ngIf="parents.damsDam.awards.length"><br><small> {{getAwards(parents.damsDam.awards)}}</small></span>
+                <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
               </div>
             </div>
             <div class="row row-cols-4" *ngIf="parents === undefined">
@@ -95,7 +95,7 @@
                     {{getAwards(parents.sire.awards)}}</small></span></div>
             </div>
             <div class="row row-cols-1 border-bottom border-3" *ngIf="parents === undefined">
-              <div class="col placeholder-wave placeholder">lorem<br><small> ipsum</small></div>
+              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
             </div>
             <div class="row row-cols-2 border-bottom">
               <th class="col border-end border-3">Sire's Sire (SS):</th>
@@ -103,10 +103,10 @@
             </div>
             <div class="row row-cols-2" *ngIf="parents">
               <div class="col border-end border-3">{{parents.siresSire.name}}
-                <span *ngIf="parents.siresSire.awards.length"><br><small> {{getAwards(parents.siresSire.awards)}}</small></span>
+                <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
               </div>
               <div class="col">{{parents.siresDam.name}}
-                <span *ngIf="parents.siresDam.awards.length"><br><small> {{getAwards(parents.siresDam.awards)}}</small></span>
+                <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
               </div>
             </div>
             <div class="row row-cols-2" *ngIf="parents === undefined">
@@ -134,10 +134,10 @@
             </div>
             <div class="row row-cols-2" *ngIf="parents">
               <div class="col border-end border-3">{{parents.damsSire.name}}
-                <span *ngIf="parents.damsSire.awards.length"><br><small> {{getAwards(parents.damsSire.awards)}}</small></span>
+                <span *ngIf="parents.damsSire.awards.length"><br><small>{{getAwards(parents.damsSire.awards)}}</small></span>
               </div>
               <div class="col">{{parents.damsDam.name}}
-                <span *ngIf="parents.damsDam.awards.length"><br><small> {{getAwards(parents.damsDam.awards)}}</small></span>
+                <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
               </div>
             </div>
             <div class="row row-cols-2" *ngIf="parents === undefined">

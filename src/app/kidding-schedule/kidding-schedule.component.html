@@ -2,8 +2,8 @@
 <app-goat-modal title="Kidding Schedule" [noIndex]="true" [goats]="goats" *ngIf="goats.length"></app-goat-modal>
 <div class="container text-center" *ngFor="let breeding of kiddingSchedule">
   <div class="row color-scheme-tertiary py-3">
-    <div class="col"> <app-goat [goat]="breeding.dam"></app-goat> </div>
-    <div class="col"> <app-goat [goat]="breeding.sire"></app-goat> </div>
+    <div class="col"><app-goat [goat]="breeding.dam"></app-goat></div>
+    <div class="col"><app-goat [goat]="breeding.sire"></app-goat></div>
     <div class="col-auto pt-5">
       <h3>Bred: {{breeding.bred}}</h3>
       <br>
@@ -14,7 +14,7 @@
       <div *ngIf="breeding.reservations.length">
         <h5>Reservations:</h5>
         <div class="row justify-content-center">
-          <div class="col" *ngFor="let reservation of breeding.reservations">{{reservation}} </div>
+          <div class="col" *ngFor="let reservation of breeding.reservations">{{reservation}}</div>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
               <!--<a class="stretched-link" [routerLink]="goat.nickname"></a>-->
               <h5 class="card-title text-center placeholder">GILLIS FAMILY FARM MYSTIC</h5>
               <h6 class="card-subtitle pb-2 text-center placeholder">"Mystic"</h6>
-              <!--<div class="card-text text-center placeholder"> lorem ipsum dolor sit amet, consect et met eiusmod </div>-->
+              <!--<div class="card-text text-center placeholder">lorem ipsum dolor sit amet, consect et met eiusmod</div>-->
             </div>
           </div>
         </div>
