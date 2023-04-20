@@ -85,6 +85,14 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
   getAwards(awards: Awards['result']['items']): string {
-    return awards.map(award => award.awardCode).join('; ');
+    const _awards: Record<string, number> = {};
+    for (const award of awards) {
+      if (_awards[award.awardCode]) {
+        _awards[award.awardCode]++;
+      } else {
+        _awards[award.awardCode] = 1;
+      }
+    }
+    return Object.keys(_awards).map(key => `${_awards[key] === 1 ? '' : _awards[key]}${key}`).join('; '); ////awards.map(award => award.awardCode).join('; ');
   }
 }
