@@ -6,6 +6,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { DoesComponent } from './does/does.component';
 import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
+import { PetsComponent } from './pets/pets.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,16 @@ const routes: Routes = [
     }, children: [
       { path: '', component: BucksComponent },
       { path: ':buck', component: BucksComponent }
+    ]
+  },
+  {
+    path: 'pets', data: {
+      title: 'Pets',
+      description: '',
+      keywords: ['Pets', 'Pet']
+    }, children: [
+      { path: '', component: PetsComponent },
+      { path: ':pet', component: PetsComponent }
     ]
   },
   {

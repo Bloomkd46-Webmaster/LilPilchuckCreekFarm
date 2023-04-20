@@ -40,7 +40,7 @@
         </div>
         <div class="card-text text-center" *ngIf="goat">
           <div class="container color-scheme-tertiary" *ngIf="goat.description" [innerHTML]="goat.description"></div>
-          <div class="container border rounded-4 desktop-grid">
+          <div class="container border rounded-4 desktop-grid" *ngIf="goat.damId">
             <div class="row row-cols-2 border-bottom">
               <th class="col border-end border-3">Sire:</th>
               <th class="col">Dam:</th>
@@ -86,7 +86,7 @@
               </div>
             </div>
           </div>
-          <div class="container border rounded-4 mobile-grid">
+          <div class="container border rounded-4 mobile-grid" *ngIf="goat.damId">
             <div class="row row-cols-1 border-bottom">
               <th class="col">Sire:</th>
             </div>
@@ -117,7 +117,7 @@
             </div>
           </div>
           <br>
-          <div class="container border rounded-4 mobile-grid">
+          <div class="container border rounded-4 mobile-grid" *ngIf="goat.damId">
             <div class="row row-cols-1 border-bottom">
               <th class="col">Dam:</th>
             </div>

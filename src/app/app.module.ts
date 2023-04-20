@@ -13,6 +13,7 @@ import { GoatModalComponent } from './goat-modal/goat-modal.component';
 import { GoatComponent } from './goat/goat.component';
 import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
+import { PetsComponent } from './pets/pets.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.co
     KiddingScheduleComponent,
     DoesComponent,
     GoatModalComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    PetsComponent
   ],
   imports: [
     BrowserModule,

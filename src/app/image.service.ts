@@ -49,7 +49,7 @@ export class ImageService {
     }
   }
 
-  async find(goat: Goat): Promise<Images | undefined> {
+  async find(goat: Pick<Goat, 'nickname'>): Promise<Images | undefined> {
 
     return (await this.getImageMap()).children!.find(child => child.name === goat.nickname)?.children;//.map(image => image.path);
   }

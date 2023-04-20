@@ -13,7 +13,7 @@ import { ImageService } from '../image.service';
 export class GoatComponent implements OnInit {
   public image?: string;
   /** The goat to display */
-  @Input() goat!: Goat;
+  @Input() goat!: Partial<Goat> & Pick<Goat, 'nickname' | 'name' | 'description'>;
   constructor(public colorScheme: ColorSchemeService, public imageService: ImageService) { }
 
   ngOnInit() {

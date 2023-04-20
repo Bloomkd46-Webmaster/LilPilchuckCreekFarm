@@ -53,6 +53,21 @@ export class GoatService {
     }
     ////return new Promise(resolve => this.http.get<ExternalGoat[]>('/assets/goats/references.json').subscribe(data => resolve(data)));
   }
+  private _pets?: Pet[];
+  getPets(): Promise<Pet[]> {
+    if (this._pets) {
+      console.debug('Used Pets From Cache', this._pets);
+      return Promise.resolve(this._pets);
+    } else {
+      return new Promise(resolve => this.http.get<Pet[]>('/assets/goats/pets.json')
+        .subscribe(data => {
+          this._pets = data;
+          console.debug('Loaded Pets From Server', data);
+          resolve(data);
+        }));
+    }
+    ////return new Promise(resolve => this.http.get<ExternalGoat[]>('/assets/goats/references.json').subscribe(data => resolve(data)));
+  }
   async getParents(goat: Goat): Promise<Parents> {
     const references = await this.getReferences();
     const dam = references.find(reference => reference.id === goat.damId)!;
@@ -130,6 +145,7 @@ export class GoatService {
 }
 export type Goat = (OwnedGoats['result']['items'][number] & { nickname: string; description: string; awards: Awards['result']['items']; });
 export type ExternalGoat = (ExternalGoats['result']['items'][number] & { awards: Awards['result']['items']; });
+export type Pet = { nickname: string; name: string; description: string; };
 export type Parents = { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; };
 export type RawKiddingSchedule = { bred: string; dam: number; sire: number; due: string; price: number; reservations: string[]; };
 export type KiddingSchedule = { bred: string; dam: Goat; sire: Goat; due: string; price: number; reservations: string[]; };

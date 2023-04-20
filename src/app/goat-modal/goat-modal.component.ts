@@ -19,17 +19,17 @@ declare const bootstrap: typeof Bootstrap;
 })
 export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public images?: { path: string; name: string; }[];
-  public goat?: Goat;
+  public goat?: Partial<Goat> & Pick<Goat, 'nickname' | 'name' | 'description'>;
   public parents?: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; } | null = null;
   public nickname = this.activatedRoute.snapshot.paramMap.get("doe") || this.activatedRoute.snapshot.paramMap.get("buck");
 
   @Input() title?: string;
   @Input() noIndex?: boolean;
   @Input() ignoreNotFound?: boolean;
-  @Input() goats: Goat[] = [];
+  @Input() goats: (Partial<Goat> & Pick<Goat, 'nickname' | 'name' | 'description'>)[] = [];
   constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router, public imageService: ImageService, private goatService: GoatService) { }
 
-  async setup(goat?: Goat) {
+  async setup(goat?: Partial<Goat> & Pick<Goat, 'nickname' | 'name' | 'description'>) {
     this.goat = goat;
     if (this.goat/*specificDoe || specificBuck*/) {
       console.log(this.goat);
@@ -40,15 +40,19 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       this.imageService.find(this.goat).then(images => this.images = images);
 
       //this.parents = await this.goatService.getParents(this.goat);
-      this.goatService.getParents(this.goat).then(parents => this.parents = parents);
-      setTimeout(() => this.parents ? undefined : this.parents = undefined, 100);
+      if (this.goat.damId) {
+        //@ts-expect-error
+        this.goatService.getParents(this.goat).then(parents => this.parents = parents);
+        setTimeout(() => this.parents ? undefined : this.parents = undefined, 100);
+      }
     }/* else {
       this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
     }*/
   }
   ngOnInit(): void {
     this.setup(this.goats.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe")) ??
-      this.goats.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("buck")));
+      this.goats.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("buck")) ??
+      this.goats.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("pet")));
     /*const doe = new Promise<Goat>(resolve => this.goatService.getDoes().then(does => {
       const doe = does.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe"));
       doe ? resolve(doe) : undefined;
