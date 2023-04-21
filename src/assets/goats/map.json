@@ -7,12 +7,12 @@
       "name": "Basil",
       "children": [
         {
-          "path": "/assets/goats/Basil/51167169-C808-4788-8338-120F8B99805A_1_105_c.jpeg",
-          "name": "51167169-C808-4788-8338-120F8B99805A_1_105_c.jpeg"
-        },
-        {
           "path": "/assets/goats/Basil/F0C4128A-1221-4F34-8B98-8029A23EF4CA_1_105_c.jpeg",
           "name": "F0C4128A-1221-4F34-8B98-8029A23EF4CA_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Basil/display.jpeg",
+          "name": "display.jpeg"
         }
       ]
     },
@@ -21,12 +21,12 @@
       "name": "Crystal",
       "children": [
         {
-          "path": "/assets/goats/Crystal/0AD3E5E1-DF74-44EC-9ADB-B9A9AABEA3DF_1_105_c.jpeg",
-          "name": "0AD3E5E1-DF74-44EC-9ADB-B9A9AABEA3DF_1_105_c.jpeg"
-        },
-        {
           "path": "/assets/goats/Crystal/IMG_1732.jpeg",
           "name": "IMG_1732.jpeg"
+        },
+        {
+          "path": "/assets/goats/Crystal/display.jpeg",
+          "name": "display.jpeg"
         }
       ]
     },
@@ -39,10 +39,6 @@
           "name": "290B0F19-7039-43A5-9EA5-A7367F0A3350_1_105_c.jpeg"
         },
         {
-          "path": "/assets/goats/Hazel/A96D6F75-1857-4D43-8750-67CA8B4214BA_1_102_o.jpeg",
-          "name": "A96D6F75-1857-4D43-8750-67CA8B4214BA_1_102_o.jpeg"
-        },
-        {
           "path": "/assets/goats/Hazel/B4E3143A-C445-4B48-AEF1-354249174A5E_1_105_c.jpeg",
           "name": "B4E3143A-C445-4B48-AEF1-354249174A5E_1_105_c.jpeg"
         },
@@ -53,6 +49,10 @@
         {
           "path": "/assets/goats/Hazel/IMG_0830.jpeg",
           "name": "IMG_0830.jpeg"
+        },
+        {
+          "path": "/assets/goats/Hazel/display.jpeg",
+          "name": "display.jpeg"
         }
       ]
     },
@@ -61,12 +61,12 @@
       "name": "Mystic",
       "children": [
         {
-          "path": "/assets/goats/Mystic/61E6552D-4F59-40A7-B388-523A787FD8A1_1_105_c.jpeg",
-          "name": "61E6552D-4F59-40A7-B388-523A787FD8A1_1_105_c.jpeg"
-        },
-        {
           "path": "/assets/goats/Mystic/FullSizeRender.JPEG",
           "name": "FullSizeRender.JPEG"
+        },
+        {
+          "path": "/assets/goats/Mystic/display.jpeg",
+          "name": "display.jpeg"
         }
       ]
     },
@@ -83,8 +83,8 @@
           "name": "373BEEAD-3A8B-41A8-BCF5-6B04555340A1_1_102_o.jpeg"
         },
         {
-          "path": "/assets/goats/Storm/D70371BA-C8BE-4FF9-99D1-AF8EE967CBE5_1_102_o.jpeg",
-          "name": "D70371BA-C8BE-4FF9-99D1-AF8EE967CBE5_1_102_o.jpeg"
+          "path": "/assets/goats/Storm/display.jpeg",
+          "name": "display.jpeg"
         }
       ]
     }
