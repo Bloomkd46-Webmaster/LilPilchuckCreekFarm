@@ -1,6 +1,6 @@
 {
-  "name": "BFFN",
-  "short_name": "BFFN",
+  "name": "Lil' Pilchuck Creek Farm",
+  "short_name": "Lil' Pilchuck Creek",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "hsl(240, 100%, 25%)",
-  "background_color": "hsl(240, 100%, 15%)",
+  "theme_color": "hsl(26, 40%, 15%)",
+  "background_color": "hsl(26, 40%, 10%)",
   "display": "standalone"
 }
