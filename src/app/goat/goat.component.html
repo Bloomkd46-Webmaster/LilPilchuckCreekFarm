@@ -8,7 +8,7 @@
       <a class="stretched-link" [routerLink]="goat.nickname"></a>
       <h5 class="card-title text-center">{{goat.name}}</h5>
       <h6 class="card-subtitle pb-2 text-center">"{{goat.nickname}}"</h6>
-      <div class="card-text text-center" *ngIf="goat.description" [innerHTML]="goat.description">
+      <div class="card-text text-center text-truncate-3" *ngIf="goat.description" [innerHTML]="goat.description">
         <!--<dl>
           <dt>Sire: {{goat.sire.name}}<span *ngIf="goat.sire.stars"><br><small>Awards: {{goat.sire.stars.join(', ')}}</small></span>
          </dt>

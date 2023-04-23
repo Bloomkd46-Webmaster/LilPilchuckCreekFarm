@@ -71,6 +71,20 @@
       ]
     },
     {
+      "path": "/assets/goats/Rue",
+      "name": "Rue",
+      "children": [
+        {
+          "path": "/assets/goats/Rue/3AE26700-248A-42C5-9FD9-BE4A6EC09231_1_105_c.jpeg",
+          "name": "3AE26700-248A-42C5-9FD9-BE4A6EC09231_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Rue/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
       "path": "/assets/goats/Storm",
       "name": "Storm",
       "children": [
