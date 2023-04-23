@@ -18,7 +18,7 @@
               <!--<button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
             </div>
-            <div class="carousel-inner d-flex align-items-center color-scheme-main" style="max-height: 75vh;">
+            <div class="carousel-inner d-flex align-items-center color-scheme-tertiary" style="max-height: 75vh;">
               <div *ngFor="let image of images; index as i" class="carousel-item" [class.active]="i === 0">
                 <img [src]="image.path" [alt]="image.name"
                   style="aspect-ratio: 4/3; width: 100%;object-fit:contain;object-position: center;">
@@ -37,113 +37,115 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-        </div>
-        <div class="card-text text-center" *ngIf="goat">
-          <div class="container color-scheme-tertiary" *ngIf="goat.description" [innerHTML]="goat.description"></div>
-          <div class="container border rounded-4 desktop-grid" *ngIf="goat.damId">
-            <div class="row row-cols-2 border-bottom">
-              <th class="col border-end border-3">Sire:</th>
-              <th class="col">Dam:</th>
-            </div>
-            <div class="row row-cols-2 border-bottom border-3" *ngIf="parents">
-              <div class="col border-end border-3">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>
-                    {{getAwards(parents.sire.awards)}}</small></span></div>
-              <div class="col">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>
-                    {{getAwards(parents.dam.awards)}}</small></span></div>
-            </div>
-            <div class="row row-cols-2 border-bottom border-3" *ngIf="parents === undefined">
-              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
-              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
-            </div>
-            <div class="row row-cols-4 border-bottom">
-              <th class="col border-end border-3">Sire's Sire (SS):</th>
-              <th class="col border-end border-5">Sire's Dam (SD):</th>
-              <th class="col border-end border-3">Dam's Sire (DS):</th>
-              <th class="col">Dam's Dam (DD):</th>
-            </div>
-            <div class="row row-cols-4" *ngIf="parents">
-              <div class="col border-end border-3">{{parents.siresSire.name}}
-                <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
-              </div>
-              <div class="col border-end border-5">{{parents.siresDam.name}}
-                <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
-              </div>
-              <div class="col border-end border-3">{{parents.damsSire.name}}
-                <span *ngIf="parents.damsSire.awards.length"><br><small>{{getAwards(parents.damsSire.awards)}}</small></span>
-              </div>
-              <div class="col">{{parents.damsDam.name}}
-                <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
-              </div>
-            </div>
-            <div class="row row-cols-4" *ngIf="parents === undefined">
-              <div class="col border-end border-3 placeholder-wave placeholder">lorem <br><small>ipsum</small>
-              </div>
-              <div class="col border-end border-5 placeholder-wave placeholder">lorem <br><small>ipsum</small>
-              </div>
-              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
-              </div>
-              <div class="col placeholder placeholder-wave">lorem <br><small>ipsum</small>
-              </div>
-            </div>
+          <div class="card-text text-center container color-scheme-tertiary rounded-bottom" *ngIf="goat?.description"
+            [innerHTML]="goat?.description">
           </div>
-          <div class="container border rounded-4 mobile-grid" *ngIf="goat.damId">
-            <div class="row row-cols-1 border-bottom">
-              <th class="col">Sire:</th>
-            </div>
-            <div class="row row-cols-1 border-bottom border-3" *ngIf="parents">
-              <div class="col">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>
-                    {{getAwards(parents.sire.awards)}}</small></span></div>
-            </div>
-            <div class="row row-cols-1 border-bottom border-3" *ngIf="parents === undefined">
-              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
-            </div>
-            <div class="row row-cols-2 border-bottom">
-              <th class="col border-end border-3">Sire's Sire (SS):</th>
-              <th class="col">Sire's Dam (SD):</th>
-            </div>
-            <div class="row row-cols-2" *ngIf="parents">
-              <div class="col border-end border-3">{{parents.siresSire.name}}
-                <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
+          <div *ngIf="goat" class="text-center mt-4">
+            <div class="container border rounded-4 desktop-grid" *ngIf="goat.damId">
+              <div class="row row-cols-2 border-bottom">
+                <th class="col border-end border-3">Sire:</th>
+                <th class="col">Dam:</th>
               </div>
-              <div class="col">{{parents.siresDam.name}}
-                <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
+              <div class="row row-cols-2 border-bottom border-3" *ngIf="parents">
+                <div class="col border-end border-3">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>
+                      {{getAwards(parents.sire.awards)}}</small></span></div>
+                <div class="col">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>
+                      {{getAwards(parents.dam.awards)}}</small></span></div>
               </div>
-            </div>
-            <div class="row row-cols-2" *ngIf="parents === undefined">
-              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
+              <div class="row row-cols-2 border-bottom border-3" *ngIf="parents === undefined">
+                <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
+                <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
               </div>
-              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small>
+              <div class="row row-cols-4 border-bottom">
+                <th class="col border-end border-3">Sire's Sire (SS):</th>
+                <th class="col border-end border-5">Sire's Dam (SD):</th>
+                <th class="col border-end border-3">Dam's Sire (DS):</th>
+                <th class="col">Dam's Dam (DD):</th>
               </div>
-            </div>
-          </div>
-          <br>
-          <div class="container border rounded-4 mobile-grid" *ngIf="goat.damId">
-            <div class="row row-cols-1 border-bottom">
-              <th class="col">Dam:</th>
-            </div>
-            <div class="row row-cols-1 border-bottom border-3" *ngIf="parents">
-              <div class="col">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>
-                    {{getAwards(parents.dam.awards)}}</small></span></div>
-            </div>
-            <div class="row row-cols-1 border-bottom border-3" *ngIf="parents === undefined">
-              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
-            </div>
-            <div class="row row-cols-2 border-bottom">
-              <th class="col border-end border-3">Dam's Sire (DS):</th>
-              <th class="col">Dam's Dam (DD):</th>
-            </div>
-            <div class="row row-cols-2" *ngIf="parents">
-              <div class="col border-end border-3">{{parents.damsSire.name}}
-                <span *ngIf="parents.damsSire.awards.length"><br><small>{{getAwards(parents.damsSire.awards)}}</small></span>
+              <div class="row row-cols-4" *ngIf="parents">
+                <div class="col border-end border-3">{{parents.siresSire.name}}
+                  <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
+                </div>
+                <div class="col border-end border-5">{{parents.siresDam.name}}
+                  <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
+                </div>
+                <div class="col border-end border-3">{{parents.damsSire.name}}
+                  <span *ngIf="parents.damsSire.awards.length"><br><small>{{getAwards(parents.damsSire.awards)}}</small></span>
+                </div>
+                <div class="col">{{parents.damsDam.name}}
+                  <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
+                </div>
               </div>
-              <div class="col">{{parents.damsDam.name}}
-                <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
+              <div class="row row-cols-4" *ngIf="parents === undefined">
+                <div class="col border-end border-3 placeholder-wave placeholder">lorem <br><small>ipsum</small>
+                </div>
+                <div class="col border-end border-5 placeholder-wave placeholder">lorem <br><small>ipsum</small>
+                </div>
+                <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
+                </div>
+                <div class="col placeholder placeholder-wave">lorem <br><small>ipsum</small>
+                </div>
               </div>
             </div>
-            <div class="row row-cols-2" *ngIf="parents === undefined">
-              <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
+            <div class="container border rounded-4 mobile-grid" *ngIf="goat.damId">
+              <div class="row row-cols-1 border-bottom">
+                <th class="col">Sire:</th>
               </div>
-              <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small>
+              <div class="row row-cols-1 border-bottom border-3" *ngIf="parents">
+                <div class="col">{{parents.sire.name}}<span *ngIf="parents.sire.awards.length"><br><small>
+                      {{getAwards(parents.sire.awards)}}</small></span></div>
+              </div>
+              <div class="row row-cols-1 border-bottom border-3" *ngIf="parents === undefined">
+                <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
+              </div>
+              <div class="row row-cols-2 border-bottom">
+                <th class="col border-end border-3">Sire's Sire (SS):</th>
+                <th class="col">Sire's Dam (SD):</th>
+              </div>
+              <div class="row row-cols-2" *ngIf="parents">
+                <div class="col border-end border-3">{{parents.siresSire.name}}
+                  <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
+                </div>
+                <div class="col">{{parents.siresDam.name}}
+                  <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
+                </div>
+              </div>
+              <div class="row row-cols-2" *ngIf="parents === undefined">
+                <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
+                </div>
+                <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="container border rounded-4 mobile-grid" *ngIf="goat.damId">
+              <div class="row row-cols-1 border-bottom">
+                <th class="col">Dam:</th>
+              </div>
+              <div class="row row-cols-1 border-bottom border-3" *ngIf="parents">
+                <div class="col">{{parents.dam.name}}<span *ngIf="parents.dam.awards.length"><br><small>
+                      {{getAwards(parents.dam.awards)}}</small></span></div>
+              </div>
+              <div class="row row-cols-1 border-bottom border-3" *ngIf="parents === undefined">
+                <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></div>
+              </div>
+              <div class="row row-cols-2 border-bottom">
+                <th class="col border-end border-3">Dam's Sire (DS):</th>
+                <th class="col">Dam's Dam (DD):</th>
+              </div>
+              <div class="row row-cols-2" *ngIf="parents">
+                <div class="col border-end border-3">{{parents.damsSire.name}}
+                  <span *ngIf="parents.damsSire.awards.length"><br><small>{{getAwards(parents.damsSire.awards)}}</small></span>
+                </div>
+                <div class="col">{{parents.damsDam.name}}
+                  <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
+                </div>
+              </div>
+              <div class="row row-cols-2" *ngIf="parents === undefined">
+                <div class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
+                </div>
+                <div class="col placeholder-wave placeholder">lorem<br><small>ipsum</small>
+                </div>
               </div>
             </div>
           </div>
