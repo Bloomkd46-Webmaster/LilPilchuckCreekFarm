@@ -22,7 +22,7 @@ export class KiddingScheduleComponent implements OnInit {
         goats.includes(breeding.sire) ? undefined : goats.push(breeding.sire);
       }
       this.goats = goats;
-      console.log(this.goats);
+      console.log('Compiled Goats', this.goats);
     });
     setTimeout(() => this.kiddingSchedule?.length ? undefined : this.kiddingSchedule = undefined, 100);
   }
