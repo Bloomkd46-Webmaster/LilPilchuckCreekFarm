@@ -2156,7 +2156,21 @@
     "birthTattoo": "",
     "birthTattooLocation": "",
     "id": 2157990,
-    "awards": []
+    "awards": [
+      {
+        "animalId": 2157990,
+        "awardId": 12,
+        "awardCode": "*B",
+        "awardDescription": "*BUCK",
+        "awardYear": 2021,
+        "creationTime": "2021-03-23T08:40:56.802997",
+        "processedDate": "2021-03-23T08:40:56.8030089",
+        "staffUserId": null,
+        "isActive": true,
+        "awardCount": 1,
+        "id": 3821321
+      }
+    ]
   },
   {
     "name": "RAINY ROCK CH SHOWSTOPPER ",
