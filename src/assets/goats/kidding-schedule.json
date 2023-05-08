@@ -4,7 +4,8 @@
     "dam": 2175097,
     "sire": 1924035,
     "due": "April 16th, 2023",
-    "price": 350,
+    "does": 300,
+    "wethers": 100,
     "reservations": []
   },
   {
@@ -12,7 +13,8 @@
     "dam": 2174259,
     "sire": 1924035,
     "due": "May 13th, 2023",
-    "price": 350,
+    "does": 350,
+    "wethers": 100,
     "reservations": [
       "Doe: Retained"
     ]

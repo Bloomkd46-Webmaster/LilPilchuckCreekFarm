@@ -147,5 +147,5 @@ export type Goat = (OwnedGoats['result']['items'][number] & { nickname: string; 
 export type ExternalGoat = (ExternalGoats['result']['items'][number] & { awards: Awards['result']['items']; });
 export type Pet = { nickname: string; name: string; description: string; };
 export type Parents = { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; };
-export type RawKiddingSchedule = { bred: string; dam: number; sire: number; due: string; price: number; reservations: string[]; };
-export type KiddingSchedule = { bred: string; dam: Goat; sire: Goat; due: string; price: number; reservations: string[]; };
+export type RawKiddingSchedule = { bred: string; dam: number; sire: number; due: string; does: number; wethers: number; reservations: string[]; };
+export type KiddingSchedule = { bred: string; dam: Goat; sire: Goat; due: string; does: number; wethers: number; reservations: string[]; };
