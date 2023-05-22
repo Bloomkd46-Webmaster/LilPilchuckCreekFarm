@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BloomFamilyFarmNigerians": {
+    "LilPilchuckCreekFarm": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bloom-family-farm-nigerians",
+            "outputPath": "dist/lil-pilchuck-creek-farm",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "BloomFamilyFarmNigerians:build:production"
+              "browserTarget": "LilPilchuckCreekFarm:build:production"
             },
             "development": {
-              "browserTarget": "BloomFamilyFarmNigerians:build:development"
+              "browserTarget": "LilPilchuckCreekFarm:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BloomFamilyFarmNigerians:build"
+            "browserTarget": "LilPilchuckCreekFarm:build"
           }
         },
         "test": {
