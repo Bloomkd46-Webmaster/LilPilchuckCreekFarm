@@ -1,0 +1,14 @@
+<div class="card color-scheme-secondary" *ngIf="goat">
+  <!--<div class="card-header text-center color-scheme-tertiary"></div>-->
+  <div *ngIf="!image" class="card-img-top rounded px-3 pt-3 ratio ratio-16x9 placeholder-wave placeholder"></div>
+  <img *ngIf="image" [src]="image" [alt]="goat.nickname" class="card-img-top rounded px-3 pt-3 ratio ratio-16x9 plaveholder"
+    [class.placeholder]="!image">
+  <div class="card-body color-scheme-secondary">
+    <div class="container color-scheme-tertiary pb-3">
+      <a class="stretched-link" [routerLink]="goat.nickname"></a>
+      <h6 class="card-subtitle pb-2 text-center">{{goat.nickname}}</h6>
+      <div class="card-text text-center text-truncate-3" *ngIf="goat.description" [innerHTML]="goat.description">
+      </div>
+    </div>
+  </div>
+</div>

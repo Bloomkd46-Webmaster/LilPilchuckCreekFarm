@@ -1,0 +1,49 @@
+<div #modal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <!--<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable color-scheme-secondary">-->
+    <div class="modal-content">
+      <div class="modal-header color-scheme-tertiary">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{goat?.nickname || 'Not Found'}}</h1>
+        <button type="button" class="btn-close" [class.btn-close-white]="colorScheme.darkMode" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body color-scheme-quaternary card">
+        <h5 class="card-title text-center">{{goat?.nickname || 'The Requested Goat: "' + nickname + '" Was Not Found'}}</h5>
+        <div class="card-header color-scheme-quaternary">
+          <div #carousel id="goatImageCarousel" class="carousel slide" data-bs-ride="true" [class.carousel-dark]="colorScheme.lightMode">
+            <div class="carousel-indicators">
+              <button *ngFor="let image of images; index as i" type="button" data-bs-target="#goatImageCarousel" [attr.data-bs-slide-to]="i"
+                [class.active]="i === 0" [attr.aria-current]="i === 0" attr.aria-label="Slide {{i+1}}"></button>
+              <!--<button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+            </div>
+            <div class="carousel-inner d-flex align-items-center color-scheme-secondary" style="max-height: 75vh;">
+              <div *ngFor="let image of images; index as i" class="carousel-item" [class.active]="i === 0">
+                <img [src]="image.path" [alt]="image.name"
+                  style="aspect-ratio: 4/3; width: 100%;object-fit:contain;object-position: center;">
+              </div>
+              <div *ngFor="let image of (images ? [] : [1,2,3]); index as i" class="carousel-item placeholder-wave"
+                [class.placeholder]="!images" [class.active]="i === 0">
+                <div style="aspect-ratio: 4/3; width: 100%;object-fit:contain;object-position: center;"></div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#goatImageCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#goatImageCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="card-text text-center container color-scheme-tertiary rounded-bottom" *ngIf="goat?.description"
+            [innerHTML]="goat?.description">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer color-scheme-tertiary">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
