@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BucksComponent } from './bucks/bucks.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { DoesComponent } from './does/does.component';
+import { ForSaleComponent } from './for-sale/for-sale.component';
 import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
 import { PetsComponent } from './pets/pets.component';
@@ -57,6 +58,18 @@ const routes: Routes = [
       { path: '', component: KiddingScheduleComponent },
       { path: ':doe', component: KiddingScheduleComponent },
       { path: ':buck', component: KiddingScheduleComponent }
+    ]
+  },
+  {
+    path: 'for-sale', data: {
+      title: 'For Sale',
+      description: '',
+      keywords: ['For', 'Sale', 'Selling']
+    }, children: [
+      { path: '', component: ForSaleComponent },
+      { path: ':doe', component: ForSaleComponent },
+      { path: ':buck', component: ForSaleComponent },
+      { path: ':pet', component: ForSaleComponent }
     ]
   },
   {

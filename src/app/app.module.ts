@@ -14,6 +14,9 @@ import { GoatComponent } from './goat/goat.component';
 import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
 import { PetsComponent } from './pets/pets.component';
+import { ForSaleComponent } from './for-sale/for-sale.component';
+import { ForSaleGoatComponent } from './for-sale-goat/for-sale-goat.component';
+import { ForSaleGoatModalComponent } from './for-sale-goat-modal/for-sale-goat-modal.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { PetsComponent } from './pets/pets.component';
     DoesComponent,
     GoatModalComponent,
     ContactUsComponent,
-    PetsComponent
+    PetsComponent,
+    ForSaleComponent,
+    ForSaleGoatComponent,
+    ForSaleGoatModalComponent
   ],
   imports: [
     BrowserModule,

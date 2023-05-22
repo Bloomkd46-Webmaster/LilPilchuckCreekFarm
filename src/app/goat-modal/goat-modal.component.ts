@@ -19,17 +19,17 @@ declare const bootstrap: typeof Bootstrap;
 })
 export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public images?: { path: string; name: string; }[];
-  public goat?: Partial<Goat> & Pick<Goat, 'nickname' | 'name' | 'description'>;
+  public goat?: Goat;
   public parents?: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; } | null = null;
   public nickname = this.activatedRoute.snapshot.paramMap.get("doe") || this.activatedRoute.snapshot.paramMap.get("buck");
 
   @Input() title?: string;
   @Input() noIndex?: boolean;
   @Input() ignoreNotFound?: boolean;
-  @Input() goats: (Partial<Goat> & Pick<Goat, 'nickname' | 'name' | 'description'>)[] = [];
+  @Input() goats: Goat[] = [];
   constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router, public imageService: ImageService, private goatService: GoatService) { }
 
-  async setup(goat?: Partial<Goat> & Pick<Goat, 'nickname' | 'name' | 'description'>) {
+  async setup(goat?: Goat) {
     this.goat = goat;
     if (this.goat/*specificDoe || specificBuck*/) {
       console.log(this.goat);
@@ -41,7 +41,6 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
 
       //this.parents = await this.goatService.getParents(this.goat);
       if (this.goat.damId) {
-        //@ts-expect-error
         this.goatService.getParents(this.goat).then(parents => this.parents = parents);
         setTimeout(() => this.parents ? undefined : this.parents = undefined, 100);
       }

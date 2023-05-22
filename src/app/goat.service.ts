@@ -111,6 +111,21 @@ export class GoatService {
     console.debug('Compiled Kidding Schedule', schedule);
     return schedule;
   }
+  private _forSale?: ForSale;
+  getForSale(): Promise<ForSale> {
+    if (this._forSale) {
+      console.debug('Used For Sale From Cache', this._forSale);
+      return Promise.resolve(this._forSale);
+    } else {
+      return new Promise(resolve => this.http.get<ForSale>('/assets/goats/for-sale.json')
+        .subscribe(data => {
+          this._forSale = data;
+          console.debug('Loaded For Sale From Server', data);
+          resolve(data);
+        }));
+    }
+    ////return new Promise(resolve => this.http.get<ExternalGoat[]>('/assets/goats/references.json').subscribe(data => resolve(data)));
+  }
   /*private does?: Goat[];
   getDoes(): Promise<Goat[]> {
     return new Promise((resolve, reject) => {
@@ -149,3 +164,5 @@ export type Pet = { nickname: string; name: string; description: string; };
 export type Parents = { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; };
 export type RawKiddingSchedule = { bred: string; dam: number; sire: number; due: string; does: number; wethers: number; reservations: string[]; };
 export type KiddingSchedule = { bred: string; dam: Goat; sire: Goat; due: string; does: number; wethers: number; reservations: string[]; };
+export type ForSaleGoat = { nickname: string; description: string; price?: string; };
+export type ForSale = { does: ForSaleGoat[]; bucks: ForSaleGoat[]; wethers: ForSaleGoat[]; };

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { GoatService, Pet } from '../goat.service';
+import { Goat, GoatService } from '../goat.service';
 
 
 @Component({
@@ -8,11 +8,11 @@ import { GoatService, Pet } from '../goat.service';
   templateUrl: './pets.component.html',
   styleUrls: ['./pets.component.scss']
 })
-export class PetsComponent {
-  public pets?: Pet[] = [];
+export class PetsComponent implements OnInit {
+  public pets?: Goat[] = [];
   constructor(private goatService: GoatService) { }
   ngOnInit(): void {
-    this.goatService.getPets().then(pets => this.pets = pets);
+    this.goatService.getPets().then(pets => this.pets = pets as Goat[]);
     setTimeout(() => this.pets?.length ? undefined : this.pets = undefined, 100);
   }
 }
