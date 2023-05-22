@@ -6,7 +6,10 @@
     "due": "April 16th, 2023",
     "does": 300,
     "wethers": 100,
-    "reservations": []
+    "reservations": [],
+    "kidded": {
+      "date": "April 17th, 2023"
+    }
   },
   {
     "bred": "December 19th, 2022",
@@ -17,6 +20,9 @@
     "wethers": 100,
     "reservations": [
       "Doe: Retained"
-    ]
+    ],
+    "kidded": {
+      "date": "May 16th, 2023"
+    }
   }
 ]

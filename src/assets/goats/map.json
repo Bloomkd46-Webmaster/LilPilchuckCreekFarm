@@ -71,6 +71,64 @@
       ]
     },
     {
+      "path": "/assets/goats/R1",
+      "name": "R1",
+      "children": [
+        {
+          "path": "/assets/goats/R1/IMG_4053.jpeg",
+          "name": "IMG_4053.jpeg"
+        },
+        {
+          "path": "/assets/goats/R1/IMG_4054.jpeg",
+          "name": "IMG_4054.jpeg"
+        },
+        {
+          "path": "/assets/goats/R1/IMG_4056.jpeg",
+          "name": "IMG_4056.jpeg"
+        },
+        {
+          "path": "/assets/goats/R1/IMG_4058.jpeg",
+          "name": "IMG_4058.jpeg"
+        },
+        {
+          "path": "/assets/goats/R1/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/R3",
+      "name": "R3",
+      "children": [
+        {
+          "path": "/assets/goats/R3/IMG_4043.jpeg",
+          "name": "IMG_4043.jpeg"
+        },
+        {
+          "path": "/assets/goats/R3/IMG_4044.jpeg",
+          "name": "IMG_4044.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/R4",
+      "name": "R4",
+      "children": [
+        {
+          "path": "/assets/goats/R4/IMG_4043.jpeg",
+          "name": "IMG_4043.jpeg"
+        },
+        {
+          "path": "/assets/goats/R4/IMG_4046.jpeg",
+          "name": "IMG_4046.jpeg"
+        },
+        {
+          "path": "/assets/goats/R4/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
       "path": "/assets/goats/Rue",
       "name": "Rue",
       "children": [
@@ -99,6 +157,28 @@
         {
           "path": "/assets/goats/Storm/display.jpeg",
           "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/Sugar",
+      "name": "Sugar",
+      "children": [
+        {
+          "path": "/assets/goats/Sugar/IMG_4048.jpeg",
+          "name": "IMG_4048.jpeg"
+        },
+        {
+          "path": "/assets/goats/Sugar/IMG_4049.jpeg",
+          "name": "IMG_4049.jpeg"
+        },
+        {
+          "path": "/assets/goats/Sugar/IMG_4050.jpeg",
+          "name": "IMG_4050.jpeg"
+        },
+        {
+          "path": "/assets/goats/Sugar/IMG_4051.jpeg",
+          "name": "IMG_4051.jpeg"
         }
       ]
     }
