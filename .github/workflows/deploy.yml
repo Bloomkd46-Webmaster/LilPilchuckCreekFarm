@@ -31,8 +31,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm install -g yarn
-          yarn
+          npm install
           npm run lint
           ###
           # Configure Angular first!
@@ -43,8 +42,29 @@ jobs:
           ####
           npm run ng deploy --cname=www.botsmiths.org --name="github-actions" --email="action@github.com"
 
-  upload:
+  optimize:
     needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: 'gh-pages'
+      - name: Update 404 Pages
+        run: echo '<head><title>Forwarding...</title><script>if (!window.location.href.match(/\/#/)) { window.location.href = window.location.origin + "/#" + window.location.pathname + window.location.search; }</script><head><body></body>' > 404.html
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          git add -A
+          git commit -m "Updated 404 Page"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+           github_token: ${{ secrets.GH_TOKEN }}
+           branch: gh-pages
+  upload:
+    needs: optimize
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -62,7 +82,7 @@ jobs:
     needs: upload
     environment:
       name: github-pages
-      url: https://www.botsmiths.org
+      url: https://www.lilpilchuckcreek.org
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
