@@ -115,6 +115,14 @@
             ],
             "fix": true
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "cname": "www.lilpilchuckcreek.org",
+            "name": "github-actions",
+            "email": "action@github.com"
+          }
         }
       }
     }

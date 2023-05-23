@@ -45,6 +45,7 @@
     "@types/jasmine": "~4.0.0",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
+    "angular-cli-ghpages": "^1.0.6",
     "axios": "^0.27.2",
     "directory-tree": "^3.4.0",
     "eslint": "^8.28.0",
