@@ -32,9 +32,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Installing Yarn"
-          npm install yarn
+          npm install -g yarn
           echo "Downloading Dependencies"
-          npx yarn
+          yarn
           #npm run lint
           ###
           # Configure Angular first!
