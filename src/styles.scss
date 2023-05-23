@@ -25,17 +25,18 @@ img {
   opacity: 0.75
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bs-link-color: #0dcaf0 !important;
-    --bs-link-hover-color: #3dd5f3 !important;
-  }
+:root {
+  --bs-link-color-rgb: 13, 202, 240 !important;
+  --bs-link-hover-color-rgb: 61, 213, 243 !important;
 }
-
-//}
 
 /**Colors for devices in light mode*/
 @media (prefers-color-scheme: light) {
+  :root {
+    --bs-link-color-rgb: 10, 85, 195 !important;
+    //--bs-link-hover-color-rgb: 61, 213, 243 !important;
+  }
+
   .color-scheme-main {
     background-color: hsl(26, 40%, 60%) !important;
     color: hsl(0, 0%, 15%) !important;
