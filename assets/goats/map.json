@@ -1,0 +1,186 @@
+{
+  "path": "/assets/goats",
+  "name": "goats",
+  "children": [
+    {
+      "path": "/assets/goats/Basil",
+      "name": "Basil",
+      "children": [
+        {
+          "path": "/assets/goats/Basil/F0C4128A-1221-4F34-8B98-8029A23EF4CA_1_105_c.jpeg",
+          "name": "F0C4128A-1221-4F34-8B98-8029A23EF4CA_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Basil/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/Crystal",
+      "name": "Crystal",
+      "children": [
+        {
+          "path": "/assets/goats/Crystal/IMG_1732.jpeg",
+          "name": "IMG_1732.jpeg"
+        },
+        {
+          "path": "/assets/goats/Crystal/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/Hazel",
+      "name": "Hazel",
+      "children": [
+        {
+          "path": "/assets/goats/Hazel/290B0F19-7039-43A5-9EA5-A7367F0A3350_1_105_c.jpeg",
+          "name": "290B0F19-7039-43A5-9EA5-A7367F0A3350_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Hazel/B4E3143A-C445-4B48-AEF1-354249174A5E_1_105_c.jpeg",
+          "name": "B4E3143A-C445-4B48-AEF1-354249174A5E_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Hazel/D836A4DA-4D75-480D-A170-3C20692758A2_1_105_c.jpeg",
+          "name": "D836A4DA-4D75-480D-A170-3C20692758A2_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Hazel/IMG_0830.jpeg",
+          "name": "IMG_0830.jpeg"
+        },
+        {
+          "path": "/assets/goats/Hazel/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/Mystic",
+      "name": "Mystic",
+      "children": [
+        {
+          "path": "/assets/goats/Mystic/FullSizeRender.JPEG",
+          "name": "FullSizeRender.JPEG"
+        },
+        {
+          "path": "/assets/goats/Mystic/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/R1",
+      "name": "R1",
+      "children": [
+        {
+          "path": "/assets/goats/R1/IMG_4053.jpeg",
+          "name": "IMG_4053.jpeg"
+        },
+        {
+          "path": "/assets/goats/R1/IMG_4054.jpeg",
+          "name": "IMG_4054.jpeg"
+        },
+        {
+          "path": "/assets/goats/R1/IMG_4056.jpeg",
+          "name": "IMG_4056.jpeg"
+        },
+        {
+          "path": "/assets/goats/R1/IMG_4058.jpeg",
+          "name": "IMG_4058.jpeg"
+        },
+        {
+          "path": "/assets/goats/R1/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/R3",
+      "name": "R3",
+      "children": [
+        {
+          "path": "/assets/goats/R3/IMG_4043.jpeg",
+          "name": "IMG_4043.jpeg"
+        },
+        {
+          "path": "/assets/goats/R3/IMG_4044.jpeg",
+          "name": "IMG_4044.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/R4",
+      "name": "R4",
+      "children": [
+        {
+          "path": "/assets/goats/R4/IMG_4043.jpeg",
+          "name": "IMG_4043.jpeg"
+        },
+        {
+          "path": "/assets/goats/R4/IMG_4046.jpeg",
+          "name": "IMG_4046.jpeg"
+        },
+        {
+          "path": "/assets/goats/R4/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/Rue",
+      "name": "Rue",
+      "children": [
+        {
+          "path": "/assets/goats/Rue/3AE26700-248A-42C5-9FD9-BE4A6EC09231_1_105_c.jpeg",
+          "name": "3AE26700-248A-42C5-9FD9-BE4A6EC09231_1_105_c.jpeg"
+        },
+        {
+          "path": "/assets/goats/Rue/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/Storm",
+      "name": "Storm",
+      "children": [
+        {
+          "path": "/assets/goats/Storm/066239B7-EDE5-458D-A252-ACD6092916DB_1_102_o.jpeg",
+          "name": "066239B7-EDE5-458D-A252-ACD6092916DB_1_102_o.jpeg"
+        },
+        {
+          "path": "/assets/goats/Storm/373BEEAD-3A8B-41A8-BCF5-6B04555340A1_1_102_o.jpeg",
+          "name": "373BEEAD-3A8B-41A8-BCF5-6B04555340A1_1_102_o.jpeg"
+        },
+        {
+          "path": "/assets/goats/Storm/display.jpeg",
+          "name": "display.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/Sugar",
+      "name": "Sugar",
+      "children": [
+        {
+          "path": "/assets/goats/Sugar/IMG_4048.jpeg",
+          "name": "IMG_4048.jpeg"
+        },
+        {
+          "path": "/assets/goats/Sugar/IMG_4049.jpeg",
+          "name": "IMG_4049.jpeg"
+        },
+        {
+          "path": "/assets/goats/Sugar/IMG_4050.jpeg",
+          "name": "IMG_4050.jpeg"
+        },
+        {
+          "path": "/assets/goats/Sugar/IMG_4051.jpeg",
+          "name": "IMG_4051.jpeg"
+        }
+      ]
+    }
+  ]
+}
