@@ -14,8 +14,9 @@ export class NotFoundComponent implements OnInit {
   ngOnInit() {
     routes.forEach(route => {
       if (route.path?.toLowerCase() === this.activatedRoute.snapshot.url[0].path.toLowerCase()) {
-        console.log('Found Correct Path');
-        this.router.navigate([route.path]);
+        const path = '/' + [route.path, this.activatedRoute.snapshot.url[1]].join('/');
+        console.log('Found Correct Path', path);
+        this.router.navigate([path]);
       }
     });
   }
