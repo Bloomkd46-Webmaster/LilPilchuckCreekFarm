@@ -6,24 +6,24 @@
     <div class="col"><app-goat [goat]="breeding.dam"></app-goat></div>
     <div class="col"><app-goat [goat]="breeding.sire"></app-goat></div>
     <div class="col-auto pt-5">
-      <h3>Bred: {{breeding.bred}}</h3>
-      <br>
       <div *ngIf="!breeding.kidded">
+        <h3>Bred: {{breeding.bred}}</h3>
+        <br>
         <h3>Due: {{breeding.due}}*</h3>
         <br>
         <h5>Does: ${{breeding.does}}</h5>
         <h5>Wethers: ${{breeding.wethers}}</h5>
+        <br>
+        <div *ngIf="breeding.reservations.length">
+          <h5>Reservations:</h5>
+          <div class="row justify-content-center">
+            <div class="col" *ngFor="let reservation of breeding.reservations">{{reservation}}</div>
+          </div>
+        </div>
       </div>
       <div *ngIf="breeding.kidded">
         <h3>Kidded: {{breeding.kidded}}</h3>
         <h5>See the <a routerLink="/for-sale">For Sale</a> Page For More Info</h5>
-      </div>
-      <br>
-      <div *ngIf="breeding.reservations.length">
-        <h5>Reservations:</h5>
-        <div class="row justify-content-center">
-          <div class="col" *ngFor="let reservation of breeding.reservations">{{reservation}}</div>
-        </div>
       </div>
     </div>
   </div>
