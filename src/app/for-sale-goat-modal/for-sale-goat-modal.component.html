@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body color-scheme-quaternary card">
         <h5 class="card-title text-center">{{goat?.nickname || 'The Requested Goat: "' + nickname + '" Was Not Found'}}</h5>
-        <div class="card-header color-scheme-quaternary">
+        <div class="card-header color-scheme-quaternary" *ngIf="goat">
           <div #carousel id="goatImageCarousel" class="carousel slide" data-bs-ride="true" [class.carousel-dark]="colorScheme.lightMode">
             <div class="carousel-indicators">
               <button *ngFor="let image of images; index as i" type="button" data-bs-target="#goatImageCarousel" [attr.data-bs-slide-to]="i"
@@ -37,7 +37,7 @@
             </button>
           </div>
           <div class="card-text text-center container color-scheme-tertiary rounded-bottom" *ngIf="goat?.description"
-            [innerHTML]="goat?.description">
+            [innerHTML]="goat.description">
           </div>
         </div>
       </div>

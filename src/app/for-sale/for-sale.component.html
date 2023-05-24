@@ -1,6 +1,6 @@
 <h1 class="text-center">For Sale</h1>
 <h5 class="text-center">Click on a goat below for more information</h5>
-<app-for-sale-goat-modal title="For Sale Goat" [goats]="getAllGoats()" *ngIf="hasValue()"></app-for-sale-goat-modal>
+<app-for-sale-goat-modal title="For Sale" [goats]="getAllGoats()" *ngIf="hasValue()"></app-for-sale-goat-modal>
 <div class="container">
   <div>
     <h2 class="text-center" *ngIf="goats?.does?.length ?? true">Does:</h2>

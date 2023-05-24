@@ -35,7 +35,7 @@ export class ForSaleGoatModalComponent implements OnInit, AfterViewInit, OnDestr
       console.log(this.goat);
       //this.metaService.updateKeywords(['News', 'Post', 'Blog', ...(this.post.categories ?? [])]);
       this.metaService.updateTitle(this.title ? `${this.goat.nickname} · ${this.title}` : this.goat.nickname);
-      this.goat.description !== undefined ? this.metaService.updateDescription(this.goat.description) : undefined;
+      this.metaService.updateDescription(this.goat.description);
       if (this.noIndex) this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
       this.imageService.find(this.goat).then(images => this.images = images);
     }/* else {
@@ -43,9 +43,9 @@ export class ForSaleGoatModalComponent implements OnInit, AfterViewInit, OnDestr
     }*/
   }
   ngOnInit(): void {
-    this.setup(this.goats.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe")) ??
-      this.goats.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("buck")) ??
-      this.goats.find(buck => buck.nickname === this.activatedRoute.snapshot.paramMap.get("pet")));
+    this.setup(this.goats.find(doe => doe.nickname.toLowerCase() === this.activatedRoute.snapshot.paramMap.get("doe")?.toLowerCase()) ??
+      this.goats.find(buck => buck.nickname.toLowerCase() === this.activatedRoute.snapshot.paramMap.get("buck")?.toLowerCase()) ??
+      this.goats.find(buck => buck.nickname.toLowerCase() === this.activatedRoute.snapshot.paramMap.get("pet")?.toLowerCase()));
     /*const doe = new Promise<Goat>(resolve => this.goatService.getDoes().then(does => {
       const doe = does.find(doe => doe.nickname === this.activatedRoute.snapshot.paramMap.get("doe"));
       doe ? resolve(doe) : undefined;
