@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BucksComponent } from './bucks/bucks.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 import { DoesComponent } from './does/does.component';
 import { ForSaleComponent } from './for-sale/for-sale.component';
 import { HomeComponent } from './home/home.component';
 import { KiddingScheduleComponent } from './kidding-schedule/kidding-schedule.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { PetsComponent } from './pets/pets.component';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '', component: HomeComponent, data: {
       title: 'Home',
-      description: '',
+      description: 'Our hobby farm is home to ADGA Registered Nigerian Dwarfs. The farm has evolved from a farm girl\'s wish to continue her dairy roots into a 4-H project with the goal of raising show-quality goats. Thanks to wonderful breed mentors we have established a solid herd we hope to learn from and build on.',
       keywords: ['Home'],
     }
   },
@@ -71,12 +71,17 @@ const routes: Routes = [
       { path: ':buck', component: ForSaleComponent },
       { path: ':pet', component: ForSaleComponent }
     ]
-  },
+  }/*,
   {
     path: 'contact-us', component: ContactUsComponent, data: {
       title: 'Kidding Schedule',
       description: '',
       keywords: ['Contact', 'Us']
+    }
+  }*/,
+  {
+    path: '**', component: NotFoundComponent, data: {
+      title: 'Not Found'
     }
   }
 ];

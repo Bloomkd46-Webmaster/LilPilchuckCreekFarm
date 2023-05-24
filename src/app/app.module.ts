@@ -17,6 +17,7 @@ import { PetsComponent } from './pets/pets.component';
 import { ForSaleComponent } from './for-sale/for-sale.component';
 import { ForSaleGoatComponent } from './for-sale-goat/for-sale-goat.component';
 import { ForSaleGoatModalComponent } from './for-sale-goat-modal/for-sale-goat-modal.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ForSaleGoatModalComponent } from './for-sale-goat-modal/for-sale-goat-m
     PetsComponent,
     ForSaleComponent,
     ForSaleGoatComponent,
-    ForSaleGoatModalComponent
+    ForSaleGoatModalComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
