@@ -94,4 +94,11 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     return Object.keys(_awards).map(key => `${_awards[key] === 1 ? '' : _awards[key]}${key}`).join('; '); ////awards.map(award => award.awardCode).join('; ');
   }
+  private months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  getBirthday(): string {
+    if (!this.goat?.dateOfBirth) return 'Unknown';
+    const unparsedBirthday = this.goat.dateOfBirth;
+    const birthday = unparsedBirthday.split('T')[0].split('-');
+    return `${this.months[parseInt(birthday[1])]} ${birthday[2].startsWith('0') ? birthday[2].slice(1) : birthday[2]}, ${birthday[0]}`;
+  }
 }

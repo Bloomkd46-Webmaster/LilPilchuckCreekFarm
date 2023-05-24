@@ -37,8 +37,8 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-          <div class="card-text text-center container color-scheme-tertiary rounded-bottom" *ngIf="goat?.description"
-            [innerHTML]="goat?.description">
+          <div class="card-text text-center container color-scheme-tertiary rounded-bottom"> Born: {{getBirthday()}}<br>
+            {{goat?.description ?? ''}}
           </div>
           <div *ngIf="goat" class="text-center mt-4">
             <div class="container border rounded-4 desktop-grid" *ngIf="goat.damId">
