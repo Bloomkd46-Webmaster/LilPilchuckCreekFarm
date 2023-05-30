@@ -80,11 +80,12 @@ export class ImageService {
     } else {
       return new Promise(resolve => {
         if (goatImage === null) {
-          setInterval(() => {
+          const interval = setInterval(() => {
             const latestGoatImage = this._displayImages[goat];
             if (latestGoatImage) {
               console.debug('Used Display Image From Cache', goat, latestGoatImage);
               resolve(latestGoatImage);
+              clearInterval(interval);
             };
           });
         } else {
