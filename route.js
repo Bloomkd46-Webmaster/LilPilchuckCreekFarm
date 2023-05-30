@@ -48,4 +48,5 @@ for (const pet of pets) {
   sitemap.push(file.replace('.html', ''));
 }
 sitemap.map(path => `https://www.lilpilchuckcreek.org/${path}`);
+console.log('Generating', 'sitemap.txt');
 writeFileSync('sitemap.txt', sitemap.join('\n'));
