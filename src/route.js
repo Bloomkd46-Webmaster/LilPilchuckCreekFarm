@@ -42,7 +42,7 @@ for (const goat of [...forSale.does, ...forSale.bucks, ...forSale.wethers]) {
 const pets = require('./assets/goats/pets.json');
 mkdirSync('pets')
 for (const pet of pets) {
-  const file = `pet/${pet.nickname}.html`
+  const file = `pets/${pet.nickname}.html`
   console.log('Generating', file);
   writeFileSync(file, index);
   sitemap.push(file.replace('.html', ''));
