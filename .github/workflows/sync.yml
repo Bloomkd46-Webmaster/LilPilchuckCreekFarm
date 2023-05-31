@@ -42,9 +42,9 @@ jobs:
           git add -A
           git commit -m "Synced Goats" || echo changes=false >> $GITHUB_OUTPUT
           git push
-          echo ${{steps.commit.outputs.changes}}
+          echo ${{steps.commit.outputs}}
 
       - name: Update Webpage
         if: steps.commit.outputs.changes != false
-        uses: ./.github/workflows/deploy.yml@main
+        uses: ./.github/workflows/deploy.yml
 
