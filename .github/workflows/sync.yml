@@ -44,6 +44,6 @@ jobs:
           git push
 
       - name: Update Webpage
-        if: steps.commit.outputs.changes !== false
+        if: steps.commit.outputs.changes != false
         uses: ./.github/workflows/deploy.yml@v1
 
