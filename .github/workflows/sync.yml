@@ -40,12 +40,10 @@ jobs:
           git config --global user.name github-actions[bot]
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A
-          (git commit -m "Synced Goats" echo "commit=true") || echo "commit=false" >> "$GITHUB_ENV"
+          git commit -m "Synced Goats"
           git push
-          echo "Output: ${{env.commit}}"
 
-  deploy: Update Webpage
+  deploy:
     needs: sync
-    if: env.commit == true
     uses: ./.github/workflows/deploy.yml
 
