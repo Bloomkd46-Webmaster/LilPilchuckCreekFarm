@@ -45,6 +45,7 @@ jobs:
           echo "Output: ${{env.commit}}"
 
   deploy: Update Webpage
+    needs: sync
     if: env.commit == true
     uses: ./.github/workflows/deploy.yml
 
