@@ -12,6 +12,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   sync:
+    outputs:
+      status: ${{ steps.commit.outputs.status }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -35,7 +37,7 @@ jobs:
         run: npm run sync ${{ secrets.ADGA_USERNAME }} ${{ secrets.ADGA_PASSWORD }} -- --headless
 
       - name: Commit & Push Changes
-        shell: bash
+        id: commit
         run: |
           status="deploy"
           git config --global user.name github-actions[bot]
@@ -44,7 +46,6 @@ jobs:
           git commit -m "Synced Goats" || status="skip"
           git push
           echo "status=$status" >> $GITHUB_OUTPUT
-          echo "status=$status"
 
   deploy:
     needs: sync
