@@ -43,6 +43,7 @@ jobs:
           git commit -m "Synced Goats" || status="skip"
           git push
           echo "status=$status" >> $GITHUB_OUTPUT
+          echo "status=$status"
 
   deploy:
     needs: sync
