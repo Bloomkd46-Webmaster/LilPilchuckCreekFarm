@@ -35,6 +35,7 @@ jobs:
         run: npm run sync ${{ secrets.ADGA_USERNAME }} ${{ secrets.ADGA_PASSWORD }} -- --headless
 
       - name: Commit & Push Changes
+        shell: bash
         run: |
           status="deploy"
           git config --global user.name github-actions[bot]
