@@ -61,9 +61,13 @@
           <a class="nav-link" routerLinkActive="active" aria-currentWhenActive="page" routerLink="/kidding-schedule"
             data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Kidding Schedule</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item position-relative">
           <a class="nav-link" routerLinkActive="active" aria-currentWhenActive="page" routerLink="/for-sale" data-bs-toggle="collapse"
-            data-bs-target=".navbar-collapse.show">For Sale</a>
+            data-bs-target=".navbar-collapse.show">For Sale<span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" *ngIf="forSale">{{forSale}}<span
+                class="visually-hidden">Goats for sale</span>
+            </span>
+          </a>
         </li>
         <!--
         <li class="nav-item">

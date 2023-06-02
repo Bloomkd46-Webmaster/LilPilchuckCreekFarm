@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 import { ColorSchemeService } from './color-scheme.service';
+import { GoatService } from './goat.service';
 import { MetaService } from './meta.service';
-
 
 
 declare const gtag: Function;
@@ -16,7 +16,8 @@ declare const gtag: Function;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(public colorScheme: ColorSchemeService, public router: Router, private metaService: MetaService, private activatedRoute: ActivatedRoute) { }
+  constructor(public colorScheme: ColorSchemeService, public router: Router, private metaService: MetaService, private activatedRoute: ActivatedRoute, private goatService: GoatService) { }
+  public forSale = 0;
   /**
    * Update meta's and add route change listeners
    */
@@ -53,6 +54,7 @@ export class AppComponent implements OnInit {
         console.error(event.error);
       }
     });
+    this.goatService.getForSale().then(goats => this.forSale = [...goats.does, ...goats.wethers, ...goats.bucks].length);
   }
   /**
    * Returns wether or not a link is active
