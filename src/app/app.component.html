@@ -1,5 +1,5 @@
 <!-- Navbar to display tabs at the top of the page -->
-<header class="navbar navbar-expand-lg sticky-top color-scheme-secondary" [class.navbar-dark]="colorScheme.darkMode">
+<header class="navbar navbar-expand-lg sticky-top color-scheme-secondary" [attr.data-bs-theme]="colorScheme.darkMode ? 'dark' : 'light'">
   <div class="container-fluid">
     <img src="./assets/logos/18ppi.png" alt="Logo" class="d-inline-block align-text-top" width="70" height="70">
     <a class="navbar-brand" routerLink="/">
