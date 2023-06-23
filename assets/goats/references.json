@@ -1331,7 +1331,7 @@
       "associatedUserId": 3274,
       "isPrimary": true,
       "creditLimit": 20,
-      "lifeTimeCredit": null,
+      "lifeTimeCredit": 1,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1518479
@@ -1881,7 +1881,7 @@
       "associatedUserId": 3274,
       "isPrimary": true,
       "creditLimit": 20,
-      "lifeTimeCredit": null,
+      "lifeTimeCredit": 1,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1518479
