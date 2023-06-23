@@ -37,8 +37,8 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-          <div class="card-text text-center container color-scheme-tertiary rounded-bottom" *ngIf="goat?.dateOfBirth"> Born:
-            {{getBirthday()}}<br>
+          <div class="card-text text-center container color-scheme-tertiary rounded-bottom" *ngIf="goat?.dateOfBirth">
+            <app-adga-info [goat]="goat"></app-adga-info>
             {{goat.description}}
           </div>
           <div *ngIf="goat" class="text-center mt-4">

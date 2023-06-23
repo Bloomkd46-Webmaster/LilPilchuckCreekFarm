@@ -71,13 +71,13 @@ function titleCase(string: string) {
       if (doe.description === '' && headlessArg) {
         console.warn(`Empty Description For ${doe.nickname}. Run Again Without '${headlessArg}' To Update`);
       }
-      Object.assign(does[does.indexOf(doe)], goat, { description: doe.description || await rl?.question(`What would you like to set the description to for '${doe.nickname}'?\n(optional) `) || '', awards: awards });
+      Object.assign(does[does.indexOf(doe)], goat, { description: doe.description || await rl?.question(`What would you like to set the description to for '${doe.nickname}'?\n(optional) `) || '', awards: awards }, await adga.getGoat(doe.id), { animalTattoo: goat.animalTattoo, breederAccountId: goat.breederAccountId });
     } else if (buck) {
       console.log(`Updating ${buck.nickname}...`);
       if (buck.description === '' && headlessArg) {
         console.warn(`Empty Description For ${buck.nickname}. Run Again Without '${headlessArg}' To Update`);
       }
-      Object.assign(bucks[bucks.indexOf(buck)], goat, { description: buck.description || await rl?.question(`What would you like to set the description to for '${buck.nickname}'?\n(optional) `) || '', awards: awards });
+      Object.assign(bucks[bucks.indexOf(buck)], goat, { description: buck.description || await rl?.question(`What would you like to set the description to for '${buck.nickname}'?\n(optional) `) || '', awards: awards }, await adga.getGoat(buck.id), { animalTattoo: goat.animalTattoo, breederAccountId: goat.breederAccountId });
     } else if (rl) {
       console.log('Creating', goat.name);
       const nickname = titleCase(await rl.question(`What would you like to set the nickname to for '${goat.name}'?\n(${titleCase(goat.name.split(' ').pop()!)}) `) || goat.name.split(' ').pop()!);
@@ -86,13 +86,13 @@ function titleCase(string: string) {
           nickname: nickname,
           description: await rl.question(`What would you like to set the description to for '${nickname}'?\n(optional) `) || '',
           awards: awards
-        }));
+        }, await adga.getGoat(goat.id), { animalTattoo: goat.animalTattoo, breederAccountId: goat.breederAccountId }));
       } else {
         bucks.push(Object.assign(goat, {
           nickname: nickname,
           description: await rl.question(`What would you like to set the description to for '${nickname}'?\n(optional) `) || '',
           awards: awards
-        }));
+        }, await adga.getGoat(goat.id), { animalTattoo: goat.animalTattoo, breederAccountId: goat.breederAccountId }));
       }
       /*config[goat.sex === 'Female' ? 'does' : 'bucks'].push(Object.assign(goat, {
         nickname: nickname,

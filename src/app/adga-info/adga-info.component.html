@@ -1,0 +1,16 @@
+<!--<div *ngFor="let key of getKeys()">
+  <p *ngIf="!['nickname', 'description', 'awards'].includes(key) && getValue(key) !== null"><span
+      class="fw-bolder">{{key}}</span>: <span class="fw-lighter">{{getValue(key)}}</span>
+
+</div>-->
+<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday()}}</span>
+  <br>
+  <span class="fw-bolder">ID</span>: <span class="fw-lighter">{{goat.normalizeId}}</span>
+  <br>
+  <!--<span class="fw-bolder">Breeder Account ID</span>: <span class="fw-lighter">{{goat.breederAccountId}}</span>-->
+  <span class="fw-bolder">Tattoo</span>: {{goat.animalTattoo[0].tattooLocation.name}}:<span
+    class="fw-lighter">{{goat.animalTattoo[0].tattoo}}</span> {{goat.animalTattoo[1].tattooLocation.name}}:<span
+    class="fw-lighter">{{goat.animalTattoo[1].tattoo}}</span>
+  <br>
+  <span class="fw-bolder">Markings</span>: <span class="fw-lighter">{{goat.colorAndMarking.toLowerCase()}}</span>
+</div>
