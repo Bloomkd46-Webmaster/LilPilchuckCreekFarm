@@ -22,7 +22,7 @@ export class ForSaleGoatModalComponent implements OnInit, AfterViewInit, OnDestr
   public parents?: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; } | null = null;
   public nickname = this.activatedRoute.snapshot.paramMap.get("doe") || this.activatedRoute.snapshot.paramMap.get("buck");
 
-  @Input() title?: string;
+  @Input() _title?: string;
   @Input() noIndex?: boolean;
   @Input() ignoreNotFound?: boolean;
   @Input() goats: ForSaleGoat[] = [];
@@ -34,7 +34,7 @@ export class ForSaleGoatModalComponent implements OnInit, AfterViewInit, OnDestr
     if (this.goat/*specificDoe || specificBuck*/) {
       console.log(this.goat);
       //this.metaService.updateKeywords(['News', 'Post', 'Blog', ...(this.post.categories ?? [])]);
-      this.metaService.updateTitle(this.title ? `${this.goat.nickname} · ${this.title}` : this.goat.nickname);
+      this.metaService.updateTitle(this._title ? `${this.goat.nickname} · ${this._title}` : this.goat.nickname);
       this.metaService.updateDescription(this.goat.description);
       if (this.noIndex) this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
       this.imageService.find(this.goat).then(images => this.images = images);

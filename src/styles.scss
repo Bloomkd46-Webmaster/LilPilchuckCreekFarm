@@ -30,6 +30,17 @@ img {
   --bs-link-hover-color-rgb: 61, 213, 243 !important;
 }
 
+.reference-popover {
+  --bs-popover-max-width: 100vw !important;
+  --bs-popover-border-color: hsl(26, 40%, 15%) !important;
+  --bs-popover-header-bg: hsl(26, 40%, 15%) !important;
+  --bs-popover-header-color: hsl(0, 0%, 85%) !important;
+  --bs-popover-bg: hsl(26, 40%, 10%) !important;
+  --bs-popover-body-color: hsl(0, 0%, 85%) !important;
+  --bs-popover-body-padding-y: 0.5rem !important;
+  text-align: center !important;
+}
+
 /**Colors for devices in light mode*/
 @media (prefers-color-scheme: light) {
   :root {

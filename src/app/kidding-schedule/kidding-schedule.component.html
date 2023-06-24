@@ -1,6 +1,6 @@
 <h1 class="text-center">Kidding Schedule</h1>
 <h5 class="text-center">Click on a Goat Below For More Info</h5>
-<app-goat-modal title="Kidding Schedule" [noIndex]="true" [goats]="goats" *ngIf="goats.length"></app-goat-modal>
+<app-goat-modal _title="Kidding Schedule" [noIndex]="true" [goats]="goats" *ngIf="goats.length"></app-goat-modal>
 <div class="container text-center" *ngFor="let breeding of kiddingSchedule">
   <div class="row color-scheme-tertiary py-3">
     <div class="col"><app-goat [goat]="breeding.dam"></app-goat></div>

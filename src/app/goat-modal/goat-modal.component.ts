@@ -23,7 +23,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public parents?: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; } | null = null;
   public nickname = this.activatedRoute.snapshot.paramMap.get("doe") || this.activatedRoute.snapshot.paramMap.get("buck");
 
-  @Input() title?: string;
+  @Input() _title?: string;
   @Input() noIndex?: boolean;
   @Input() ignoreNotFound?: boolean;
   @Input() goats: Goat[] = [];
@@ -34,7 +34,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.goat/*specificDoe || specificBuck*/) {
       console.log(this.goat);
       //this.metaService.updateKeywords(['News', 'Post', 'Blog', ...(this.post.categories ?? [])]);
-      this.metaService.updateTitle(this.title ? `${this.goat.nickname} · ${this.title}` : this.goat.nickname);
+      this.metaService.updateTitle(this._title ? `${this.goat.nickname} · ${this._title}` : this.goat.nickname);
       this.metaService.updateDescription(this.goat.description);
       if (this.noIndex) this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
       this.imageService.find(this.goat).then(images => this.images = images);
@@ -75,6 +75,14 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
         this.meta.removeTag('name="robots"');
         this.router.navigate(['../'], { relativeTo: this.activatedRoute });
       });
+      setTimeout(() => {
+        const popovers = document.querySelectorAll('[data-bs-toggle="popover"]');
+        console.log('POPOVERS', popovers);
+        popovers.forEach(popover => {
+          console.log('POPOVER', popover);
+          new bootstrap.Popover(popover, { container: '.popover-container', trigger: 'hover focus', customClass: 'reference-popover', html: true, placement: 'auto' });
+        });
+      }, 100);
     }
     if (this.images) {
       new bootstrap.Carousel(this.carousel.nativeElement, {
@@ -93,5 +101,24 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     }
     return Object.keys(_awards).map(key => `${_awards[key] === 1 ? '' : _awards[key]}${key}`).join('; '); ////awards.map(award => award.awardCode).join('; ');
+  }
+  private months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  getBirthday(born: string): string {
+    const birthday = born.split('T')[0].split('-');
+    return `${this.months[parseInt(birthday[1])]} ${birthday[2].startsWith('0') ? birthday[2].slice(1) : birthday[2]}, ${birthday[0]}`;
+  }
+  getFullAwards(awards: Awards['result']['items']): string {
+    const _awards: Record<string, number> = {};
+    for (const award of awards) {
+      if (_awards[award.awardDescription]) {
+        _awards[award.awardDescription]++;
+      } else {
+        _awards[award.awardDescription] = 1;
+      }
+    }
+    return Object.keys(_awards).length ? `<br><span class="fw-bolder">Awards</span>: <span class="fw-lighter">${Object.keys(_awards).map(key => `${_awards[key] === 1 ? '' : _awards[key]}${key}`).join('; ')}</span>` : ''; ////awards.map(award => award.awardCode).join('; ');
+  }
+  getOwner(goat: ExternalGoat): string {
+    return goat.ownerAccount ? `<br><span class="fw-bolder">Owned By</span>: <span class="fw-lighter">${goat.ownerAccount?.displayName?.toLowerCase()}</span>` : '';
   }
 }
