@@ -12,9 +12,9 @@
   <span class="fw-bolder">ID</span>: <span class="fw-lighter">{{goat.normalizeId}}</span>
   <br>
   <!--<span class="fw-bolder">Breeder Account ID</span>: <span class="fw-lighter">{{goat.breederAccountId}}</span>-->
-  <span class="fw-bolder">Tattoo</span>: {{goat.animalTattoo[0].tattooLocation.name}}:<span
-    class="fw-lighter">{{goat.animalTattoo[0].tattoo}}</span> {{goat.animalTattoo[1].tattooLocation.name}}:<span
-    class="fw-lighter">{{goat.animalTattoo[1].tattoo}}</span>
+  <span class="fw-bolder">Tattoo</span>: <span *ngFor="let animalTattoo of goat.animalTattoo">
+    {{animalTattoo.tattooLocation.name}}:<span class="fw-lighter">{{animalTattoo.tattoo}}</span>
+  </span>
   <br>
   <span class="fw-bolder">Markings</span>: <span class="fw-lighter">{{goat.colorAndMarking.toLowerCase()}}</span>
 </div>

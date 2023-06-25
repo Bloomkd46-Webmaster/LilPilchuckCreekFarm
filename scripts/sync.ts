@@ -41,6 +41,7 @@ if (myArgs.length < 2) {
     const credentialFile = fs.readFileSync(path.join(process.cwd(), 'credentials.txt'), 'utf8').replace(/\r/g, '');
     const splitCredentials = credentialFile.split('\n');
     Object.assign(credentials, { username: splitCredentials[0], password: splitCredentials[1], accountId: splitCredentials[2] });
+    myArgs.push(...splitCredentials);
   } else {
     console.error('Usage:  <Username> <Password> [Account ID] [ -- (-H | --headless)]');
     process.exit(1);
@@ -60,7 +61,12 @@ function titleCase(string: string) {
   const adga = new ADGA(credentials.username!, credentials.password!);
   console.log('Downloading Goats...');
   const goats = await adga.getOwnedGoats(credentials.accountId || undefined);
-  console.log('Downloaded', goats.totalCount, 'Goats From ADGA');
+  for (const id of myArgs.slice(3)) {
+    if (id) {
+      goats.items.push(await adga.getGoat(id as any) as any);
+    }
+  }
+  console.log('Downloaded', goats.items.length, 'Goats From ADGA');
   const unconfiguredGoats = [];
   for (const goat of goats.items) {
     const awards = (await adga.getAwards(goat.id)).items;
