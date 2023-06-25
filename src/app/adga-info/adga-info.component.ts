@@ -17,7 +17,7 @@ export class AdgaInfoComponent {
   getValue(key: keyof Goat): any {
     return this.goat[key];
   }
-  private months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  private months = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   getBirthday(): string {
     if (!this.goat?.dateOfBirth) return 'Unknown';
     const unparsedBirthday = this.goat.dateOfBirth;
