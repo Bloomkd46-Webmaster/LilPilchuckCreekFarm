@@ -70,15 +70,15 @@ export class GoatService {
   }
   async getParents(goat: Goat): Promise<Parents> {
     const references = await this.getReferences();
-    const dam = references.find(reference => reference.id === goat.damId)!;
-    const sire = references.find(reference => reference.id === goat.sireId)!;
+    const dam = references.find(reference => reference.id === goat.damId) ?? (await this.getDoes()).find(doe => doe.id === goat.damId)!;
+    const sire = references.find(reference => reference.id === goat.sireId) ?? (await this.getBucks()).find(buck => buck.id === goat.sireId)!;
     return {
       dam: dam,
-      damsDam: references.find(reference => reference.id === dam.damId)!,
-      damsSire: references.find(reference => reference.id === dam.sireId)!,
+      damsDam: references.find(reference => reference.id === dam.damId) ?? (await this.getDoes()).find(doe => doe.id === dam.damId)!,
+      damsSire: references.find(reference => reference.id === dam.sireId) ?? (await this.getBucks()).find(buck => buck.id === dam.sireId)!,
       sire: sire,
-      siresDam: references.find(reference => reference.id === sire.damId)!,
-      siresSire: references.find(reference => reference.id === sire.sireId)!,
+      siresDam: references.find(reference => reference.id === sire.damId) ?? (await this.getDoes()).find(doe => doe.id === sire.damId)!,
+      siresSire: references.find(reference => reference.id === sire.sireId) ?? (await this.getBucks()).find(buck => buck.id === sire.sireId)!,
     };
   }
   private _rawKiddingSchedule?: RawKiddingSchedule[];
@@ -161,7 +161,7 @@ export class GoatService {
 export type Goat = (OwnedGoats['result']['items'][number] & { nickname: string; description: string; awards: Awards['result']['items']; colorAndMarking: string; obtained?: string; });
 export type ExternalGoat = (ExternalGoats['result']['items'][number] & { awards: Awards['result']['items']; });
 export type Pet = { nickname: string; name: string; description: string; };
-export type Parents = { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; };
+export type Parents = { dam: ExternalGoat | Goat; damsDam: ExternalGoat | Goat; damsSire: ExternalGoat | Goat; sire: ExternalGoat | Goat; siresDam: ExternalGoat | Goat; siresSire: ExternalGoat | Goat; };
 export type RawKiddingSchedule = { bred: string; dam: number; sire: number; due: string; does: number; wethers: number; reservations: string[]; kidded?: string; };
 export type KiddingSchedule = { bred: string; dam: Goat; sire: Goat; due: string; does: number; wethers: number; reservations: string[]; kidded?: string; };
 export type ForSaleGoat = { nickname: string; description: string; price?: string; };

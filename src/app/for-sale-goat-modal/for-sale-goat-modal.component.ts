@@ -5,7 +5,7 @@ import { Meta } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
-import { ExternalGoat, ForSaleGoat, GoatService } from '../goat.service';
+import { ExternalGoat, ForSaleGoat, Goat, GoatService } from '../goat.service';
 import { ImageService } from '../image.service';
 import { MetaService } from '../meta.service';
 
@@ -24,8 +24,8 @@ export class ForSaleGoatModalComponent implements OnInit, AfterViewInit, OnDestr
 
   @Input() _title?: string;
   @Input() noIndex?: boolean;
-  @Input() ignoreNotFound?: boolean;
   @Input() goats: ForSaleGoat[] = [];
+  @Input() alternateGoats: Goat[] = [];
   constructor(public colorScheme: ColorSchemeService, private activatedRoute: ActivatedRoute, private metaService: MetaService, private meta: Meta, private router: Router, public imageService: ImageService, private goatService: GoatService) { }
 
   async setup(goat?: ForSaleGoat) {
@@ -62,7 +62,9 @@ export class ForSaleGoatModalComponent implements OnInit, AfterViewInit, OnDestr
   @ViewChild("modal") modal!: ElementRef<HTMLDivElement>;
   @ViewChild("carousel") carousel!: ElementRef<HTMLDivElement>;
   ngAfterViewInit(): void {
-    if (this.goat || (this.nickname && !this.ignoreNotFound)) {
+    if (this.goat || (this.nickname && !(this.alternateGoats.find(doe => doe.nickname.toLowerCase() === this.activatedRoute.snapshot.paramMap.get("doe")?.toLowerCase()) ??
+      this.alternateGoats.find(buck => buck.nickname.toLowerCase() === this.activatedRoute.snapshot.paramMap.get("buck")?.toLowerCase()) ??
+      this.alternateGoats.find(buck => buck.nickname.toLowerCase() === this.activatedRoute.snapshot.paramMap.get("pet")?.toLowerCase())))) {
       const bsModal = new bootstrap.Modal(this.modal.nativeElement);
       bsModal.show();
       this.modal.nativeElement.addEventListener('hidden.bs.modal', () => {

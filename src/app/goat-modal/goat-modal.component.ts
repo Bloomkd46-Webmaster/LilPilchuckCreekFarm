@@ -6,7 +6,7 @@ import { Meta } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
-import { ExternalGoat, Goat, GoatService } from '../goat.service';
+import { ExternalGoat, Goat, GoatService, Parents } from '../goat.service';
 import { ImageService } from '../image.service';
 import { MetaService } from '../meta.service';
 
@@ -20,7 +20,7 @@ declare const bootstrap: typeof Bootstrap;
 export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   public images?: { path: string; name: string; }[];
   public goat?: Goat;
-  public parents?: { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; } | null = null;
+  public parents?: Parents | null = null;
   public nickname = this.activatedRoute.snapshot.paramMap.get("doe") || this.activatedRoute.snapshot.paramMap.get("buck");
 
   @Input() _title?: string;
@@ -118,7 +118,7 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     return Object.keys(_awards).length ? `<br><span class="fw-bolder">Awards</span>: <span class="fw-lighter">${Object.keys(_awards).map(key => `${_awards[key] === 1 ? '' : _awards[key]}${key}`).join('; ')}</span>` : ''; ////awards.map(award => award.awardCode).join('; ');
   }
-  getOwner(goat: ExternalGoat): string {
+  getOwner(goat: ExternalGoat | Goat): string {
     return goat.ownerAccount ? `<br><span class="fw-bolder">Owned By</span>: <span class="fw-lighter">${goat.ownerAccount?.displayName?.toLowerCase()}</span>` : '';
   }
 }

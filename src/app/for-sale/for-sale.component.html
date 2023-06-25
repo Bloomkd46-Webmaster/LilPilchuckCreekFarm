@@ -1,14 +1,17 @@
 <h1 class="text-center">For Sale</h1>
 <h5 class="text-center">Click on a goat below for more information</h5>
 <h6 class="text-center">Please contact us for pricing information, we are open to offers and will do bundle deals</h6>
-<app-for-sale-goat-modal _title="For Sale" [goats]="getAllGoats()" *ngIf="hasValue()"></app-for-sale-goat-modal>
+<app-for-sale-goat-modal _title="For Sale" [goats]="goats!.pets" *ngIf="goats?.pets?.length"
+  [alternateGoats]="getAllGoats()"></app-for-sale-goat-modal>
+<app-goat-modal _title="For Sale" [goats]="getAllGoats()" *ngIf="goats?.does?.length || goats?.bucks?.length"
+  [ignoreNotFound]="true"></app-goat-modal>
 <div class="container">
   <div>
     <h2 class="text-center" *ngIf="goats?.does?.length ?? true">Does:</h2>
     <div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center"
       *ngIf="goats && goats.does.length">
       <div class="col py-3" *ngFor="let goat of goats.does">
-        <app-for-sale-goat [goat]="goat"></app-for-sale-goat>
+        <app-goat [goat]="goat"></app-goat>
       </div>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="!goats">
@@ -29,7 +32,7 @@
     <div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center"
       *ngIf="goats && goats.bucks">
       <div class="col py-3" *ngFor="let goat of goats.bucks">
-        <app-for-sale-goat [goat]="goat"></app-for-sale-goat>
+        <app-goat [goat]="goat"></app-goat>
       </div>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center" *ngIf="!goats">

@@ -16,12 +16,9 @@ export class ForSaleComponent implements OnInit {
   constructor(public colorScheme: ColorSchemeService, private goatService: GoatService) { }
   ngOnInit(): void {
     this.goatService.getForSale().then(goats => this.goats = goats);
-    setTimeout(() => this.hasValue() ? undefined : this.goats = undefined, 100);
-  }
-  hasValue() {
-    return (this.goats?.bucks.length || this.goats?.does.length || this.goats?.pets.length) ? true : false;
+    setTimeout(() => this.goats?.bucks.length || this.goats?.does.length || this.goats?.pets.length ? undefined : this.goats = undefined, 100);
   }
   getAllGoats() {
-    return this.hasValue() ? [...this.goats!.does, ...this.goats!.bucks, ...this.goats!.pets] : [];
+    return this.goats?.bucks.length || this.goats?.does.length ? [...this.goats!.does, ...this.goats!.bucks] : [];
   }
 }
