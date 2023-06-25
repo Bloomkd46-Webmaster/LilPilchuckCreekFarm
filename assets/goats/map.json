@@ -147,6 +147,16 @@
       ]
     },
     {
+      "path": "/assets/goats/Sky",
+      "name": "Sky",
+      "children": [
+        {
+          "path": "/assets/goats/Sky/Frame-25-06-2023-10-25-34.jpg",
+          "name": "Frame-25-06-2023-10-25-34.jpg"
+        }
+      ]
+    },
+    {
       "path": "/assets/goats/Storm",
       "name": "Storm",
       "children": [
@@ -183,6 +193,16 @@
         {
           "path": "/assets/goats/Sugar/IMG_4051.jpeg",
           "name": "IMG_4051.jpeg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/Zaya",
+      "name": "Zaya",
+      "children": [
+        {
+          "path": "/assets/goats/Zaya/Frame-25-06-2023-10-25-52.jpg",
+          "name": "Frame-25-06-2023-10-25-52.jpg"
         }
       ]
     }
