@@ -5,6 +5,10 @@
 </div>-->
 <div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday()}}</span>
   <br>
+  <div *ngIf="goat.obtained">
+    <span class="fw-bolder">Transferred</span>: <span class="fw-lighter">{{getDateObtained()}}</span>
+    <br>
+  </div>
   <span class="fw-bolder">ID</span>: <span class="fw-lighter">{{goat.normalizeId}}</span>
   <br>
   <!--<span class="fw-bolder">Breeder Account ID</span>: <span class="fw-lighter">{{goat.breederAccountId}}</span>-->

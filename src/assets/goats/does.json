@@ -201,7 +201,8 @@
     "showBreederDetails": false,
     "adgaAssociation": {
       "isAdga": true
-    }
+    },
+    "obtained": "2021-07-31T00:00:00"
   },
   {
     "name": "GILLIS FAMILY FARM MYSTIC",
@@ -405,7 +406,8 @@
     "showBreederDetails": false,
     "adgaAssociation": {
       "isAdga": true
-    }
+    },
+    "obtained": "2021-07-31T00:00:00"
   },
   {
     "name": "R SERENITY CF BLUE HAZE",
@@ -609,7 +611,8 @@
     "showBreederDetails": false,
     "adgaAssociation": {
       "isAdga": true
-    }
+    },
+    "obtained": "2019-06-09T00:00:00"
   },
   {
     "name": "TUA FARMS RMI SUGAR N SPICE",
@@ -813,6 +816,7 @@
     "showBreederDetails": false,
     "adgaAssociation": {
       "isAdga": true
-    }
+    },
+    "obtained": "2023-04-30T00:00:00"
   }
 ]

@@ -158,7 +158,7 @@ export class GoatService {
     };
   }*/
 }
-export type Goat = (OwnedGoats['result']['items'][number] & { nickname: string; description: string; awards: Awards['result']['items']; colorAndMarking: string; });
+export type Goat = (OwnedGoats['result']['items'][number] & { nickname: string; description: string; awards: Awards['result']['items']; colorAndMarking: string; obtained?: string; });
 export type ExternalGoat = (ExternalGoats['result']['items'][number] & { awards: Awards['result']['items']; });
 export type Pet = { nickname: string; name: string; description: string; };
 export type Parents = { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: ExternalGoat; sire: ExternalGoat; siresDam: ExternalGoat; siresSire: ExternalGoat; };
