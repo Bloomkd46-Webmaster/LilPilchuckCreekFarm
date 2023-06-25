@@ -12,16 +12,16 @@ import { ForSale, GoatService } from '../goat.service';
   styleUrls: ['./for-sale.component.scss']
 })
 export class ForSaleComponent implements OnInit {
-  public goats?: ForSale = { does: [], bucks: [], wethers: [] };
+  public goats?: ForSale = { does: [], bucks: [], pets: [] };
   constructor(public colorScheme: ColorSchemeService, private goatService: GoatService) { }
   ngOnInit(): void {
     this.goatService.getForSale().then(goats => this.goats = goats);
     setTimeout(() => this.hasValue() ? undefined : this.goats = undefined, 100);
   }
   hasValue() {
-    return (this.goats?.bucks.length || this.goats?.does.length || this.goats?.wethers.length) ? true : false;
+    return (this.goats?.bucks.length || this.goats?.does.length || this.goats?.pets.length) ? true : false;
   }
   getAllGoats() {
-    return this.hasValue() ? [...this.goats!.does, ...this.goats!.bucks, ...this.goats!.wethers] : [];
+    return this.hasValue() ? [...this.goats!.does, ...this.goats!.bucks, ...this.goats!.pets] : [];
   }
 }

@@ -165,4 +165,4 @@ export type Parents = { dam: ExternalGoat; damsDam: ExternalGoat; damsSire: Exte
 export type RawKiddingSchedule = { bred: string; dam: number; sire: number; due: string; does: number; wethers: number; reservations: string[]; kidded?: string; };
 export type KiddingSchedule = { bred: string; dam: Goat; sire: Goat; due: string; does: number; wethers: number; reservations: string[]; kidded?: string; };
 export type ForSaleGoat = { nickname: string; description: string; price?: string; };
-export type ForSale = { does: ForSaleGoat[]; bucks: ForSaleGoat[]; wethers: ForSaleGoat[]; };
+export type ForSale = { does: Goat[]; bucks: Goat[]; pets: ForSaleGoat[]; };

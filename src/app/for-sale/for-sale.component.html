@@ -1,5 +1,6 @@
 <h1 class="text-center">For Sale</h1>
 <h5 class="text-center">Click on a goat below for more information</h5>
+<h6 class="text-center">Please contact us for pricing information, we are open to offers and will do bundle deals</h6>
 <app-for-sale-goat-modal _title="For Sale" [goats]="getAllGoats()" *ngIf="hasValue()"></app-for-sale-goat-modal>
 <div class="container">
   <div>
@@ -45,10 +46,10 @@
     </div>
   </div>
   <div>
-    <h2 class="text-center" *ngIf="goats?.wethers?.length ?? true">Wethers:</h2>
+    <h2 class="text-center" *ngIf="goats?.pets?.length ?? true">Pets:</h2>
     <div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 row-cols-xxl-4 align-items-center justify-content-center"
-      *ngIf="goats && goats.wethers">
-      <div class="col py-3" *ngFor="let goat of goats.wethers">
+      *ngIf="goats && goats.pets">
+      <div class="col py-3" *ngFor="let goat of goats.pets">
         <app-for-sale-goat [goat]="goat"></app-for-sale-goat>
       </div>
     </div>
