@@ -8,41 +8,41 @@ if (execSync('git branch --show-current').toString() === 'main\n') {
 }
 const index = readFileSync('index.html');
 const paths = ['does', 'bucks', 'pets', 'kidding-schedule', 'for-sale'];
-const sitemap = ['']
+const sitemap = [''];
 for (const path of paths) {
-  const file = `${path}.html`
+  const file = `${path}.html`;
   console.log('Generating', file);
   writeFileSync(file, index);
   sitemap.push(file.replace('.html', ''));
 }
 const does = require('./assets/goats/does.json');
-mkdirSync('does')
+mkdirSync('does');
 for (const doe of does) {
-  const file = `does/${doe.nickname}.html`
+  const file = `does/${doe.nickname}.html`;
   console.log('Generating', file);
   writeFileSync(file, index);
   sitemap.push(file.replace('.html', ''));
 }
 const bucks = require('./assets/goats/bucks.json');
-mkdirSync('bucks')
+mkdirSync('bucks');
 for (const buck of bucks) {
-  const file = `bucks/${buck.nickname}.html`
+  const file = `bucks/${buck.nickname}.html`;
   console.log('Generating', file);
   writeFileSync(file, index);
   sitemap.push(file.replace('.html', ''));
 }
 const forSale = require('./assets/goats/for-sale.json');
-mkdirSync('for-sale')
-for (const goat of [...forSale.does, ...forSale.bucks, ...forSale.wethers]) {
-  const file = `for-sale/${goat.nickname}.html`
+mkdirSync('for-sale');
+for (const goat of [...forSale.does, ...forSale.bucks, ...forSale.pets]) {
+  const file = `for-sale/${goat.nickname}.html`;
   console.log('Generating', file);
   writeFileSync(file, index);
   sitemap.push(file.replace('.html', ''));
 }
 const pets = require('./assets/goats/pets.json');
-mkdirSync('pets')
+mkdirSync('pets');
 for (const pet of pets) {
-  const file = `pets/${pet.nickname}.html`
+  const file = `pets/${pet.nickname}.html`;
   console.log('Generating', file);
   writeFileSync(file, index);
   sitemap.push(file.replace('.html', ''));
