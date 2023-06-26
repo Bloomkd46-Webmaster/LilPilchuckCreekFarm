@@ -7,7 +7,7 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-safari-launcher'),
+      require('karma-edge-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       // @ts-ignore

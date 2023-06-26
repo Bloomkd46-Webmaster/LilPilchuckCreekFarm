@@ -77,9 +77,8 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
       });
       setTimeout(() => {
         const popovers = document.querySelectorAll('[data-bs-toggle="popover"]');
-        console.log('POPOVERS', popovers);
+        console.debug('POPOVERS', popovers);
         popovers.forEach(popover => {
-          console.log('POPOVER', popover);
           new bootstrap.Popover(popover, { container: '.popover-container', trigger: 'hover focus', customClass: 'reference-popover', html: true, placement: 'auto', fallbackPlacements: ['left', 'right', 'bottom', 'top'], delay: { show: 200, hide: 250 } });
         });
       }, 100);

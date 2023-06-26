@@ -37,34 +37,6 @@
           }
         }
       }
-    },
-    {
-      "label": "Serve app on startup",
-      "type": "shell",
-      //"command": "npm run ng serve --open",
-      "windows": {
-        "command": "ng serve"
-      },
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      },
-      "runOptions": {
-        "runOn": "folderOpen"
-      },
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
-      }
     }
   ]
 }
