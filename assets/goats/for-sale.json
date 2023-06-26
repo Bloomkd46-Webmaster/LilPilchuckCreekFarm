@@ -1,12 +1,7 @@
 {
-  "does": [
-    {
-      "nickname": "Hazel",
-      "description": "Hazel is a blue-eyed baby and was our first venture into registered goats. Unfortunately, we were never able to get her breed. She is a super friendly bottle baby who would make a perfect addition to any pet home."
-    }
-  ],
+  "does": [],
   "bucks": [],
-  "wethers": [
+  "pets": [
     {
       "nickname": "R1",
       "description": "Crystal x Storm wether - polled"
@@ -18,6 +13,10 @@
     {
       "nickname": "R4",
       "description": "Mystic x Storm wether"
+    },
+    {
+      "nickname": "Hazel",
+      "description": "Hazel is a blue-eyed baby and was our first venture into registered goats. Unfortunately, we were never able to get her breed. She is a super friendly bottle baby who would make a perfect addition to any pet home."
     }
   ]
 }
