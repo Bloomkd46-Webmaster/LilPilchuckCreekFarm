@@ -81,10 +81,11 @@ export const routes: Routes = [
     }
   }*/,
   {
-    path: 'blog', data: {}, children: [
-      { path: '', component: BlogComponent },
-      { path: ':post', component: BlogComponent },
-    ]
+    path: 'blog', data: {
+      title: 'Farm Blog',
+      description: 'See whats happening on the farm',
+      keywords: ['Blog', 'social', 'socials', 'media', 'facebook']
+    }, component: BlogComponent,
   },
   {
     path: '**', component: NotFoundComponent, data: {
