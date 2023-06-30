@@ -7,7 +7,7 @@ if (execSync('git branch --show-current').toString() === 'main\n') {
   process.exit(1);
 }
 const index = readFileSync('index.html');
-const paths = ['does', 'bucks', 'pets', 'kidding-schedule', 'for-sale'];
+const paths = ['does', 'bucks', 'pets', 'kidding-schedule', 'for-sale', 'blog'];
 const sitemap = [''];
 for (const path of paths) {
   const file = `${path}.html`;
