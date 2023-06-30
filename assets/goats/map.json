@@ -25,12 +25,16 @@
       "name": "Crystal",
       "children": [
         {
+          "path": "/assets/goats/Crystal/1.jpeg",
+          "name": "1.jpeg"
+        },
+        {
           "path": "/assets/goats/Crystal/IMG_1732.jpeg",
           "name": "IMG_1732.jpeg"
         },
         {
-          "path": "/assets/goats/Crystal/display.jpeg",
-          "name": "display.jpeg"
+          "path": "/assets/goats/Crystal/display.png",
+          "name": "display.png"
         }
       ]
     },
@@ -65,12 +69,16 @@
       "name": "Mystic",
       "children": [
         {
+          "path": "/assets/goats/Mystic/1.jpeg",
+          "name": "1.jpeg"
+        },
+        {
           "path": "/assets/goats/Mystic/FullSizeRender.JPEG",
           "name": "FullSizeRender.JPEG"
         },
         {
-          "path": "/assets/goats/Mystic/display.jpeg",
-          "name": "display.jpeg"
+          "path": "/assets/goats/Mystic/display.png",
+          "name": "display.png"
         }
       ]
     },
@@ -153,6 +161,10 @@
         {
           "path": "/assets/goats/Sky/Frame-25-06-2023-10-25-34.jpg",
           "name": "Frame-25-06-2023-10-25-34.jpg"
+        },
+        {
+          "path": "/assets/goats/Sky/display.png",
+          "name": "display.png"
         }
       ]
     },
@@ -193,6 +205,10 @@
         {
           "path": "/assets/goats/Sugar/IMG_4051.jpeg",
           "name": "IMG_4051.jpeg"
+        },
+        {
+          "path": "/assets/goats/Sugar/display.png",
+          "name": "display.png"
         }
       ]
     },
@@ -203,6 +219,10 @@
         {
           "path": "/assets/goats/Zaya/Frame-25-06-2023-10-25-52.jpg",
           "name": "Frame-25-06-2023-10-25-52.jpg"
+        },
+        {
+          "path": "/assets/goats/Zaya/display.png",
+          "name": "display.png"
         }
       ]
     }

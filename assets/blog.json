@@ -1,0 +1,82 @@
+[
+  {
+    "image": [
+      "/assets/blog/2023-6-30/Side.png",
+      "/assets/blog/2023-6-30/Rear.png",
+      "/assets/blog/2023-6-30/Front.png"
+    ],
+    "author": "Kolton Bloom",
+    "title": "Upcoming Addition!",
+    "description": [
+      "Here's a little sneak peak of an upcoming addition to the herd",
+      {
+        "br": "",
+        "span class='fw-bold'": {
+          "": "Born: ",
+          "span class='fw-light'": "May 11, 2023"
+        }
+      },
+      {
+        "br": "",
+        "span class='fw-bold'": {
+          "": "Dam: ",
+          "span class='fw-light'": "LEISURE TIME ZZ JUBILATION"
+        }
+      },
+      {
+        "br": "",
+        "span class='fw-bold'": {
+          "": "Sire: ",
+          "span class='fw-light'": "LEISURE TIME ST TIGER L VIS?"
+        }
+      }
+    ],
+    "posted": "Posted June 30, 2023"
+  },
+  {
+    "image": [
+      "/assets/blog/2023-6-29/Mystic.png",
+      "/assets/blog/2023-6-29/Crystal.png",
+      "/assets/blog/2023-6-29/Sugar.png",
+      "/assets/blog/2023-6-29/Sky.png",
+      "/assets/blog/2023-6-29/Zaya.png",
+      "/assets/blog/2023-6-29/Jewel.png"
+    ],
+    "author": "Kolton Bloom",
+    "title": "Picture Day!",
+    "description": [
+      "It was picture day for the goats today, everyone",
+      {
+        "small": " (except the bucks) "
+      },
+      "got their picture taken today",
+      {
+        "br": ""
+      },
+      "Names in order of appearance:",
+      {
+        "ul": [
+          {
+            "li": "Mystic"
+          },
+          {
+            "li": "Crystal"
+          },
+          {
+            "li": "Sugar"
+          },
+          {
+            "li": "Sky"
+          },
+          {
+            "li": "Zaya"
+          },
+          {
+            "li": "Jewel"
+          }
+        ]
+      }
+    ],
+    "posted": "Posted June 29, 2023"
+  }
+]
