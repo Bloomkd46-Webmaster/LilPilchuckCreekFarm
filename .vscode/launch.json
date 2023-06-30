@@ -6,6 +6,9 @@
       "name": "ng serve",
       "type": "msedge",
       "request": "launch",
+      "runtimeArgs": [
+        //"--headless"
+      ],
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/"
     },

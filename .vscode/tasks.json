@@ -15,9 +15,16 @@
             "regexp": "(.*?)"
           },
           "endsPattern": {
-            "regexp": "bundle generation complete"
+            "regexp": "bundle generation complete|Failed to compile"
           }
         }
+      },
+      "presentation": {
+        "reveal": "silent",
+        "revealProblems": "onProblem",
+        "showReuseMessage": false,
+        "panel": "dedicated",
+        "close": true
       }
     },
     {
