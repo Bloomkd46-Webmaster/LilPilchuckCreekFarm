@@ -126,6 +126,22 @@ export class GoatService {
     }
     ////return new Promise(resolve => this.http.get<ExternalGoat[]>('/assets/goats/references.json').subscribe(data => resolve(data)));
   }
+  private _blog?: Blog;
+  getBlog(): Promise<Blog> {
+    if (this._blog) {
+      console.debug('Used Blog From Cache', this._blog);
+      return Promise.resolve(this._blog);
+    } else {
+      return new Promise(resolve => this.http.get<Blog>('/assets/blog.json')
+        .subscribe(data => {
+          this._blog = data;
+          console.debug('Loaded Blog From Server', data);
+          resolve(data);
+        }));
+    }
+    ////return new Promise(resolve => this.http.get<ExternalGoat[]>('/assets/goats/references.json').subscribe(data => resolve(data)));
+  }
+
   /*private does?: Goat[];
   getDoes(): Promise<Goat[]> {
     return new Promise((resolve, reject) => {
@@ -166,3 +182,4 @@ export type RawKiddingSchedule = { bred: string; dam: number; sire: number; due:
 export type KiddingSchedule = { bred: string; dam: Goat; sire: Goat; due: string; does: number; wethers: number; reservations: string[]; kidded?: string; };
 export type ForSaleGoat = { nickname: string; description: string; price?: string; };
 export type ForSale = { does: Goat[]; bucks: Goat[]; pets: ForSaleGoat[]; };
+export type Blog = { image: string | string[]; author: string; title: string; description: string; posted: string; }[];

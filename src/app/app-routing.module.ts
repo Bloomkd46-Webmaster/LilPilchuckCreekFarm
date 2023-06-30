@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { BlogComponent } from './blog/blog.component';
 import { BucksComponent } from './bucks/bucks.component';
 import { DoesComponent } from './does/does.component';
 import { ForSaleComponent } from './for-sale/for-sale.component';
@@ -79,6 +80,12 @@ export const routes: Routes = [
       keywords: ['Contact', 'Us']
     }
   }*/,
+  {
+    path: 'blog', data: {}, children: [
+      { path: '', component: BlogComponent },
+      { path: ':post', component: BlogComponent },
+    ]
+  },
   {
     path: '**', component: NotFoundComponent, data: {
       title: 'Not Found'

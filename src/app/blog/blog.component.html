@@ -1,0 +1,58 @@
+<div class="card mb-3 color-scheme-secondary" *ngFor="let post of blog ?? []; let i = index;">
+  <div class="row g-0 p-2">
+    <div class="col-md-4">
+      <div class="ratio ratio-4x3" *ngIf="!images(post.image)">
+        <img [src]="post.image" class="rounded-start object-fit-contain " [alt]="post.title">
+      </div>
+      <div *ngIf="images(post.image)">
+        <div id="goatImageCarousel{{i}}" class="carousel slide" data-bs-ride="false" [class.carousel-dark]="colorScheme.lightMode">
+          <div class="carousel-indicators">
+            <button *ngFor="let image of getImages(post.image); index as i" type="button" attr.data-bs-target="#goatImageCarousel{{i}}"
+              [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-current]="i === 0" attr.aria-label="Slide {{i+1}}"></button>
+            <!--<button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+          </div>
+          <div class="carousel-inner d-flex align-items-center color-scheme-secondary" style="max-height: 75vh;">
+            <div *ngFor="let image of getImages(post.image); index as i" class="carousel-item" [class.active]="i === 0">
+              <img [src]="image" [alt]="post.title" style="aspect-ratio: 4/3; width: 100%;object-fit:contain;object-position: center;">
+            </div>
+            <div *ngFor="let image of (images ? [] : [1,2,3]); index as i" class="carousel-item placeholder-wave"
+              [class.placeholder]="!images" [class.active]="i === 0">
+              <div style="aspect-ratio: 4/3; width: 100%;object-fit:contain;object-position: center;"></div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" attr.data-bs-target="#goatImageCarousel{{i}}" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" attr.data-bs-target="#goatImageCarousel{{i}}" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body color-scheme-secondary h-100 d-flex flex-column">
+        <h5 class="card-title align-self-start" [innerHTML]="post.title"></h5>
+        <small class="card-subtitle mb-2 muted align-self-start" [innerHTML]="post.author"></small>
+        <p class="card-text h-100 align-self-stretch" [innerHTML]="getHTML(post.description)"></p>
+        <small class="card-text muted align-self-baseline" [innerHTML]="post.posted"></small>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3 color-scheme-secondary" *ngFor="let post of blog ? [] : [1,2,3,4,5,6,7,8,9]">
+  <div class="row g-0 p-2">
+    <div class="col-md-4 placeholder-wave">
+      <div class="img-fluid rounded-start object-fit-cover placeholder w-100 h-100 ratio-16x9" alt="Loading..."></div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body color-scheme-secondary h-100 d-flex flex-column placeholder-glow">
+        <h5 class="card-title align-self-start placeholder w-100"></h5>
+        <small class="card-subtitle mb-2 muted align-self-start placeholder w-100"></small>
+        <p class="card-text h-100 align-self-stretch placeholder w-100"></p>
+        <small class="card-text muted align-self-baseline placeholder w-100"></small>
+      </div>
+    </div>
+  </div>

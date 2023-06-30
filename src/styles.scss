@@ -21,6 +21,10 @@
   color: hsl(0, 0%, 85%) !important;
 }
 
+.muted {
+  color: hsl(0, 0%, 50%) !important;
+}
+
 img {
   opacity: 0.75
 }
@@ -78,4 +82,9 @@ img {
   img {
     opacity: 0.9
   }
+
+  .muted {
+    color: --bs-secondary-color !important;
+  }
+
 }

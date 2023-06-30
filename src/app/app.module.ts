@@ -7,6 +7,7 @@ import { BrowserModule, Meta } from '@angular/platform-browser';
 import { AdgaInfoComponent } from './adga-info/adga-info.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BlogComponent } from './blog/blog.component';
 import { BucksComponent } from './bucks/bucks.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { DoesComponent } from './does/does.component';
@@ -36,6 +37,7 @@ import { PetsComponent } from './pets/pets.component';
     ForSaleGoatComponent,
     ForSaleGoatModalComponent,
     NotFoundComponent,
+    BlogComponent,
     AdgaInfoComponent
   ],
   imports: [
