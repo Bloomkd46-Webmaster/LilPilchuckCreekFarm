@@ -39,7 +39,22 @@
       "isActive": true,
       "id": 3
     },
-    "breederAccount": null,
+    "breederAccount": {
+      "lastName": "STUBBE",
+      "firstName": "PAMELA",
+      "organizationName": null,
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "PAMELA STUBBE",
+      "associatedUserId": 8378,
+      "isPrimary": true,
+      "creditLimit": 20,
+      "lifeTimeCredit": null,
+      "membershipStatus": "Active",
+      "defaultAddress": null,
+      "id": 1546125
+    },
     "ownerAccount": {
       "lastName": "BLOOM",
       "firstName": "KOLTON",
@@ -183,7 +198,7 @@
     "isReTattoo": false,
     "externalAnimalRegistrationId": null,
     "ownerAccountName": "KOLTON BLOOM",
-    "breederAccountName": "",
+    "breederAccountName": "PAMELA STUBBE",
     "breedName": "NIGERIAN DWARF",
     "format1Identification": "NDUSA000002131517",
     "animalPurityData": {
@@ -198,7 +213,7 @@
     "dam": null,
     "isRegistrationPaperless": false,
     "showOwnerDetails": true,
-    "showBreederDetails": false,
+    "showBreederDetails": true,
     "adgaAssociation": {
       "isAdga": true
     },
@@ -244,7 +259,22 @@
       "isActive": true,
       "id": 3
     },
-    "breederAccount": null,
+    "breederAccount": {
+      "lastName": "MATHIS",
+      "firstName": "BRITTANY C",
+      "organizationName": "",
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "BRITTANY C MATHIS",
+      "associatedUserId": 23222,
+      "isPrimary": true,
+      "creditLimit": null,
+      "lifeTimeCredit": 2,
+      "membershipStatus": "Active",
+      "defaultAddress": null,
+      "id": 1651913
+    },
     "ownerAccount": {
       "lastName": "BLOOM",
       "firstName": "KOLTON",
@@ -388,7 +418,7 @@
     "isReTattoo": false,
     "externalAnimalRegistrationId": null,
     "ownerAccountName": "KOLTON BLOOM",
-    "breederAccountName": "",
+    "breederAccountName": "BRITTANY C MATHIS",
     "breedName": "NIGERIAN DWARF",
     "format1Identification": "NDUSA000002294587",
     "animalPurityData": {
@@ -403,7 +433,7 @@
     "dam": null,
     "isRegistrationPaperless": false,
     "showOwnerDetails": true,
-    "showBreederDetails": false,
+    "showBreederDetails": true,
     "adgaAssociation": {
       "isAdga": true
     },
