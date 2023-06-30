@@ -39,7 +39,22 @@
       "isActive": true,
       "id": 3
     },
-    "breederAccount": null,
+    "breederAccount": {
+      "lastName": "GILLIS",
+      "firstName": "MIKE & CARISSA",
+      "organizationName": null,
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "MIKE & CARISSA GILLIS",
+      "associatedUserId": 6361,
+      "isPrimary": true,
+      "creditLimit": 20,
+      "lifeTimeCredit": null,
+      "membershipStatus": "Active",
+      "defaultAddress": null,
+      "id": 1537687
+    },
     "ownerAccount": {
       "lastName": "BLOOM",
       "firstName": "KOLTON",
@@ -183,7 +198,7 @@
     "isReTattoo": false,
     "externalAnimalRegistrationId": null,
     "ownerAccountName": "KOLTON BLOOM",
-    "breederAccountName": "",
+    "breederAccountName": "MIKE & CARISSA GILLIS",
     "breedName": "NIGERIAN DWARF",
     "format1Identification": "NDUSA000002175097",
     "animalPurityData": {
@@ -198,7 +213,7 @@
     "dam": null,
     "isRegistrationPaperless": false,
     "showOwnerDetails": true,
-    "showBreederDetails": false,
+    "showBreederDetails": true,
     "adgaAssociation": {
       "isAdga": true
     },
@@ -244,7 +259,22 @@
       "isActive": true,
       "id": 3
     },
-    "breederAccount": null,
+    "breederAccount": {
+      "lastName": "GILLIS",
+      "firstName": "MIKE & CARISSA",
+      "organizationName": null,
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "MIKE & CARISSA GILLIS",
+      "associatedUserId": 6361,
+      "isPrimary": true,
+      "creditLimit": 20,
+      "lifeTimeCredit": null,
+      "membershipStatus": "Active",
+      "defaultAddress": null,
+      "id": 1537687
+    },
     "ownerAccount": {
       "lastName": "BLOOM",
       "firstName": "KOLTON",
@@ -388,7 +418,7 @@
     "isReTattoo": false,
     "externalAnimalRegistrationId": null,
     "ownerAccountName": "KOLTON BLOOM",
-    "breederAccountName": "",
+    "breederAccountName": "MIKE & CARISSA GILLIS",
     "breedName": "NIGERIAN DWARF",
     "format1Identification": "NDUSA000002174259",
     "animalPurityData": {
@@ -403,7 +433,7 @@
     "dam": null,
     "isRegistrationPaperless": false,
     "showOwnerDetails": true,
-    "showBreederDetails": false,
+    "showBreederDetails": true,
     "adgaAssociation": {
       "isAdga": true
     },
@@ -449,7 +479,22 @@
       "isActive": true,
       "id": 3
     },
-    "breederAccount": null,
+    "breederAccount": {
+      "lastName": "BENSMILLER",
+      "firstName": "DAN & BRENDA",
+      "organizationName": null,
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "DAN & BRENDA BENSMILLER",
+      "associatedUserId": 6913,
+      "isPrimary": true,
+      "creditLimit": 20,
+      "lifeTimeCredit": null,
+      "membershipStatus": "NonMember",
+      "defaultAddress": null,
+      "id": 1540201
+    },
     "ownerAccount": {
       "lastName": "BLOOM",
       "firstName": "KOLTON",
@@ -593,7 +638,7 @@
     "isReTattoo": false,
     "externalAnimalRegistrationId": null,
     "ownerAccountName": "KOLTON BLOOM",
-    "breederAccountName": "",
+    "breederAccountName": "DAN & BRENDA BENSMILLER",
     "breedName": "NIGERIAN DWARF",
     "format1Identification": "NDUSA000002012791",
     "animalPurityData": {
@@ -608,7 +653,7 @@
     "dam": null,
     "isRegistrationPaperless": false,
     "showOwnerDetails": true,
-    "showBreederDetails": false,
+    "showBreederDetails": true,
     "adgaAssociation": {
       "isAdga": true
     },
@@ -654,7 +699,22 @@
       "isActive": true,
       "id": 3
     },
-    "breederAccount": null,
+    "breederAccount": {
+      "lastName": "YORK",
+      "firstName": "AMY",
+      "organizationName": null,
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "AMY YORK",
+      "associatedUserId": 3094,
+      "isPrimary": true,
+      "creditLimit": 20,
+      "lifeTimeCredit": null,
+      "membershipStatus": "Active",
+      "defaultAddress": null,
+      "id": 1517028
+    },
     "ownerAccount": {
       "lastName": "BLOOM",
       "firstName": "KOLTON",
@@ -798,7 +858,7 @@
     "isReTattoo": false,
     "externalAnimalRegistrationId": null,
     "ownerAccountName": "KOLTON BLOOM",
-    "breederAccountName": "",
+    "breederAccountName": "AMY YORK",
     "breedName": "NIGERIAN DWARF",
     "format1Identification": "NDUSA000002315360",
     "animalPurityData": {
@@ -813,7 +873,7 @@
     "dam": null,
     "isRegistrationPaperless": false,
     "showOwnerDetails": true,
-    "showBreederDetails": false,
+    "showBreederDetails": true,
     "adgaAssociation": {
       "isAdga": true
     },
