@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
 import { Blog, GoatService } from '../goat.service';
+import { MetaService } from '../meta.service';
 
 
 @Component({
@@ -11,12 +13,35 @@ import { Blog, GoatService } from '../goat.service';
 })
 export class BlogComponent implements OnInit {
   public blog?: Blog = [];
-  constructor(public goatService: GoatService, public colorScheme: ColorSchemeService) {
+  constructor(public goatService: GoatService, public colorScheme: ColorSchemeService, public route: ActivatedRoute, public metaService: MetaService) {
 
   }
   ngOnInit(): void {
-    this.goatService.getBlog().then(blog => this.blog = blog);
+    this.goatService.getBlog().then(blog => {
+      this.blog = blog;
+      this.route.fragment.subscribe(title => {
+        const post = this.blog?.find(post => post.title === title);
+        if (post) {
+          setTimeout(() => {
+            this.scrollToTargetAdjusted(post.title);
+            this.metaService.updateTitle(`${title} · Farm Blog`);
+            this.metaService.updateDescription(this.getHTML(post.description));
+          });
+        }
+      });
+    });
     setTimeout(() => this.blog?.length ? undefined : this.blog = undefined, 100);
+  }
+  scrollToTargetAdjusted(title: string): void {
+    var element = document.getElementById(title)!;
+    var headerOffset = 160;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.screenY - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
   }
   images(images: string | string[]): boolean {
     return typeof images === 'object' ?? false;

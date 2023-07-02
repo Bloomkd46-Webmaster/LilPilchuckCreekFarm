@@ -24,7 +24,7 @@ export class MetaService {
    */
   updateDescription(description: string) {
     this.meta.updateTag({ name: 'description', content: description ?? '' }, 'name=\'description\'');
-    this.meta.updateTag({ name: 'og:description', content: description ?? '' }, 'name=\'og:description\'');
+    this.meta.updateTag({ property: 'og:description', content: description ?? '' }, 'property=\'og:description\'');
   }
   /**
    * updates the <meta name="keywords" content="{@link keywords}">
@@ -43,6 +43,6 @@ export class MetaService {
    */
   updateTitle(title: string) {
     this.title.setTitle(title + ' · Lil\' Pilchuck Creek');
-    this.meta.updateTag({ name: 'og:title', content: title ?? '' }, 'name=\'og:title\'');
+    this.meta.updateTag({ property: 'og:title', content: title ?? '' }, 'property=\'og:title\'');
   }
 }
