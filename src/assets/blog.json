@@ -1,5 +1,41 @@
 [
   {
+    "image": "/assets/blog/2023-7-1/Jewel.png",
+    "author": "Kolton Bloom",
+    "title": "Tattoo Day!",
+    "description": [
+      {
+        "a href='/does/Jewel'": "Jewel",
+        "": " was tattooed and registered today, making her the first registered offspring of "
+      },
+      {
+        "a href='/'": "Lil Pilchuck Creek Farm"
+      },
+      {
+        "br": "",
+        "span class='fw-bold'": {
+          "": "Born: ",
+          "span class='fw-light'": "April 17, 2023"
+        }
+      },
+      {
+        "br": "",
+        "span class='fw-bold'": {
+          "": "Dam: ",
+          "span class='fw-light'": "GILLIS FAMILY FARM CRYSTAL"
+        }
+      },
+      {
+        "br": "",
+        "span class='fw-bold'": {
+          "": "Sire: ",
+          "span class='fw-light'": "TIMBUCKDOE FARM AW ALEUT STORM"
+        }
+      }
+    ],
+    "posted": "Posted July 1, 2023"
+  },
+  {
     "image": [
       "/assets/blog/2023-6-30/Side.png",
       "/assets/blog/2023-6-30/Rear.png",

@@ -129,20 +129,20 @@ function titleCase(string: string) {
   for (const goat of [...does, ...bucks]) {
     //const dam = newConfig.references.find(reference => reference.id === goat.damId);
     //const sire = newConfig.references.find(reference => reference.id === goat.sireId);
-    if (/*!dam && */!ids.includes(goat.damId)) {
+    if (/*!dam && */!ids.includes(goat.damId) && !goats.items.map(goat => goat.id).includes(goat.damId)) {
       ids.push(goat.damId);
     }
-    if (/*!sire && */!ids.includes(goat.sireId)) {
+    if (/*!sire && */!ids.includes(goat.sireId) && !goats.items.map(goat => goat.id).includes(goat.sireId)) {
       ids.push(goat.sireId);
     }
   }
   console.log('Downloading Reference Goats... (Part 1)');
   let referenceGoats = (await adga.getGoats(ids)).items;
   for (const referenceGoat of referenceGoats) {
-    if (!ids.includes(referenceGoat.damId)) {
+    if (!ids.includes(referenceGoat.damId) && !goats.items.map(goat => goat.id).includes(referenceGoat.damId)) {
       ids.push(referenceGoat.damId);
     }
-    if (!ids.includes(referenceGoat.sireId)) {
+    if (!ids.includes(referenceGoat.sireId) && !goats.items.map(goat => goat.id).includes(referenceGoat.sireId)) {
       ids.push(referenceGoat.sireId);
     }
   }

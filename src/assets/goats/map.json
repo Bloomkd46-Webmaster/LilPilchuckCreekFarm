@@ -65,6 +65,24 @@
       ]
     },
     {
+      "path": "/assets/goats/Jewel",
+      "name": "Jewel",
+      "children": [
+        {
+          "path": "/assets/goats/Jewel/IMG_4288.png",
+          "name": "IMG_4288.png"
+        },
+        {
+          "path": "/assets/goats/Jewel/IMG_4297.png",
+          "name": "IMG_4297.png"
+        },
+        {
+          "path": "/assets/goats/Jewel/display.png",
+          "name": "display.png"
+        }
+      ]
+    },
+    {
       "path": "/assets/goats/Mystic",
       "name": "Mystic",
       "children": [

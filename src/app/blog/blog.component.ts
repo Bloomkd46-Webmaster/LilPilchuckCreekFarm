@@ -71,5 +71,11 @@ export class BlogComponent implements OnInit {
 
     return objToHTML(obj);
   }
+  copy(title: string): void {
+    // Copy the text inside the text field
+    const text = `${window.location.href.split('#')[0]}#${title}`;
+    navigator.clipboard.writeText(text);
+    console.log(text);
+  }
 }
 

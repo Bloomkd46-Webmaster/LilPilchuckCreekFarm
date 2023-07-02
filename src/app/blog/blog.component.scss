@@ -1,0 +1,37 @@
+.linkSymbol {
+  color: white;
+  fill: currentColor;
+  opacity: 0%;
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+svg {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
+
+@media (prefers-color-scheme: light) {
+  .linkSymbol {
+    color: black;
+    fill: currentColor;
+    visibility: hidden;
+  }
+}
+
+@media (hover: none) {
+  .linkSymbol {
+    opacity: 100%;
+  }
+}
+
+.link:hover .linkSymbol {
+  opacity: 100%;
+}
+
+.linkSymbol:hover {
+  opacity: 100%;
+}
