@@ -24,12 +24,12 @@ export class AdgaInfoComponent {
     const birthday = unparsedBirthday.split('T')[0].split('-');
     return `${this.months[parseInt(birthday[1])]} ${birthday[2].startsWith('0') ? birthday[2].slice(1) : birthday[2]}, ${birthday[0]}`;
   }
-  getDateObtained(): string | undefined {
+  /*getDateObtained(): string | undefined {
     if (!this.goat?.obtained) return;
     const unparsedObtained = this.goat.obtained;
     const obtained = unparsedObtained.split('T')[0].split('-');
     return `${this.months[parseInt(obtained[1])]} ${obtained[2].startsWith('0') ? obtained[2].slice(1) : obtained[2]}, ${obtained[0]}`;
-  }
+  }*/
   /*getValue(key: string): string[] {
     const values: string[] = [];
     function _getValue(_goat: any, _key: string): void {
