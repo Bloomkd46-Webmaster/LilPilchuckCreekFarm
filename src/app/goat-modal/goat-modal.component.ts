@@ -75,13 +75,16 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
         this.meta.removeTag('name="robots"');
         this.router.navigate(['../'], { relativeTo: this.activatedRoute });
       });
-      setTimeout(() => {
+      const interval = setInterval(() => {
         const popovers = document.querySelectorAll('[data-bs-toggle="popover"]');
-        console.debug('POPOVERS', popovers);
-        popovers.forEach(popover => {
-          new bootstrap.Popover(popover, { container: '.popover-container', trigger: 'hover focus', customClass: 'reference-popover', html: true, placement: 'auto', fallbackPlacements: ['left', 'right', 'bottom', 'top'], delay: { show: 200, hide: 250 } });
-        });
-      }, 100);
+        if (popovers.length) {
+          console.debug('POPOVERS', popovers);
+          popovers.forEach(popover => {
+            new bootstrap.Popover(popover, { container: '.popover-container', trigger: 'hover focus', customClass: 'reference-popover', html: true, placement: 'auto', fallbackPlacements: ['left', 'right', 'bottom', 'top'], delay: { show: 200, hide: 250 } });
+          });
+          clearInterval(interval);
+        }
+      });
     }
     if (this.images) {
       new bootstrap.Carousel(this.carousel.nativeElement, {
