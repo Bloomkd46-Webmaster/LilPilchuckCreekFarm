@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
@@ -13,7 +14,7 @@ import { MetaService } from '../meta.service';
 })
 export class BlogComponent implements OnInit {
   public blog?: Blog = [];
-  constructor(public goatService: GoatService, public colorScheme: ColorSchemeService, public route: ActivatedRoute, public metaService: MetaService) {
+  constructor(public goatService: GoatService, public colorScheme: ColorSchemeService, public route: ActivatedRoute, public metaService: MetaService, public sanitizer: DomSanitizer) {
 
   }
   ngOnInit(): void {

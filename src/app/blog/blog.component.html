@@ -3,7 +3,7 @@
 <br>
 <div class="card mb-3 color-scheme-secondary" *ngFor="let post of blog ?? []; let i = index;">
   <div class="row g-0 p-2">
-    <div class="col-md-4">
+    <div class="col-md-4 d-flex align-items-center">
       <div class="ratio ratio-4x3" *ngIf="!images(post.image)">
         <img [src]="post.image" class="rounded-start object-fit-contain " [alt]="post.title">
       </div>
@@ -49,6 +49,7 @@
         </span>
         <!--<h5 [id]="post.title" class="card-title align-self-start title" [innerHTML]="post.title"></h5>-->
         <small class="card-subtitle mb-2 muted align-self-start" [innerHTML]="post.author"></small>
+        <!--<p class="card-text h-100 align-self-stretch" [innerHTML]="sanitizer.bypassSecurityTrustHtml(getHTML(post.description))"></p>-->
         <p class="card-text h-100 align-self-stretch" [innerHTML]="getHTML(post.description)"></p>
         <small class="card-text muted align-self-baseline" [innerHTML]="post.posted"></small>
       </div>
