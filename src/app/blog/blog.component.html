@@ -1,17 +1,18 @@
 <h1 class="text-center">Farm Blog</h1>
 <h5 class="text-center">See What's Been Happening On The Farm</h5>
 <br>
-<div class="card mb-3 color-scheme-secondary" *ngFor="let post of blog ?? []; let i = index;">
+<div class="card mb-3 color-scheme-secondary" *ngFor="let post of blog ?? []; index as z;">
   <div class="row g-0 p-2">
     <div class="col-md-4 d-flex align-items-center">
       <div class="ratio ratio-4x3" *ngIf="!images(post.image)">
         <img [src]="post.image" class="rounded-start object-fit-contain " [alt]="post.title">
       </div>
       <div *ngIf="images(post.image)">
-        <div id="goatImageCarousel{{i}}" class="carousel slide" data-bs-ride="false" [class.carousel-dark]="colorScheme.lightMode">
+        <div id="goatImageCarousel{{z}}" class="carousel slide" data-bs-ride="false" [class.carousel-dark]="colorScheme.lightMode">
           <div class="carousel-indicators">
-            <button *ngFor="let image of getImages(post.image); index as i" type="button" attr.data-bs-target="#goatImageCarousel{{i}}"
-              [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-current]="i === 0" attr.aria-label="Slide {{i+1}}"></button>
+            <button *ngFor="let image of getImages(post.image); index as i" type="button" attr.data-bs-target="#goatImageCarousel{{z}}"
+              [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-current]="i === 0" [attr.aria-label]="image.split('/').pop()"
+              [title]="image.split('/').pop()"></button>
             <!--<button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                 <button type="button" data-bs-target="#goatImageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
           </div>
@@ -24,11 +25,11 @@
               <div style="aspect-ratio: 4/3; width: 100%;object-fit:contain;object-position: center;"></div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" attr.data-bs-target="#goatImageCarousel{{i}}" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" attr.data-bs-target="#goatImageCarousel{{z}}" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" attr.data-bs-target="#goatImageCarousel{{i}}" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" attr.data-bs-target="#goatImageCarousel{{z}}" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
