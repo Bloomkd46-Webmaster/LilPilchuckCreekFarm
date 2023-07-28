@@ -4,15 +4,18 @@
   "pets": [
     {
       "nickname": "R1",
-      "description": "Crystal x Storm wether - polled"
+      "description": "Crystal x Storm wether - polled",
+      "status": "pending"
     },
     {
       "nickname": "R3",
-      "description": "Mystic x Storm wether - blue eyes"
+      "description": "Mystic x Storm wether - blue eyes",
+      "status": "pending"
     },
     {
       "nickname": "R4",
-      "description": "Mystic x Storm wether"
+      "description": "Mystic x Storm wether",
+      "status": "pending"
     },
     {
       "nickname": "Hazel",
