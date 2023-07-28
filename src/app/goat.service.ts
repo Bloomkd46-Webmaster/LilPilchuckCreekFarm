@@ -180,6 +180,6 @@ export type Pet = { nickname: string; name: string; description: string; };
 export type Parents = { dam: ExternalGoat | Goat; damsDam: ExternalGoat | Goat; damsSire: ExternalGoat | Goat; sire: ExternalGoat | Goat; siresDam: ExternalGoat | Goat; siresSire: ExternalGoat | Goat; };
 export type RawKiddingSchedule = { bred: string; dam: number; sire: number; due: string; does: number; wethers: number; reservations: string[]; kidded?: string; };
 export type KiddingSchedule = { bred: string; dam: Goat; sire: Goat; due: string; does: number; wethers: number; reservations: string[]; kidded?: string; };
-export type ForSaleGoat = { nickname: string; description: string; price?: string; };
+export type ForSaleGoat = { nickname: string; description: string; price?: string; status?: string; };
 export type ForSale = { does: Goat[]; bucks: Goat[]; pets: ForSaleGoat[]; };
 export type Blog = { image: string | string[]; author: string; title: string; description: string; posted: string; }[];
