@@ -21,6 +21,24 @@
       ]
     },
     {
+      "path": "/assets/goats/Beauty",
+      "name": "Beauty",
+      "children": [
+        {
+          "path": "/assets/goats/Beauty/Front.png",
+          "name": "Front.png"
+        },
+        {
+          "path": "/assets/goats/Beauty/Rear.png",
+          "name": "Rear.png"
+        },
+        {
+          "path": "/assets/goats/Beauty/display.png",
+          "name": "display.png"
+        }
+      ]
+    },
+    {
       "path": "/assets/goats/Crystal",
       "name": "Crystal",
       "children": [
