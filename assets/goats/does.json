@@ -887,8 +887,8 @@
     "name": "LITTLE REDHOUSE ZAYUSHKA",
     "breedId": 8,
     "conformsToBreedId": 8,
-    "breederAccountId": null,
-    "ownerAccountId": null,
+    "breederAccountId": 1551763,
+    "ownerAccountId": 1634014,
     "herdId": "LITTLE REDHOUSE",
     "aiMating": null,
     "embryoTransfer": null,
@@ -927,8 +927,8 @@
     "birthTattoo": "R2",
     "isReTattoo": false,
     "externalAnimalRegistrationId": null,
-    "ownerAccountName": "",
-    "breederAccountName": "",
+    "ownerAccountName": "KOLTON BLOOM",
+    "breederAccountName": "TRENNE EARL",
     "breedName": "NIGERIAN DWARF",
     "format1Identification": "NDUSA000002293424",
     "animalPurityData": {
@@ -946,17 +946,69 @@
       "isActive": true,
       "id": 3
     },
-    "breederAccount": null,
-    "ownerAccount": null,
+    "breederAccount": {
+      "lastName": "EARL",
+      "firstName": "TRENNE",
+      "organizationName": null,
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "TRENNE EARL",
+      "associatedUserId": 9001,
+      "isPrimary": true,
+      "creditLimit": 20,
+      "lifeTimeCredit": null,
+      "membershipStatus": "Active",
+      "defaultAddress": null,
+      "id": 1551763
+    },
+    "ownerAccount": {
+      "lastName": "BLOOM",
+      "firstName": "KOLTON",
+      "organizationName": null,
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "KOLTON BLOOM",
+      "associatedUserId": 34698,
+      "isPrimary": true,
+      "creditLimit": 20,
+      "lifeTimeCredit": null,
+      "membershipStatus": "Active",
+      "defaultAddress": null,
+      "id": 1634014
+    },
     "transferToAccount": null,
     "transferDate": null,
     "animalTattoo": [
       {
         "tenantId": 1,
+        "tattooLocationId": 1,
+        "tattoo": "LRH1",
+        "comment": null,
+        "tattooLocation": {
+          "tenantId": 1,
+          "code": "RE",
+          "name": "RE",
+          "isActive": true,
+          "isDeleted": false,
+          "deleterUserId": null,
+          "deletionTime": null,
+          "lastModificationTime": null,
+          "lastModifierUserId": null,
+          "creationTime": "2019-09-30T07:26:51.411",
+          "creatorUserId": null,
+          "id": 1
+        },
+        "isMemberTattoo": true,
+        "isActive": true,
+        "id": 3849894
+      },
+      {
+        "tenantId": 1,
         "tattooLocationId": 2,
         "tattoo": "R2",
         "comment": null,
-        "isMemberTattoo": false,
         "tattooLocation": {
           "tenantId": 1,
           "code": "LE",
@@ -971,6 +1023,7 @@
           "creatorUserId": null,
           "id": 2
         },
+        "isMemberTattoo": false,
         "isActive": true,
         "id": 3849895
       }
@@ -1022,8 +1075,8 @@
     "dam": null,
     "herdBook": "Purebred",
     "isRegistrationPaperless": false,
-    "showOwnerDetails": false,
-    "showBreederDetails": false,
+    "showOwnerDetails": true,
+    "showBreederDetails": true,
     "rfidLocation": null,
     "adgaAssociation": {
       "isAdga": true
@@ -1031,7 +1084,19 @@
     "id": 2293424,
     "nickname": "Zaya",
     "description": "",
-    "awards": []
+    "awards": [],
+    "isAdgaRegistered": true,
+    "isTransferInProcess": false,
+    "memberTattooLocation": "RE",
+    "birthTattooLocation": "LE",
+    "animalLAScore": null,
+    "freshenDate": null,
+    "lastAppraisalYear": null,
+    "lactationNumber": null,
+    "removalReasonId": null,
+    "laTripAnimalId": null,
+    "laAnimalStatus": 0,
+    "removalReason": null
   },
   {
     "tenantId": 1,
@@ -1041,8 +1106,8 @@
     "name": "LITTLE REDHOUSE BLUEBIRD SKY",
     "breedId": 8,
     "conformsToBreedId": 8,
-    "breederAccountId": null,
-    "ownerAccountId": null,
+    "breederAccountId": 1551763,
+    "ownerAccountId": 1634014,
     "herdId": "LITTLE REDHOUSE",
     "aiMating": null,
     "embryoTransfer": null,
@@ -1081,8 +1146,8 @@
     "birthTattoo": "R8",
     "isReTattoo": false,
     "externalAnimalRegistrationId": null,
-    "ownerAccountName": "",
-    "breederAccountName": "",
+    "ownerAccountName": "KOLTON BLOOM",
+    "breederAccountName": "TRENNE EARL",
     "breedName": "NIGERIAN DWARF",
     "format1Identification": "NDUSA000002293211",
     "animalPurityData": {
@@ -1100,17 +1165,69 @@
       "isActive": true,
       "id": 3
     },
-    "breederAccount": null,
-    "ownerAccount": null,
+    "breederAccount": {
+      "lastName": "EARL",
+      "firstName": "TRENNE",
+      "organizationName": null,
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "TRENNE EARL",
+      "associatedUserId": 9001,
+      "isPrimary": true,
+      "creditLimit": 20,
+      "lifeTimeCredit": null,
+      "membershipStatus": "Active",
+      "defaultAddress": null,
+      "id": 1551763
+    },
+    "ownerAccount": {
+      "lastName": "BLOOM",
+      "firstName": "KOLTON",
+      "organizationName": null,
+      "isActive": true,
+      "isOrg": false,
+      "emailAddress": null,
+      "displayName": "KOLTON BLOOM",
+      "associatedUserId": 34698,
+      "isPrimary": true,
+      "creditLimit": 20,
+      "lifeTimeCredit": null,
+      "membershipStatus": "Active",
+      "defaultAddress": null,
+      "id": 1634014
+    },
     "transferToAccount": null,
     "transferDate": null,
     "animalTattoo": [
       {
         "tenantId": 1,
+        "tattooLocationId": 1,
+        "tattoo": "LRH1",
+        "comment": null,
+        "tattooLocation": {
+          "tenantId": 1,
+          "code": "RE",
+          "name": "RE",
+          "isActive": true,
+          "isDeleted": false,
+          "deleterUserId": null,
+          "deletionTime": null,
+          "lastModificationTime": null,
+          "lastModifierUserId": null,
+          "creationTime": "2019-09-30T07:26:51.411",
+          "creatorUserId": null,
+          "id": 1
+        },
+        "isMemberTattoo": true,
+        "isActive": true,
+        "id": 3849468
+      },
+      {
+        "tenantId": 1,
         "tattooLocationId": 2,
         "tattoo": "R8",
         "comment": null,
-        "isMemberTattoo": false,
         "tattooLocation": {
           "tenantId": 1,
           "code": "LE",
@@ -1125,6 +1242,7 @@
           "creatorUserId": null,
           "id": 2
         },
+        "isMemberTattoo": false,
         "isActive": true,
         "id": 3849469
       }
@@ -1176,8 +1294,8 @@
     "dam": null,
     "herdBook": "Purebred",
     "isRegistrationPaperless": false,
-    "showOwnerDetails": false,
-    "showBreederDetails": false,
+    "showOwnerDetails": true,
+    "showBreederDetails": true,
     "rfidLocation": null,
     "adgaAssociation": {
       "isAdga": true
@@ -1185,7 +1303,19 @@
     "id": 2293211,
     "nickname": "Sky",
     "description": "",
-    "awards": []
+    "awards": [],
+    "isAdgaRegistered": true,
+    "isTransferInProcess": false,
+    "memberTattooLocation": "RE",
+    "birthTattooLocation": "LE",
+    "animalLAScore": null,
+    "freshenDate": null,
+    "lastAppraisalYear": null,
+    "lactationNumber": null,
+    "removalReasonId": null,
+    "laTripAnimalId": null,
+    "laAnimalStatus": 0,
+    "removalReason": null
   },
   {
     "name": "LIL PILCHUCK CREEK AMETH JEWEL",
