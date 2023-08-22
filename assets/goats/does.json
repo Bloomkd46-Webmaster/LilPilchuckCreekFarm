@@ -217,7 +217,8 @@
     "adgaAssociation": {
       "isAdga": true
     },
-    "obtained": "2021-07-31T00:00:00"
+    "obtained": "2021-07-31T00:00:00",
+    "adgaAssociationId": 1
   },
   {
     "name": "GILLIS FAMILY FARM MYSTIC",
@@ -437,7 +438,8 @@
     "adgaAssociation": {
       "isAdga": true
     },
-    "obtained": "2021-07-31T00:00:00"
+    "obtained": "2021-07-31T00:00:00",
+    "adgaAssociationId": 1
   },
   {
     "name": "R SERENITY CF BLUE HAZE",
@@ -657,7 +659,8 @@
     "adgaAssociation": {
       "isAdga": true
     },
-    "obtained": "2019-06-09T00:00:00"
+    "obtained": "2019-06-09T00:00:00",
+    "adgaAssociationId": 1
   },
   {
     "name": "TUA FARMS RMI SUGAR N SPICE",
@@ -877,7 +880,8 @@
     "adgaAssociation": {
       "isAdga": true
     },
-    "obtained": "2023-04-30T00:00:00"
+    "obtained": "2023-04-30T00:00:00",
+    "adgaAssociationId": 1
   },
   {
     "tenantId": 1,
@@ -1096,7 +1100,8 @@
     "removalReasonId": null,
     "laTripAnimalId": null,
     "laAnimalStatus": 0,
-    "removalReason": null
+    "removalReason": null,
+    "adgaAssociationId": 1
   },
   {
     "tenantId": 1,
@@ -1315,7 +1320,8 @@
     "removalReasonId": null,
     "laTripAnimalId": null,
     "laAnimalStatus": 0,
-    "removalReason": null
+    "removalReason": null,
+    "adgaAssociationId": 1
   },
   {
     "name": "LIL PILCHUCK CREEK AMETH JEWEL",
@@ -1535,7 +1541,8 @@
     "adgaAssociation": {
       "isAdga": true
     },
-    "obtained": "2023-04-17T00:00:00"
+    "obtained": "2023-04-17T00:00:00",
+    "adgaAssociationId": 1
   },
   {
     "name": "LEISURE TIME TL BLACK BEAUTY",
@@ -1754,6 +1761,7 @@
     "showBreederDetails": true,
     "adgaAssociation": {
       "isAdga": true
-    }
+    },
+    "adgaAssociationId": 1
   }
 ]

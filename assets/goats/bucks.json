@@ -217,7 +217,8 @@
     "adgaAssociation": {
       "isAdga": true
     },
-    "obtained": "2020-05-17T00:00:00"
+    "obtained": "2020-05-17T00:00:00",
+    "adgaAssociationId": 1
   },
   {
     "name": "BE WELL BM RUTA GRAVEOLENS",
@@ -437,6 +438,7 @@
     "adgaAssociation": {
       "isAdga": true
     },
-    "obtained": "2023-04-19T00:00:00"
+    "obtained": "2023-04-19T00:00:00",
+    "adgaAssociationId": 1
   }
 ]
