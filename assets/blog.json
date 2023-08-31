@@ -1,5 +1,36 @@
 [
   {
+    "image": "/assets/blog/2023-8-7/Sugar.png",
+    "author": "Kolton Bloom",
+    "title": "Stanwood-Camano Fair!",
+    "description": [
+      "Just got back from the Stanwood-Camano fair and resting up to head over to ",
+      {
+        "a href='https://my-enchanted-acres.com' target='_blank'": "My Enchanted Acres"
+      },
+      " tomorrow to go to the Clark County Fair to help show",
+      {
+        "br": ""
+      },
+      "The show went well, ",
+      {
+        "a href='/does/Sugar'": "Sugar"
+      },
+      " was the reserve grand champion junior doe, which was very exciting. ",
+      {
+        "a href='/does/Mystic'": "Mystic",
+        "": " and ",
+        "a href='/does/Sky'": "Sky"
+      },
+      " also did very good.",
+      {
+        "br": ""
+      },
+      "I am looking forward to come back again next year!"
+    ],
+    "posted": "Posted August 7, 2023"
+  },
+  {
     "image": [
       "/assets/blog/2023-7-23/1.png",
       "/assets/blog/2023-7-23/1 (1).png",
