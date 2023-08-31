@@ -44,45 +44,45 @@
           <div *ngIf="goat" class="text-center mt-4 popover-container">
             <div class="container border rounded-4 desktop-grid" *ngIf="goat.damId">
               <div class="row row-cols-2 border-bottom">
-                <span class="col border-end border-3 fw-bolder">Sire:</span>
-                <span class="col fw-bolder">Dam:</span>
+                <span class="col border-end border-3 fw-bolder">Dam:</span>
+                <span class="col fw-bolder">Sire:</span>
               </div>
               <div class="row row-cols-2 border-bottom border-3" *ngIf="parents">
-                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.sire.name"
-                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.sire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.sire.normalizeId}}</span>{{getOwner(parents.sire)}}{{getFullAwards(parents.sire.awards)}}</div>'>{{parents.sire.name}}<span
-                    *ngIf="parents.sire.awards.length"><br><small>
-                      {{getAwards(parents.sire.awards)}}</small></span></span>
-                <span class="col" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.dam.name"
+                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.dam.name"
                   attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.dam.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.dam.normalizeId}}</span>{{getOwner(parents.dam)}}{{getFullAwards(parents.dam.awards)}}</div>'>{{parents.dam.name}}<span
                     *ngIf="parents.dam.awards.length"><br><small>
                       {{getAwards(parents.dam.awards)}}</small></span></span>
+                <span class="col" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.sire.name"
+                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.sire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.sire.normalizeId}}</span>{{getOwner(parents.sire)}}{{getFullAwards(parents.sire.awards)}}</div>'>{{parents.sire.name}}<span
+                    *ngIf="parents.sire.awards.length"><br><small>
+                      {{getAwards(parents.sire.awards)}}</small></span></span>
               </div>
               <div class="row row-cols-2 border-bottom border-3" *ngIf="parents === undefined">
                 <span class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small></span>
                 <span class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></span>
               </div>
               <div class="row row-cols-4 border-bottom">
-                <span class="col fw-bolder border-end border-3">Sire's Sire:</span>
-                <span class="col fw-bolder border-end border-5">Sire's Dam:</span>
-                <span class="col fw-bolder border-end border-3">Dam's Sire:</span>
-                <span class="col fw-bolder">Dam's Dam:</span>
+                <span class="col fw-bolder border-end border-3">Dam's Dam:</span>
+                <span class="col fw-bolder border-end border-5">Dam's Sire:</span>
+                <span class="col fw-bolder border-end border-3">Sire's Dam:</span>
+                <span class="col fw-bolder ">Sire's Sire:</span>
               </div>
               <div class="row row-cols-4" *ngIf="parents">
-                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.siresSire.name"
-                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.siresSire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.siresSire.normalizeId}}</span>{{getOwner(parents.siresSire)}}{{getFullAwards(parents.siresSire.awards)}}</div>'>{{parents.siresSire.name}}
-                  <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
+                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.damsDam.name"
+                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.damsDam.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.damsDam.normalizeId}}</span>{{getOwner(parents.damsDam)}}{{getFullAwards(parents.damsDam.awards)}}</div>'>{{parents.damsDam.name}}
+                  <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
                 </span>
-                <span class="col border-end border-5" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.siresDam.name"
-                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.siresDam.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.siresDam.normalizeId}}</span>{{getOwner(parents.siresDam)}}{{getFullAwards(parents.siresDam.awards)}}</div>'>{{parents.siresDam.name}}
-                  <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
-                </span>
-                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.damsSire.name"
+                <span class="col border-end border-5" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.damsSire.name"
                   attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.damsSire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.damsSire.normalizeId}}</span>{{getOwner(parents.damsSire)}}{{getFullAwards(parents.damsSire.awards)}}</div>'>{{parents.damsSire.name}}
                   <span *ngIf="parents.damsSire.awards.length"><br><small>{{getAwards(parents.damsSire.awards)}}</small></span>
                 </span>
-                <span class="col" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.damsDam.name"
-                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.damsDam.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.damsDam.normalizeId}}</span>{{getOwner(parents.damsDam)}}{{getFullAwards(parents.damsDam.awards)}}</div>'>{{parents.damsDam.name}}
-                  <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
+                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.siresDam.name"
+                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.siresDam.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.siresDam.normalizeId}}</span>{{getOwner(parents.siresDam)}}{{getFullAwards(parents.siresDam.awards)}}</div>'>{{parents.siresDam.name}}
+                  <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
+                </span>
+                <span class="col " tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.siresSire.name"
+                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.siresSire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.siresSire.normalizeId}}</span>{{getOwner(parents.siresSire)}}{{getFullAwards(parents.siresSire.awards)}}</div>'>{{parents.siresSire.name}}
+                  <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
                 </span>
               </div>
               <div class="row row-cols-4" *ngIf="parents === undefined">
@@ -98,41 +98,6 @@
             </div>
             <div class="container border rounded-4 mobile-grid" *ngIf="goat.damId">
               <div class="row row-cols-1 border-bottom">
-                <span class="col">Sire:</span>
-              </div>
-              <div class="row row-cols-1 border-bottom border-3" *ngIf="parents">
-                <span class="col" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.sire.name"
-                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.sire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.sire.normalizeId}}</span>{{getOwner(parents.sire)}}{{getFullAwards(parents.sire.awards)}}</div>'>{{parents.sire.name}}<span
-                    *ngIf="parents.sire.awards.length"><br><small>
-                      {{getAwards(parents.sire.awards)}}</small></span></span>
-              </div>
-              <div class="row row-cols-1 border-bottom border-3" *ngIf="parents === undefined">
-                <span class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></span>
-              </div>
-              <div class="row row-cols-2 border-bottom">
-                <span class="col border-end border-3">Sire's Sire (SS):</span>
-                <span class="col">Sire's Dam (SD):</span>
-              </div>
-              <div class="row row-cols-2" *ngIf="parents">
-                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.siresSire.name"
-                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.siresSire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.siresSire.normalizeId}}</span>{{getOwner(parents.siresSire)}}{{getFullAwards(parents.siresSire.awards)}}</div>'>{{parents.siresSire.name}}
-                  <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
-                </span>
-                <span class="col" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.siresDam.name"
-                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.siresDam.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.siresDam.normalizeId}}</span>{{getOwner(parents.siresDam)}}{{getFullAwards(parents.siresDam.awards)}}</div>'>{{parents.siresDam.name}}
-                  <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
-                </span>
-              </div>
-              <div class="row row-cols-2" *ngIf="parents === undefined">
-                <span class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
-                </span>
-                <span class="col placeholder-wave placeholder">lorem<br><small>ipsum</small>
-                </span>
-              </div>
-            </div>
-            <br>
-            <div class="container border rounded-4 mobile-grid" *ngIf="goat.damId">
-              <div class="row row-cols-1 border-bottom">
                 <span class="col">Dam:</span>
               </div>
               <div class="row row-cols-1 border-bottom border-3" *ngIf="parents">
@@ -145,17 +110,52 @@
                 <span class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></span>
               </div>
               <div class="row row-cols-2 border-bottom">
-                <span class="col border-end border-3">Dam's Sire (DS):</span>
-                <span class="col">Dam's Dam (DD):</span>
+                <span class="colborder-end border-3">Dam's Dam:</span>
+                <span class="col ">Dam's Sire:</span>
               </div>
               <div class="row row-cols-2" *ngIf="parents">
-                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.damsSire.name"
+                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.damsDam.name"
+                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.damsDam.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.damsDam.normalizeId}}</span>{{getOwner(parents.damsDam)}}{{getFullAwards(parents.damsDam.awards)}}</div>'>{{parents.damsDam.name}}
+                  <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
+                </span>
+                <span class="col " tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.damsSire.name"
                   attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.damsSire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.damsSire.normalizeId}}</span>{{getOwner(parents.damsSire)}}{{getFullAwards(parents.damsSire.awards)}}</div>'>{{parents.damsSire.name}}
                   <span *ngIf="parents.damsSire.awards.length"><br><small>{{getAwards(parents.damsSire.awards)}}</small></span>
                 </span>
-                <span class="col" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.damsDam.name"
-                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.damsDam.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.damsDam.normalizeId}}</span>{{getOwner(parents.damsDam)}}{{getFullAwards(parents.damsDam.awards)}}</div>'>{{parents.damsDam.name}}
-                  <span *ngIf="parents.damsDam.awards.length"><br><small>{{getAwards(parents.damsDam.awards)}}</small></span>
+              </div>
+              <div class="row row-cols-2" *ngIf="parents === undefined">
+                <span class="col border-end border-3 placeholder-wave placeholder">lorem<br><small>ipsum</small>
+                </span>
+                <span class="col placeholder-wave placeholder">lorem<br><small>ipsum</small>
+                </span>
+              </div>
+            </div>
+            <br>
+            <div class="container border rounded-4 mobile-grid" *ngIf="goat.damId">
+              <div class="row row-cols-1 border-bottom">
+                <span class="col">Sire:</span>
+              </div>
+              <div class="row row-cols-1 border-bottom border-3" *ngIf="parents">
+                <span class="col" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.sire.name"
+                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.sire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.sire.normalizeId}}</span>{{getOwner(parents.sire)}}{{getFullAwards(parents.sire.awards)}}</div>'>{{parents.sire.name}}<span
+                    *ngIf="parents.sire.awards.length"><br><small>
+                      {{getAwards(parents.sire.awards)}}</small></span></span>
+              </div>
+              <div class="row row-cols-1 border-bottom border-3" *ngIf="parents === undefined">
+                <span class="col placeholder-wave placeholder">lorem<br><small>ipsum</small></span>
+              </div>
+              <div class="row row-cols-2 border-bottom">
+                <span class="col border-end border-3">Sire's Dam:</span>
+                <span class="col">Sire's Sire:</span>
+              </div>
+              <div class="row row-cols-2" *ngIf="parents">
+                <span class="col border-end border-3" tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.siresDam.name"
+                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.siresDam.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.siresDam.normalizeId}}</span>{{getOwner(parents.siresDam)}}{{getFullAwards(parents.siresDam.awards)}}</div>'>{{parents.siresDam.name}}
+                  <span *ngIf="parents.siresDam.awards.length"><br><small>{{getAwards(parents.siresDam.awards)}}</small></span>
+                </span>
+                <span class="col " tabindex="0" data-bs-toggle="popover" [attr.data-bs-title]="parents.siresSire.name"
+                  attr.data-bs-content='<div class="text-capitalize"><span class="fw-bolder">Born</span>: <span class="fw-lighter">{{getBirthday(parents.siresSire.dateOfBirth)}}</span><br><span class="fw-bolder">ID</span>: <span class="fw-lighter">{{parents.siresSire.normalizeId}}</span>{{getOwner(parents.siresSire)}}{{getFullAwards(parents.siresSire.awards)}}</div>'>{{parents.siresSire.name}}
+                  <span *ngIf="parents.siresSire.awards.length"><br><small>{{getAwards(parents.siresSire.awards)}}</small></span>
                 </span>
               </div>
               <div class="row row-cols-2" *ngIf="parents === undefined">
