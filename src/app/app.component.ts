@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
         console.error(event.error);
       }
     });
-    this.goatService.getForSale().then(goats => this.forSale = [...goats.does, ...goats.bucks, ...goats.pets].length);
+    this.goatService.getForSale().then(goats => this.forSale = [...goats.does, ...goats.bucks, ...goats.pets].filter(goat => goat.status !== 'Sold').length);
   }
   /**
    * Returns wether or not a link is active
