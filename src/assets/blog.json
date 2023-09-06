@@ -1,5 +1,59 @@
 [
   {
+    "image": [
+      "/assets/blog/2023-9-5/4H-Showmanship.png",
+      "/assets/blog/2023-9-5/OC-Showmanship.png",
+      "/assets/blog/2023-9-5/Beauty.png",
+      "/assets/blog/2023-9-5/Sugar.png",
+      "/assets/blog/2023-9-5/Crystal.png"
+    ],
+    "author": "Kolton Bloom",
+    "title": "2023 Evergreen State Fair Recap",
+    "description": [
+      "The Evergreen State Fair has now wrapped up. I was there during the 4-H week like last year but this year I also stayed for the open show week. Unfortunately, I did not record placings during the 4-H week but I did record them during the open show week so here they are in order by age:",
+      {
+        "ul": [
+          {
+            "li": "4-H Showmanship - Reserve Grand Champion"
+          },
+          {
+            "li": "Open Show Showmanship - Grand Champion"
+          },
+          {
+            "li": "Beauty - 2nd of 5"
+          },
+          {
+            "li": "Jewel - 3rd of 7"
+          },
+          {
+            "li": "Sky - Last of 9"
+          },
+          {
+            "li": "Zaya - 8th of 9"
+          },
+          {
+            "li": "Sugar - 1st of 1"
+          },
+          {
+            "li": "Crystal - 7th of 13"
+          },
+          {
+            "li": "Mystic - Last of 13"
+          },
+          {
+            "li": "Crystal & Jewel (Dam/Daughter) - 10th of 11"
+          }
+        ]
+      },
+      "Additional congratulations to My Enchated Acres for taking Best of Breed for Nubians and to Leisure Time for taking Best of Breed for Nigerian Dwarfs, Best in Show, and Best Dairy Herd",
+      {
+        "br": ""
+      },
+      "Stay tuned for the upcoming breeding schedule"
+    ],
+    "posted": "Posted September 5th, 2023"
+  },
+  {
     "image": "/assets/blog/2023-8-7/Sugar.png",
     "author": "Kolton Bloom",
     "title": "Stanwood-Camano Fair!",
