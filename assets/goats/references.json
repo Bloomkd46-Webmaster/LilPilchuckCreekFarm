@@ -806,7 +806,7 @@
       "isPrimary": true,
       "creditLimit": 20,
       "lifeTimeCredit": null,
-      "membershipStatus": "Active",
+      "membershipStatus": "NonMember",
       "defaultAddress": null,
       "id": 1546125
     },
@@ -1145,7 +1145,7 @@
       "isPrimary": true,
       "creditLimit": 20,
       "lifeTimeCredit": null,
-      "membershipStatus": "Active",
+      "membershipStatus": "NonMember",
       "defaultAddress": null,
       "id": 1546125
     },
@@ -3135,7 +3135,7 @@
       "isPrimary": true,
       "creditLimit": 20,
       "lifeTimeCredit": null,
-      "membershipStatus": "Active",
+      "membershipStatus": "NonMember",
       "defaultAddress": null,
       "id": 1582626
     },
