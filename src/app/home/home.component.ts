@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import app from '../app.json';
 
 
 @Component({
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  public app = app;
 
   constructor() { }
 

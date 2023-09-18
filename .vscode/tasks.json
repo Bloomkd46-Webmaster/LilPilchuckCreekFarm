@@ -20,8 +20,8 @@
         }
       },
       "presentation": {
-        "reveal": "silent",
-        "revealProblems": "onProblem",
+        "reveal": "never",
+        "revealProblems": "never",
         "showReuseMessage": false,
         "panel": "dedicated",
         "close": true

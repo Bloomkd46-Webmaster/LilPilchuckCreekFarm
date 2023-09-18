@@ -3,12 +3,15 @@ import { filter, map, mergeMap } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
+import app from './app.json';
 import { ColorSchemeService } from './color-scheme.service';
 import { GoatService } from './goat.service';
 import { MetaService } from './meta.service';
 
 
 declare const gtag: Function;
+//@ts-expect-error
+declare var window: { lastScroll: number; } & typeof window;
 
 @Component({
   selector: 'app-root',
@@ -16,12 +19,43 @@ declare const gtag: Function;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  app = app;
   constructor(public colorScheme: ColorSchemeService, public router: Router, private metaService: MetaService, private activatedRoute: ActivatedRoute, private goatService: GoatService) { }
   public forSale = 0;
   /**
    * Update meta's and add route change listeners
    */
   ngOnInit(): void {
+    /*
+        <!-- Google tag (gtag.js) -->
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-XSEKHTV26P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-XSEKHTV26P', { send_page_view: false });
+    </script>
+    */
+    if (app.analytics) {
+      const head = document.getElementsByTagName('head')[0];
+
+
+      const script1 = document.createElement('script');
+      script1.src = `https://www.googletagmanager.com/gtag/js?id=${app.analytics}`;
+      script1.async = true;
+      const script2 = document.createElement('script');
+      script2.innerHTML =
+        `window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', '${app.analytics}', { send_page_view: false });`;
+      head.insertBefore(script1, head.lastChild);
+      head.insertBefore(script2, head.lastChild);
+    }
+
+    window.addEventListener("scroll", () => {
+      window.lastScroll = window.scrollY;
+    });
     //gtag('config', 'G-CCJFLF4RHZ', { 'color_scheme': this.colorScheme.darkMode ? 'dark' : 'light' });
     this.router.events
       .pipe(
@@ -54,7 +88,12 @@ export class AppComponent implements OnInit {
         console.error(event.error);
       }
     });
-    this.goatService.getForSale().then(goats => this.forSale = [...goats.does, ...goats.bucks, ...goats.pets].filter(goat => goat.status !== 'Sold').length);
+    if (app.forSale) {
+      this.goatService.getForSale().then(goats => this.forSale = [...goats.does, ...goats.bucks, ...goats.pets].filter(goat => !goat.status).length);
+    }
+    Promise.all([
+      this.goatService.getDoes, this.goatService.getBucks, this.goatService.getReferences, app.pets ? this.goatService.getPets : undefined, app.kiddingSchedule ? this.goatService.getKiddingSchedule() : undefined, app.blog ? this.goatService.getBlog() : undefined
+    ].filter(promise => !!promise)).then(() => console.log('Preloaded assets')).catch(err => console.error('Failed to preload asset with error:', err));
   }
   /**
    * Returns wether or not a link is active

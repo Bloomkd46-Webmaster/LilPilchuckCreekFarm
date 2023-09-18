@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <img src="./assets/logos/18ppi.png" alt="Logo" class="d-inline-block align-text-top" width="70" height="70">
     <a class="navbar-brand" routerLink="/">
-      <p class="h4">Lil' Pilchuck <br> Creek Farm</p>
+      <p class="h4" [innerHTML]="app.menubarTitle"></p>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,15 +53,15 @@
           <a class="nav-link" routerLinkActive="active" aria-currentWhenActive="page" routerLink="/bucks" data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show">Bucks</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="app.pets">
           <a class="nav-link" routerLinkActive="active" aria-currentWhenActive="page" routerLink="/pets" data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show">Pets</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="app.kiddingSchedule">
           <a class="nav-link" routerLinkActive="active" aria-currentWhenActive="page" routerLink="/kidding-schedule"
             data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Kidding Schedule</a>
         </li>
-        <li class="nav-item position-relative">
+        <li class="nav-item position-relative" *ngIf="app.forSale">
           <a class="nav-link" routerLinkActive="active" aria-currentWhenActive="page" routerLink="/for-sale" data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show">For Sale<span
               class="position-absolute top-0 start-100 translate-middle badge rounded-pill border border-light bg-danger"
@@ -69,7 +69,7 @@
             </span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="app.blog">
           <a class="nav-link" routerLinkActive="active" aria-currentWhenActive="page" routerLink="/blog" data-bs-toggle="collapse"
             data-bs-target=".navbar-collapse.show">Farm Blog</a>
         </li>
@@ -96,12 +96,12 @@
 <!-- Footer with link to source code -->
 <footer class="bd-footer color-scheme-secondary">
   <br>
-  <div class="text-center"> Kolton & Karen Bloom <br>
-    <a href="mailto:lilpilchuckcreekfarm@gmail.com">LilPilchuckCreekFarm@gmail.com</a>
+  <div class="text-center"> {{app.owner}} <br>
+    <a [href]="'mailto:' + app.email">{{app.email}}</a>
   </div><br>
   <div class="container  text-center" style="min-height: 5vh;">This Site Was Created and Is Maintained By <a
       href="https://github.com/bloomkd46-webmaster" target="_blank">Bloomkd46</a>
-    <br>See The Source Code On <a href="https://github.com/bloomkd46-webmaster/LilPilchuckCreekFarm" target="_blank">Github</a>
+    <br>See The Source Code On <a [href]="app.repo" target="_blank">Github</a>
   </div>
   <br>
 </footer>

@@ -12,6 +12,9 @@ import { MetaService } from '../meta.service';
 
 
 declare const bootstrap: typeof Bootstrap;
+//@ts-expect-error
+declare var window: { lastScroll: number; } & typeof window;
+
 @Component({
   selector: 'app-goat-modal',
   templateUrl: './goat-modal.component.html',
@@ -67,14 +70,27 @@ export class GoatModalComponent implements OnInit, AfterViewInit, OnDestroy {
   };
   @ViewChild("modal") modal!: ElementRef<HTMLDivElement>;
   @ViewChild("carousel") carousel!: ElementRef<HTMLDivElement>;
+  lastScroll = 0;
   ngAfterViewInit(): void {
     if (this.goat || (this.nickname && !this.ignoreNotFound)) {
+
+      console.log('First position:', window.lastScroll);
+      this.lastScroll = window.lastScroll;
       const bsModal = new bootstrap.Modal(this.modal.nativeElement);
-      bsModal.show();
+      //Safari will focus the Modal which is not where the user was when they open it
+      this.modal.nativeElement.addEventListener('shown.bs.modal', () => {
+        if (window.scrollY !== this.lastScroll) {
+          console.log('Pre-Fix position:', window.scrollY);
+          console.log('Next Position:', this.lastScroll);
+          console.log('Fixing Scroll Position');
+          window.scrollTo({ top: this.lastScroll });
+        }
+      });
       this.modal.nativeElement.addEventListener('hidden.bs.modal', () => {
         this.meta.removeTag('name="robots"');
         this.router.navigate(['../'], { relativeTo: this.activatedRoute });
       });
+      bsModal.show();
       const interval = setInterval(() => {
         const popovers = document.querySelectorAll('[data-bs-toggle="popover"]');
         if (popovers.length) {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
 import { Blog, GoatService } from '../goat.service';
@@ -14,36 +13,54 @@ import { MetaService } from '../meta.service';
 })
 export class BlogComponent implements OnInit {
   public blog?: Blog = [];
-  constructor(public goatService: GoatService, public colorScheme: ColorSchemeService, public route: ActivatedRoute, public metaService: MetaService, public sanitizer: DomSanitizer) {
-
+  routeTitle?: string;
+  constructor(public goatService: GoatService, public colorScheme: ColorSchemeService, public metaService: MetaService, private router: Router) {
+    this.router.events.subscribe(val => {
+      if (val instanceof NavigationEnd) {
+        this.routeTitle = val.urlAfterRedirects.split('#').pop()?.replace(/-|%20/g, ' ');
+        if (this.routeTitle) {
+          this.goatService.getBlog().then(blog => {
+            const post = blog.find(post => post.title.replace(/-|%20/g, ' ') === this.routeTitle);
+            if (post) {
+              document.getElementById(post.title)?.scrollIntoView({ block: 'end' });
+              //this.scrollToTargetAdjusted(post.title);
+              this.metaService.updateTitle(`${post.title} · Farm Blog`);
+              this.metaService.updateDescription(this.getHTML(post.description));
+            }
+          });
+        }
+      }
+    });
   }
   ngOnInit(): void {
     this.goatService.getBlog().then(blog => {
       this.blog = blog;
-      this.route.fragment.subscribe(title => {
-        const post = this.blog?.find(post => post.title === title);
+      const interval = setInterval(() => {
+        const post = blog.find(post => post.title.replace(/-|%20/g, ' ') === this.routeTitle);
         if (post) {
-          setTimeout(() => {
-            this.scrollToTargetAdjusted(post.title);
-            this.metaService.updateTitle(`${title} · Farm Blog`);
-            this.metaService.updateDescription(this.getHTML(post.description));
-          });
+          document.getElementById(post.title)?.scrollIntoView({ block: 'end' });
+          //this.scrollToTargetAdjusted(post.title);
+          this.metaService.updateTitle(`${post.title} · Farm Blog`);
+          this.metaService.updateDescription(this.getHTML(post.description));
+          clearInterval(interval);
         }
       });
     });
     setTimeout(() => this.blog?.length ? undefined : this.blog = undefined, 100);
   }
-  scrollToTargetAdjusted(title: string): void {
-    var element = document.getElementById(title)!;
-    var headerOffset = 160;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.screenY - headerOffset;
+  /*
+scrollToTargetAdjusted(title: string): void {
+var element = document.getElementById(title)!;
+var headerOffset = 160;
+var elementPosition = element.getBoundingClientRect().top;
+var offsetPosition = elementPosition + window.screenY - headerOffset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
+
+window.scrollTo({
+  top: offsetPosition,
+  behavior: "smooth"
+});
+}*/
   images(images: string | string[]): boolean {
     return typeof images === 'object' ?? false;
   }

@@ -27,7 +27,12 @@
               "src/robots.txt",
               "src/assets",
               "src/manifest.webmanifest",
-              "src/route.js"
+              "src/route.js",
+              {
+                "input": "src/app/",
+                "output": "/",
+                "glob": "app.json"
+              }
             ],
             "styles": [
               "src/styles.scss",

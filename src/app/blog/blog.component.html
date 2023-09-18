@@ -1,7 +1,7 @@
 <h1 class="text-center">Farm Blog</h1>
 <h5 class="text-center">See What's Been Happening On The Farm</h5>
 <br>
-<div class="card mb-3 color-scheme-secondary" *ngFor="let post of blog ?? []; index as z;">
+<div class="card mb-3 color-scheme-secondary" *ngFor="let post of blog ?? []; index as z;" [id]="post.title">
   <div class="row g-0 p-2">
     <div class="col-md-4 d-flex align-items-center">
       <div class="ratio ratio-4x3" *ngIf="!images(post.image)">
@@ -20,7 +20,7 @@
             <div *ngFor="let image of getImages(post.image); index as i" class="carousel-item" [class.active]="i === 0">
               <img [src]="image" [alt]="post.title" style="aspect-ratio: 4/3; width: 100%;object-fit:contain;object-position: center;">
             </div>
-            <div *ngFor="let image of (images ? [] : [1,2,3]); index as i" class="carousel-item placeholder-wave"
+            <div *ngFor="let image of (getImages(post.image) ? [] : [1,2,3]); index as i" class="carousel-item placeholder-wave"
               [class.placeholder]="!images" [class.active]="i === 0">
               <div style="aspect-ratio: 4/3; width: 100%;object-fit:contain;object-position: center;"></div>
             </div>
@@ -46,7 +46,7 @@
               </path>
             </svg>
           </a>
-          <h5 [id]="post.title" class="card-title align-self-start" [innerHTML]="post.title"></h5>
+          <h5 class="card-title align-self-start" [innerHTML]="post.title"></h5>
         </span>
         <!--<h5 [id]="post.title" class="card-title align-self-start title" [innerHTML]="post.title"></h5>-->
         <small class="card-subtitle mb-2 muted align-self-start" [innerHTML]="post.author"></small>
