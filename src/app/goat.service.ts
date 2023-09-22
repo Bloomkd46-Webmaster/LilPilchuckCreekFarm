@@ -38,16 +38,16 @@ export class GoatService {
         }));
     }
   }
-  private _references?: ExternalGoat[];
-  getReferences(): Promise<ExternalGoat[]> {
-    if (this._references) {
-      console.debug('Used References From Cache', this._references);
-      return Promise.resolve(this._references);
+  private _externals?: ExternalGoat[];
+  getExternals(): Promise<ExternalGoat[]> {
+    if (this._externals) {
+      console.debug('Used Externals From Cache', this._externals);
+      return Promise.resolve(this._externals);
     } else {
-      return new Promise(resolve => this.http.get<ExternalGoat[]>('/assets/goats/references.json')
+      return new Promise(resolve => this.http.get<ExternalGoat[]>('/assets/goats/externals.json')
         .subscribe(data => {
-          this._references = data;
-          console.debug('Loaded References From Server', data);
+          this._externals = data;
+          console.debug('Loaded Externals From Server', data);
           resolve(data);
         }));
     }
@@ -69,16 +69,16 @@ export class GoatService {
     ////return new Promise(resolve => this.http.get<ExternalGoat[]>('/assets/goats/references.json').subscribe(data => resolve(data)));
   }
   async getParents(goat: Goat): Promise<Parents> {
-    const references = await this.getReferences();
-    const dam = references.find(reference => reference.id === goat.damId) ?? (await this.getDoes()).find(doe => doe.id === goat.damId)!;
-    const sire = references.find(reference => reference.id === goat.sireId) ?? (await this.getBucks()).find(buck => buck.id === goat.sireId)!;
+    const externals = await this.getExternals();
+    const dam = externals.find(reference => reference.id === goat.damId) ?? (await this.getDoes()).find(doe => doe.id === goat.damId)!;
+    const sire = externals.find(reference => reference.id === goat.sireId) ?? (await this.getBucks()).find(buck => buck.id === goat.sireId)!;
     return {
       dam: dam,
-      damsDam: references.find(reference => reference.id === dam.damId) ?? (await this.getDoes()).find(doe => doe.id === dam.damId)!,
-      damsSire: references.find(reference => reference.id === dam.sireId) ?? (await this.getBucks()).find(buck => buck.id === dam.sireId)!,
+      damsDam: externals.find(reference => reference.id === dam.damId) ?? (await this.getDoes()).find(doe => doe.id === dam.damId)!,
+      damsSire: externals.find(reference => reference.id === dam.sireId) ?? (await this.getBucks()).find(buck => buck.id === dam.sireId)!,
       sire: sire,
-      siresDam: references.find(reference => reference.id === sire.damId) ?? (await this.getDoes()).find(doe => doe.id === sire.damId)!,
-      siresSire: references.find(reference => reference.id === sire.sireId) ?? (await this.getBucks()).find(buck => buck.id === sire.sireId)!,
+      siresDam: externals.find(reference => reference.id === sire.damId) ?? (await this.getDoes()).find(doe => doe.id === sire.damId)!,
+      siresSire: externals.find(reference => reference.id === sire.sireId) ?? (await this.getBucks()).find(buck => buck.id === sire.sireId)!,
     };
   }
   private _rawKiddingSchedule?: RawKiddingSchedule[];

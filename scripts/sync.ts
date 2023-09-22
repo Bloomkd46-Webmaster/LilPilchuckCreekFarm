@@ -114,17 +114,17 @@ function titleCase(string: string) {
   fs.writeFileSync(path.join(__dirname, '../src/assets/goats/does.json'), JSON.stringify(does, null, 2));
   fs.writeFileSync(path.join(__dirname, '../src/assets/goats/bucks.json'), JSON.stringify(bucks, null, 2));
   ////fs.writeFileSync(path.join(__dirname, '../src/assets/goats/goats.json'), JSON.stringify(config, null, 2));
-  console.log('Updating Reference Goats...');
+  console.log('Updating External Goats...');
   ////const newConfig: { does: OwnedGoats['result']['items'] & { nickname: string; description: string; }[]; bucks: OwnedGoats['result']['items'] & { nickname: string; description: string; }[]; references: (Goats['result']['items'][number] & { awards: Awards['result']['items']; })[]; } = require('../src/assets/goats/goats.json');
   /*if (references === undefined) {
     console.log('Reference Goats Not Found In goats.json, Adding Them...');
     references = [];
   }*/
-  if (!fs.existsSync(path.join(__dirname, '../src/assets/goats/references.json'))) {
-    console.log('references.json Not Found, Creating It...');
-    fs.writeFileSync(path.join(__dirname, '../src/assets/goats/references.json'), JSON.stringify([]));
+  if (!fs.existsSync(path.join(__dirname, '../src/assets/goats/externals.json'))) {
+    console.log('externals.json Not Found, Creating It...');
+    fs.writeFileSync(path.join(__dirname, '../src/assets/goats/externals.json'), JSON.stringify([]));
   }
-  const references: (Goats['result']['items'][number] & { awards: Awards['result']['items']; })[] = require('../src/assets/goats/references.json');
+  const externals: (Goats['result']['items'][number] & { awards: Awards['result']['items']; })[] = require('../src/assets/goats/externals.json');
   const ids: number[] = [];//newConfig.references.map(reference => reference.id);
   for (const goat of [...does, ...bucks]) {
     //const dam = newConfig.references.find(reference => reference.id === goat.damId);
@@ -136,32 +136,32 @@ function titleCase(string: string) {
       ids.push(goat.sireId);
     }
   }
-  console.log('Downloading Reference Goats... (Part 1)');
-  let referenceGoats = (await adga.getGoats(ids)).items;
-  for (const referenceGoat of referenceGoats) {
-    if (!ids.includes(referenceGoat.damId) && !goats.items.map(goat => goat.id).includes(referenceGoat.damId)) {
-      ids.push(referenceGoat.damId);
+  console.log('Downloading External Goats... (Part 1)');
+  let externalGoats = (await adga.getGoats(ids)).items;
+  for (const externalGoat of externalGoats) {
+    if (!ids.includes(externalGoat.damId) && !goats.items.map(goat => goat.id).includes(externalGoat.damId)) {
+      ids.push(externalGoat.damId);
     }
-    if (!ids.includes(referenceGoat.sireId) && !goats.items.map(goat => goat.id).includes(referenceGoat.sireId)) {
-      ids.push(referenceGoat.sireId);
+    if (!ids.includes(externalGoat.sireId) && !goats.items.map(goat => goat.id).includes(externalGoat.sireId)) {
+      ids.push(externalGoat.sireId);
     }
   }
-  console.log('Downloading Reference Goats... (Part 2)');
-  referenceGoats = (await adga.getGoats(ids)).items;
-  console.log('Downloaded', referenceGoats.length, 'Reference Goats From ADGA.');
-  for (const goat of referenceGoats) {
+  console.log('Downloading External Goats... (Part 2)');
+  externalGoats = (await adga.getGoats(ids)).items;
+  console.log('Downloaded', externalGoats.length, 'External Goats From ADGA.');
+  for (const goat of externalGoats) {
     const awards = (await adga.getAwards(goat.id)).items;
-    const reference = references.find(reference => reference.id === goat.id);
-    if (reference) {
-      console.log(`Updating ${reference.name}...`);
-      Object.assign(references[references.indexOf(reference)], goat, { awards: awards });
+    const external = externals.find(external => external.id === goat.id);
+    if (external) {
+      console.log(`Updating ${external.name}...`);
+      Object.assign(externals[externals.indexOf(external)], goat, { awards: awards });
     } else {
       console.log(`Creating ${goat.name}...`);
-      references.push(Object.assign(goat, { awards: awards }));
+      externals.push(Object.assign(goat, { awards: awards }));
     }
   }
-  console.log('Saving Reference Goats...');
-  fs.writeFileSync(path.join(__dirname, '../src/assets/goats/references.json'), JSON.stringify(references, null, 2));
+  console.log('Saving External Goats...');
+  fs.writeFileSync(path.join(__dirname, '../src/assets/goats/externals.json'), JSON.stringify(externals, null, 2));
   console.log('Done.');
   if (unconfiguredGoats.length) {
     console.error(unconfiguredGoats.length, `Unconfigured Goats. Run Again Without '${headlessArg}' To Configure`);

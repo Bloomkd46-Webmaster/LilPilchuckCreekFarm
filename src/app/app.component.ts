@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
       this.goatService.getForSale().then(goats => this.forSale = [...goats.does, ...goats.bucks, ...goats.pets].filter(goat => !goat.status).length);
     }
     Promise.all([
-      this.goatService.getDoes, this.goatService.getBucks, this.goatService.getReferences, app.pets ? this.goatService.getPets : undefined, app.kiddingSchedule ? this.goatService.getKiddingSchedule() : undefined, app.blog ? this.goatService.getBlog() : undefined
+      this.goatService.getDoes, this.goatService.getBucks, this.goatService.getExternals, app.pets ? this.goatService.getPets : undefined, app.kiddingSchedule ? this.goatService.getKiddingSchedule() : undefined, app.blog ? this.goatService.getBlog() : undefined
     ].filter(promise => !!promise)).then(() => console.log('Preloaded assets')).catch(err => console.error('Failed to preload asset with error:', err));
   }
   /**
