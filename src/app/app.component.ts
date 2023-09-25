@@ -37,9 +37,6 @@ export class AppComponent implements OnInit {
     </script>
     */
     if (app.analytics) {
-      const head = document.getElementsByTagName('head')[0];
-
-
       const script1 = document.createElement('script');
       script1.src = `https://www.googletagmanager.com/gtag/js?id=${app.analytics}`;
       script1.async = true;
@@ -49,8 +46,8 @@ export class AppComponent implements OnInit {
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', '${app.analytics}', { send_page_view: false });`;
-      head.insertBefore(script1, head.lastChild);
-      head.insertBefore(script2, head.lastChild);
+      document.head.appendChild(script1);
+      document.head.appendChild(script2);
     }
 
     window.addEventListener("scroll", () => {
