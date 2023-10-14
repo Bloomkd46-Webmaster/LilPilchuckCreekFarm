@@ -218,7 +218,9 @@
       "isAdga": true
     },
     "obtained": "2021-07-31T00:00:00",
-    "adgaAssociationId": 1
+    "adgaAssociationId": 1,
+    "externalAssociationId": null,
+    "externalAssociation": null
   },
   {
     "name": "GILLIS FAMILY FARM MYSTIC",
@@ -439,7 +441,9 @@
       "isAdga": true
     },
     "obtained": "2021-07-31T00:00:00",
-    "adgaAssociationId": 1
+    "adgaAssociationId": 1,
+    "externalAssociationId": null,
+    "externalAssociation": null
   },
   {
     "name": "R SERENITY CF BLUE HAZE",
@@ -660,7 +664,9 @@
       "isAdga": true
     },
     "obtained": "2019-06-09T00:00:00",
-    "adgaAssociationId": 1
+    "adgaAssociationId": 1,
+    "externalAssociationId": null,
+    "externalAssociation": null
   },
   {
     "name": "TUA FARMS RMI SUGAR N SPICE",
@@ -881,7 +887,9 @@
       "isAdga": true
     },
     "obtained": "2023-04-30T00:00:00",
-    "adgaAssociationId": 1
+    "adgaAssociationId": 1,
+    "externalAssociationId": null,
+    "externalAssociation": null
   },
   {
     "tenantId": 1,
@@ -1101,7 +1109,9 @@
     "laTripAnimalId": null,
     "laAnimalStatus": 0,
     "removalReason": null,
-    "adgaAssociationId": 1
+    "adgaAssociationId": 1,
+    "externalAssociationId": null,
+    "externalAssociation": null
   },
   {
     "tenantId": 1,
@@ -1321,7 +1331,9 @@
     "laTripAnimalId": null,
     "laAnimalStatus": 0,
     "removalReason": null,
-    "adgaAssociationId": 1
+    "adgaAssociationId": 1,
+    "externalAssociationId": null,
+    "externalAssociation": null
   },
   {
     "name": "LIL PILCHUCK CREEK AMETH JEWEL",
@@ -1542,7 +1554,9 @@
       "isAdga": true
     },
     "obtained": "2023-04-17T00:00:00",
-    "adgaAssociationId": 1
+    "adgaAssociationId": 1,
+    "externalAssociationId": null,
+    "externalAssociation": null
   },
   {
     "name": "LEISURE TIME TL BLACK BEAUTY",
@@ -1762,6 +1776,8 @@
     "adgaAssociation": {
       "isAdga": true
     },
-    "adgaAssociationId": 1
+    "adgaAssociationId": 1,
+    "externalAssociationId": null,
+    "externalAssociation": null
   }
 ]
