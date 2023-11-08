@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +13,13 @@ export class ColorSchemeService {
   constructor() {
     this.darkMode = this.getDarkMode();
     this.lightMode = this.getLightMode();
+    (window as any).clarity("set", "color", this.darkMode ? 'Dark' : 'Light');
     window.matchMedia("(prefers-color-scheme: dark)").onchange = () => {
+      location.reload();
+      this.darkMode = this.getDarkMode();
+      this.lightMode = this.getLightMode();
+    };
+    window.matchMedia("(prefers-color-scheme: light)").onchange = () => {
       location.reload();
       this.darkMode = this.getDarkMode();
       this.lightMode = this.getLightMode();
