@@ -58,6 +58,7 @@ export class AppComponent implements OnInit {
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "${app.clarity}");`;
       document.head.appendChild(script);
+      (window as any).clarity("set", "Color Scheme", this.colorScheme.darkMode ? 'Dark' : 'Light');
     }
 
     window.addEventListener("scroll", () => {

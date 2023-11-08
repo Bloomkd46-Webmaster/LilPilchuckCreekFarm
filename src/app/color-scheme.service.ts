@@ -13,7 +13,6 @@ export class ColorSchemeService {
   constructor() {
     this.darkMode = this.getDarkMode();
     this.lightMode = this.getLightMode();
-    (window as any).clarity("set", "color", this.darkMode ? 'Dark' : 'Light');
     window.matchMedia("(prefers-color-scheme: dark)").onchange = () => {
       location.reload();
       this.darkMode = this.getDarkMode();
