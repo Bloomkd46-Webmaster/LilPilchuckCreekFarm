@@ -1316,7 +1316,7 @@
       "associatedUserId": 3274,
       "isPrimary": true,
       "creditLimit": 20,
-      "lifeTimeCredit": 1,
+      "lifeTimeCredit": 2,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1518479
@@ -1866,7 +1866,7 @@
       "associatedUserId": 3274,
       "isPrimary": true,
       "creditLimit": 20,
-      "lifeTimeCredit": 1,
+      "lifeTimeCredit": 2,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1518479
@@ -2997,7 +2997,7 @@
       "associatedUserId": 3274,
       "isPrimary": true,
       "creditLimit": 20,
-      "lifeTimeCredit": 1,
+      "lifeTimeCredit": 2,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1518479
@@ -3200,7 +3200,7 @@
       "associatedUserId": 3274,
       "isPrimary": true,
       "creditLimit": 20,
-      "lifeTimeCredit": 1,
+      "lifeTimeCredit": 2,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1518479
@@ -3363,7 +3363,7 @@
       "associatedUserId": 3274,
       "isPrimary": true,
       "creditLimit": 20,
-      "lifeTimeCredit": 1,
+      "lifeTimeCredit": 2,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1518479
@@ -3552,7 +3552,7 @@
       "associatedUserId": 3274,
       "isPrimary": true,
       "creditLimit": 20,
-      "lifeTimeCredit": 1,
+      "lifeTimeCredit": 2,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1518479
@@ -3568,7 +3568,7 @@
       "associatedUserId": 3274,
       "isPrimary": true,
       "creditLimit": 20,
-      "lifeTimeCredit": 1,
+      "lifeTimeCredit": 2,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1518479
