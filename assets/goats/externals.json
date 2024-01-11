@@ -1625,7 +1625,7 @@
       "isPrimary": true,
       "creditLimit": 20,
       "lifeTimeCredit": null,
-      "membershipStatus": "Active",
+      "membershipStatus": "LifeTime",
       "defaultAddress": null,
       "id": 1480173
     },
