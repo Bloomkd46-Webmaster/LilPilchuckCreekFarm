@@ -116,7 +116,7 @@
       "associatedUserId": 23222,
       "isPrimary": true,
       "creditLimit": null,
-      "lifeTimeCredit": 2,
+      "lifeTimeCredit": 3,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1651913
@@ -168,7 +168,7 @@
       "associatedUserId": 23222,
       "isPrimary": true,
       "creditLimit": null,
-      "lifeTimeCredit": 2,
+      "lifeTimeCredit": 3,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1651913
@@ -184,7 +184,7 @@
       "associatedUserId": 23222,
       "isPrimary": true,
       "creditLimit": null,
-      "lifeTimeCredit": 2,
+      "lifeTimeCredit": 3,
       "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1651913
