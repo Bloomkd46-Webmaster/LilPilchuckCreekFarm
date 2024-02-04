@@ -12,9 +12,6 @@
     "sire": 1924035,
     "dam": 2175097,
     "bred": "12/31/2023",
-    "reservations": [
-      "Doe: Retained"
-    ],
     "due": "May 24, 2024"
   },
   {
@@ -22,16 +19,15 @@
     "sire": 1924035,
     "bred": "12/21/23",
     "due": "May 14, 2024",
-    "reservations": []
+    "reservations": [
+      "Doe: Retained"
+    ]
   },
   {
     "dam": 2293211,
     "sire": 1924035,
     "bred": "1/6/2024",
-    "due": "May 30, 2024",
-    "reservations": [
-      "Doe: Lily Coy"
-    ]
+    "due": "May 30, 2024"
   },
   {
     "bred": "1/31/2024",
