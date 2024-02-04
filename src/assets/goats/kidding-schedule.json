@@ -1,24 +1,42 @@
 [
   {
-    "bred": "November 22nd, 2022",
-    "dam": 2175097,
-    "sire": 1924035,
-    "due": "April 16th, 2023",
-    "does": 300,
-    "wethers": 100,
-    "reservations": [],
-    "kidded": "April 17th, 2023"
-  },
-  {
-    "bred": "December 19th, 2022",
+    "bred": "10/26/2023",
     "dam": 2174259,
     "sire": 1924035,
-    "due": "May 13th, 2023",
-    "does": 350,
-    "wethers": 100,
     "reservations": [
       "Doe: Retained"
     ],
-    "kidded": "May 16th, 2023"
+    "due": "March 19, 2024"
+  },
+  {
+    "sire": 1924035,
+    "dam": 2175097,
+    "bred": "12/31/2023",
+    "reservations": [
+      "Doe: Retained"
+    ],
+    "due": "May 24, 2024"
+  },
+  {
+    "dam": 2315360,
+    "sire": 1924035,
+    "bred": "12/21/23",
+    "due": "May 14, 2024",
+    "reservations": []
+  },
+  {
+    "dam": 2293211,
+    "sire": 1924035,
+    "bred": "1/6/2024",
+    "due": "May 30, 2024",
+    "reservations": [
+      "Doe: Lily Coy"
+    ]
+  },
+  {
+    "bred": "1/31/2024",
+    "due": "June 24, 2024",
+    "dam": 2326883,
+    "sire": 2294587
   }
 ]

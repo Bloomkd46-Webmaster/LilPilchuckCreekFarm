@@ -7,14 +7,20 @@
     <div class="col"><app-goat [goat]="breeding.sire"></app-goat></div>
     <div class="col-auto pt-5">
       <div *ngIf="!breeding.kidded">
-        <h3>Bred: {{breeding.bred}}</h3>
+        <h3>Bred: {{breeding.bred | date:'longDate'}}</h3>
         <br>
-        <h3>Due: {{breeding.due}}*</h3>
+        <h3>Due: {{breeding.due}}</h3>
         <br>
-        <h5>Does: ${{breeding.does}}</h5>
-        <h5>Wethers: ${{breeding.wethers}}</h5>
-        <br>
-        <div *ngIf="breeding.reservations.length">
+        <div *ngIf="breeding.does || breeding.wethers">
+          <div *ngIf="breeding.does">
+            <h5>Does: ${{breeding.does}}</h5>
+          </div>
+          <div *ngIf="breeding.wethers">
+            <h5>Wethers: ${{breeding.wethers}}</h5>
+          </div>
+          <br>
+        </div>
+        <div *ngIf="breeding.reservations && breeding.reservations.length">
           <h5>Reservations:</h5>
           <div class="row justify-content-center">
             <div class="col" *ngFor="let reservation of breeding.reservations">{{reservation}}</div>
@@ -64,4 +70,4 @@
     <br>
   </div>
 </div>
-<p class="text-center">*145 Days After Breeding</p>
+<p class="text-center">*Due 145 Days After Breeding</p>
