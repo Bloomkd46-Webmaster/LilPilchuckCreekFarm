@@ -1,4 +1,4 @@
-import { filter, map, mergeMap } from 'rxjs';
+import { filter } from 'rxjs';
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
       window.lastScroll = window.scrollY;
     });
     //gtag('config', 'G-CCJFLF4RHZ', { 'color_scheme': this.colorScheme.darkMode ? 'dark' : 'light' });
-    this.router.events
+    /*this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
         map(() => this.activatedRoute),
@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
           this.metaService.updateTitle(data['title'] ?? '');
           this.metaService.updateDescription(data['description'] ?? '');
           this.metaService.updateKeywords(data['keywords'] ?? []);
-        });
+        });*/
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
         this.closeDropdown();

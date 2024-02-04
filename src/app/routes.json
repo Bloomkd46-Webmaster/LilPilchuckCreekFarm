@@ -1,0 +1,30 @@
+{
+  "":{
+    "title": "Home",
+    "description": "Our hobby farm is home to ADGA Registered Nigerian Dwarfs. The farm has evolved from a farm girl's wish to continue her dairy roots into a 4-H project with the goal of raising show-quality goats. Thanks to wonderful breed mentors we have established a solid herd we hope to learn from and build on."
+  },
+  "does": {
+    "title": "Does",
+    "description": ""
+  },
+  "bucks": {
+    "title": "Bucks",
+    "description": ""
+  },
+  "pets": {
+    "title": "Pets",
+    "description": ""
+  },
+  "for-sale":{
+    "title": "For Sale",
+    "description": ""
+  },
+  "kidding-schedule": {
+    "title": "Kidding Schedule",
+    "description": ""
+  },
+  "blog": {
+    "title": "Blog",
+    "description": ""
+  }
+}
