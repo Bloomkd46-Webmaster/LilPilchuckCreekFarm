@@ -27,12 +27,14 @@ if (execSync('git branch --show-current').toString() === 'main\n') {
   console.error('ERROR:', 'Please try again on gh-pages branch');
   process.exit(1);
 }
-const index = readFileSync('index.html', { encoding: 'utf-8' }).split('\n').splice(5, 0,
+const index = readFileSync('index.html', { encoding: 'utf-8' });
+index.split('\n').splice(3, 0,
   `
 <meta name="apple-mobile-web-app-title" content="${app.tabTitle}">
 <meta name="application-name" content="${app.tabTitle}">
 <meta name="og:image" content="${app.link}assets/icons/og-image.jpg">
-`).join('\n');
+`);
+index.join('\n');
 
 const sitemap = [''];
 function writeFile(prefix, prefixTitle, name, description) {
@@ -40,15 +42,16 @@ function writeFile(prefix, prefixTitle, name, description) {
   console.log('Generating', path);
   const file = index;
   const title = [name, prefixTitle, app.tabTitle].filter(item => item).join(' · ');
-  file.split('\n').splice(5, 0, `
+  file.split('\n').splice(3, 0, `
   <title>${title}</title>
 <meta property="og:title" content="${title}">
 <meta name="og:url" content="${app.link + path.replace('.html', '')}">
 ${description ? `<meta name="description" content="${description}">
 <meta property="og:description" content="${description}">
 ` : ''}
-    `).join('\n');
-  writeFileSync(path, index);
+    `);
+  file.join('\n');
+  writeFileSync(path, file);
   sitemap.push(path.replace('.html', ''));
 }
 
@@ -94,10 +97,12 @@ function writeBaseFile(name, fancyName) {
   <title>${title}</title>
 <meta property="og:title" content="${title}">
 <meta name="og:url" content="${app.link + path.replace('.html', '')}">
-    `).join('\n');
-  writeFileSync(path, index);
+    `);
+  file.join('\n');
+  writeFileSync(path, file);
   sitemap.push(path.replace('.html', ''));
 }
+
 writeBaseFile('does', 'Does');
 writeBaseFile('bucks', 'Bucks');
 if (app.blog) {
@@ -109,5 +114,19 @@ if (app.kiddingSchedule) {
 if (app.forSale) {
   writeBaseFile('for-sale', 'For Sale');
 }
+
+const path = `index.html`;
+console.log('Generating', path);
+const file = index;
+const title = app.tabTitle;
+file.split('\n').splice(5, 0, `
+  <title>${title}</title>
+<meta property="og:title" content="${title}">
+<meta name="og:url" content="${app.link}">
+<meta name="description" content="${app.homeDescription}">
+<meta property="og:description" content="${app.homeDescription}">
+    `);
+file.join('\n');
+writeFileSync(path, file);
 console.log('Generating', 'sitemap.txt');
 writeFileSync('sitemap.txt', sitemap.map(path => `${require('./app.json').link}${path}`).join('\n'));
