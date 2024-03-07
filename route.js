@@ -27,14 +27,14 @@ if (execSync('git branch --show-current').toString() === 'main\n') {
   console.error('ERROR:', 'Please try again on gh-pages branch');
   process.exit(1);
 }
-const index = readFileSync('index.html', { encoding: 'utf-8' });
-index.split('\n').splice(3, 0,
+const index = readFileSync('index.html', { encoding: 'utf-8' }).split('\n');
+index.splice(3, 0,
   `
 <meta name="apple-mobile-web-app-title" content="${app.tabTitle}">
 <meta name="application-name" content="${app.tabTitle}">
 <meta name="og:image" content="${app.link}assets/icons/og-image.jpg">
 `);
-index.join('\n');
+index = index.join('\n');
 
 const sitemap = [''];
 function writeFile(prefix, prefixTitle, name, description) {
