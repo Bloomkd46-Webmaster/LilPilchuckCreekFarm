@@ -3,21 +3,20 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
-      "type": "msedge",
+      "name": "Serve",
+      "type": "pwa-msedge",
       "request": "launch",
-      "runtimeArgs": [
-        //"--headless"
-      ],
       "preLaunchTask": "npm: start",
+      "postDebugTask": "terminate: start",
       "url": "http://localhost:4200/"
     },
     {
-      "name": "ng test",
+      "name": "Test",
       "type": "msedge",
       "request": "launch",
       "preLaunchTask": "npm: test",
-      "url": "http://localhost:9876/debug.html"
+      "postDebugTask": "terminate: test",
+      "url": "http://localhost:9876/debug.html?random=false"
     }
   ]
 }

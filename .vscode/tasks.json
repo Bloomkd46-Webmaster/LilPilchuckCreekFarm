@@ -10,21 +10,14 @@
         "owner": "typescript",
         "pattern": "$tsc",
         "background": {
-          "activeOnStart": true,
+          "activeOnStart": false,
           "beginsPattern": {
             "regexp": "(.*?)"
           },
           "endsPattern": {
-            "regexp": "bundle generation complete|Failed to compile"
+            "regexp": "bundle generation complete"
           }
         }
-      },
-      "presentation": {
-        "reveal": "never",
-        "revealProblems": "never",
-        "showReuseMessage": false,
-        "panel": "dedicated",
-        "close": true
       }
     },
     {
@@ -44,6 +37,32 @@
           }
         }
       }
+    },
+    {
+      "label": "terminate: start",
+      "command": "echo ${input:start}", // the 'start' command that's defined in the inputs list
+      "type": "shell",
+      "problemMatcher": []
+    },
+    {
+      "label": "terminate: test",
+      "command": "echo ${input:test}", // the 'start' command that's defined in the inputs list
+      "type": "shell",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "start",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "npm: start" // the name of the task to be terminated when the 'start' command is executed.
+    },
+    {
+      "id": "test",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "npm: test" // the name of the task to be terminated when the 'start' command is executed.
     }
   ]
 }
