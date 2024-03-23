@@ -3245,9 +3245,9 @@
     "breederAccount": {
       "lastName": "FARMS",
       "firstName": "HILLTOP",
-      "organizationName": null,
+      "organizationName": "HILLTOP FARMS",
       "isActive": true,
-      "isOrg": false,
+      "isOrg": true,
       "emailAddress": null,
       "displayName": "HILLTOP FARMS",
       "associatedUserId": 6024,
