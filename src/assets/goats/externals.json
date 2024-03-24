@@ -1611,7 +1611,7 @@
       "isPrimary": true,
       "creditLimit": 20,
       "lifeTimeCredit": null,
-      "membershipStatus": "NonMember",
+      "membershipStatus": "Active",
       "defaultAddress": null,
       "id": 1610514
     },
