@@ -57,6 +57,26 @@
       ]
     },
     {
+      "path": "/assets/goats/Fiona",
+      "name": "Fiona",
+      "children": [
+        {
+          "path": "/assets/goats/Fiona/Fiona.png",
+          "name": "Fiona.png"
+        }
+      ]
+    },
+    {
+      "path": "/assets/goats/Frost",
+      "name": "Frost",
+      "children": [
+        {
+          "path": "/assets/goats/Frost/Frost.png",
+          "name": "Frost.png"
+        }
+      ]
+    },
+    {
       "path": "/assets/goats/Hazel",
       "name": "Hazel",
       "children": [
