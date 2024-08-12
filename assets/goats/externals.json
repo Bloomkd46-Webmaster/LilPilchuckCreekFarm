@@ -841,7 +841,7 @@
     "numberBucks": 1,
     "numberDoes": 3,
     "isAlive": true,
-    "isLeased": false,
+    "isLeased": true,
     "isAdgaRegistered": true,
     "horn": null,
     "ear": null,
